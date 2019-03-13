@@ -42,7 +42,14 @@ public class CharOperation {
         char uniCode8 = 'A';
         System.out.println(String.valueOf(uniCode8).getBytes().length);  // 1 英文字母，GBK的英文字符占字节数是1
         try {
-            System.out.println(String.valueOf(uniCode8).getBytes("utf-8").length);
+            System.out.println(String.valueOf(uniCode).getBytes("UTF-8").length);  // 3 汉字 utf-8: 英文字符所占字节数:1  中文字符所占字节数:3
+            System.out.println(String.valueOf(uniCode5).getBytes("UTF-8").length); // 1 英文
+
+            System.out.println(String.valueOf(uniCode2).getBytes("utf-16").length); // 4 汉字
+            System.out.println(String.valueOf(uniCode8).getBytes("utf-16").length);// 4 英文
+
+            System.out.println(String.valueOf(uniCode).getBytes("ASCII").length);  // 1 汉字 ASCII 取了低位的一个字节
+            System.out.println(String.valueOf(uniCode6).getBytes("ASCII").length); // 1 英文
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
