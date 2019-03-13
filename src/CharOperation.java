@@ -46,11 +46,6 @@ public class CharOperation {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        // jiushizheyangzi1
-
-        // 123
-
-
 
 
         /**
