@@ -54,10 +54,39 @@ public class CharOperation {
             e.printStackTrace();
         }
 
-
         /**
          * char的运算操作，可以像整型一样进行运算和操作
          */
+        System.out.println("A" + '1');  // A1 其中之一及以上操作数是string，结果是直接连接的string
+        System.out.println("A" + 1);    // A1 其中之一及以上操作数是string，结果是直接连接的string
+        System.out.println('A' + 'B');  // 131 A==65 B==66 两个都是char,按照数值运算，A+B=131
+        System.out.println('A' + 1);    // 66  A==65 其中一个是数字，按照数值运算，A+1=66
+        System.out.println('A' + 1L);   // 66  A==65 其中一个是数字，按照数值运算，A+1L=66L
+        System.out.println('A' + 1.5);  // A==65 其中一个是数字，按照数值运算，A+1.5=66.5
+        System.out.println('A' + 1.5f); // A==65 其中一个是数字，按照数值运算，A+1.5f=66.5f
+        char ch = 'A';
+        System.out.println(ch++);   // A
+        System.out.println(++ch);   // C
+        System.out.println(ch + 1); // 68 所以 char++ != char + 1，char++和++char会保持原来的char类型，改变的字符的增减
+
+        /**
+         * char的类型装换
+         */
+        // 装换成比它小的byte
+        // 强制转换
+        char ch1 = '\uff41';
+        byte b1 = (byte)ch1;
+        // byte b = '\uff41';   // 会报错
+        System.out.println(b1);  // 65  说明强转时只取了ch1的低位的一个字节
+        // 隐式转换
+        byte b2 = 'a';
+        System.out.println(b2);  // 65  'a'的字节数在一个字节内，所以可以隐式转换
+
+        // 转换成比它大的int
+
+
+
+
     }
 }
 
