@@ -67,7 +67,7 @@ public class CharOperation {
         char ch = 'A';
         System.out.println(ch++);   // A
         System.out.println(++ch);   // C
-        System.out.println(ch + 1); // 68 所以 char++ != char + 1，char++和++char会保持原来的char类型，改变的字符的增减
+        System.out.println(ch + 1); // 68 所以 char++ != char + 1，char++和++char会保持原来的char类型，改变的只是字符的增减变化，但是+1是转换为int类型后相加的
 
         /**
          * char的类型装换
@@ -77,12 +77,35 @@ public class CharOperation {
         char ch1 = '\uff41';
         byte b1 = (byte)ch1;
         // byte b = '\uff41';   // 会报错
-        System.out.println(b1);  // 65  说明强转时只取了ch1的低位的一个字节
+        System.out.println(b1);  // 65 byte类型，说明强转时只取了ch1的低位的一个字节
         // 隐式转换
-        byte b2 = 'a';
-        System.out.println(b2);  // 65  'a'的字节数在一个字节内，所以可以隐式转换
+        byte b2 = 'A';
+        System.out.println(b2);  // 65 byte类型，'a'的char字节数在一个字节内，所以可以隐式转换
 
         // 转换成比它大的int
+        int n1 = '\uff41';
+        System.out.println(n1); // 65324 int类型，隐式转换
+
+        char ch2 = (char) 0x11AB0041;
+        char ch3 = (char) 0x11AB1141;
+        System.out.println(ch2); // A  =65，一个比/uffff大的int，强转时只取了int的低位的两个字节
+        System.out.println(ch3); // ?  一个比/uffff大的int，强转时只取了int的低位的两个字节
+
+
+        // 转换成比它大的浮点
+        float f1 = '\uffff';
+        System.out.println(f1); // 65535.0 float类型，隐式转换
+
+        char ch4 = (char) 165535.777;
+        char ch5 = (char) 65.777f;
+        System.out.println(ch4); // 蚟  =165535，一个比/uffff大的int，强转时只取了int的低位的两个字节
+        System.out.println((int)ch4); // 34463
+        System.out.println((int)'\uc000');
+        System.out.println(ch5); // A  一个比/uffff大的int，强转时只取了int的低位的两个字节
+
+
+
+
 
 
 
