@@ -1,7 +1,8 @@
 public class ProgramControl {
     public static void main(String[] args) {
-        // switch  ()内是一个能隐式转换成int，short，byte，char的表达式 case具有()的相同数据类型，不能有变量
-        // 这里说的()和case相同类型，是case的值可以隐式转换成()的类型就算
+        /** switch  ()内是一个能隐式转换成int，short，byte，char的表达式 case具有()的相同数据类型，不能有变量
+         *  这里说的()和case相同类型，是case的值可以隐式转换成()的类型就算
+         */
         switch (1) {
             case 1:
                 System.out.println(1);   // 1
@@ -86,6 +87,6 @@ public class ProgramControl {
 //                break;
 //        }
 
-
     }
+
 }
