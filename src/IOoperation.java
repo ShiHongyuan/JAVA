@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class IOoperation {
     public static void main(String[] args) {
 //        // sanner 控制台输入 1 2 3 4 567890
@@ -57,10 +55,8 @@ public class IOoperation {
         System.out.printf("%b", 1);           // true
         System.out.printf("%b", 0);           // true
         System.out.printf("%b", 'c');         // true
-        System.out.printf("%b", 2.2);         // true
+        System.out.printf("%b", 2.1);         // true
         System.out.println();                 // true
-
-
 
         /** 强制转换输出 */
         System.out.printf("float is %d, double is %d", (short)1.1f, (long)1.1);
