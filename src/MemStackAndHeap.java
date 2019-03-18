@@ -16,6 +16,22 @@ public class MemStackAndHeap {
                 "栈中不同的对象句柄指向堆中不同的对象" + (ss1 == ss2)); // False
 
         System.out.println(s1 == ss1); // False
+
+        /**
+         * 但是通过 赋值操作符 就是实参传形参的原理
+         * 1、基本数据类型和常量赋值是值赋值
+         * 2、对象是引用地址赋值，不开辟新的空间
+         */
+        String s11 = "123";
+        String s22 = s11;                  // 值复制，s1和s2存的是指向常量池的不同的地址
+        System.out.println(s11 == s22);    // true
+
+        String s111 = new String("123");
+        String s222 = s111;                // 引用地址复制，s11和s22存的是相同的指向堆内存的地址，没有开辟新的空间
+        System.out.println(s111 == s222);  // true
+
+        System.out.println(s11 == s222);   // false
+
     }
 
     public static void stringEqualTest() {
