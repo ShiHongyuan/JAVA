@@ -20,7 +20,7 @@ public class IOoperation {
          * string %s
          * 科学计数法 %e 必须是浮点数
          */
-        // 正常输出
+        // 正常类型匹配输出
         System.out.println();
         System.out.printf("int is %d, long is %d, short is %d", (int)1, (long)2l, (short)3); // int is 1, long is 2, short is 3"
         System.out.println();
@@ -66,7 +66,7 @@ public class IOoperation {
         System.out.printf("float is %d, double is %d", (short)1.1f, (long)1.1);
         System.out.println();
 
-        /** boolean不能强转成int,int不能强转成boolean，boolean只能由%b输出 */
+        /** boolean不能强转成int,int不能强转成boolean，boolean只能由%b输出，其他基本数据类型也不能和boolean互转*/
 //        System.out.printf("boolean is %d", (int)true);   // 编译报错
 //        System.out.println("boolean is %b", (boolean)1); // 编译报错
 
@@ -119,12 +119,6 @@ public class IOoperation {
         System.out.printf("string is %-5s", "123");  // '123  '  长度至少是5位数，后面填充2个空格
         System.out.println();
         System.out.printf("float is %-5.1f", 1.23f); // '1.2  '  总长度至少是5位数（至少对整数而言，小数超了就截断了），小数占1位数，小数点占1位数，整数占3位数，后面填充2个空格
-        // 强制转换输出  boolean不能强转成int
-        System.out.println();
-        System.out.printf("float is %d, double is %d", (short)1.1f, (long)1.1);
-        System.out.println();
-        // 'A'不能由%d输出，但是65可以由%c输出
-        System.out.printf("char is %d, char is %c, float is %f, double is %f", (int)'A', 65, (float)1, (double)2);
-        System.out.println();
+
     }
 }
