@@ -303,6 +303,160 @@ public class StringOperation {
         System.out.println(new int[] {1,2}.toString());  // [I@5e2de80c
 
 
+        /**
+         * 字符串生成器：StringBuilder、StringBuffer
+         * StringBuilder修改缓冲区的方法是同步的，所以是线程安全的（同步方法，异步方法，加锁？）
+         * StringBuilder和StringBuffer的构造方法相同，其他方法StringBuffer包含了StringBuilder所有的，甚至更多
+         * 所有方法：1、改变原生成器的内容 2、返回新生成器的引用（很少用到）
+         */
+        /** StringBuilder---构造方法 **/
+        // 创建一个默认容量（16），实际长度为0的空字符数组的字符串生成器
+        StringBuilder builder1 = new StringBuilder();
+        System.out.println(builder1.toString());                // ""
+        // 创建一个指定容量（10），实际长度为0的空字符数组的字符串生成器
+        StringBuilder builder2 = new StringBuilder(10);
+        System.out.println(builder2.toString());                // ""
+        // 创建一个默认容量（16），实际长度为"abc"（3）的字符数组的字符串生成器
+        StringBuilder builder3 = new StringBuilder("abc");
+        System.out.println(builder3.toString());                // abc
+
+        /** StringBuilder---追加元素 **/
+        // 追加一个string
+        builder3.append("def");
+        System.out.println(builder3.toString());                // abcdef
+        // 追加一个char[]数组
+        builder3.append(new char[] {'s','h','y'});
+        System.out.println(builder3.toString());                // abcdefshy
+        // 指定char[]数组的部分元素追加，从char[]数组的哪里开始，多少个元素去追加
+        builder3.append(new char[] {'s','h','y'}, 1, 2);
+        System.out.println(builder3.toString());                // abcdefshyhy
+
+        // 运行报错，ArrayIndexOutOfBoundsException，指定的长度超过了指定起始位置后的元素个数
+//        builder3.append(new char[] {'s','h','y'}, 1, 3);
+
+        // 基本数据类型转换成string，去追加
+        builder3.append(1);
+        System.out.println(builder3.toString());                // abcdefshyhy1
+        builder3.append(2L);
+        System.out.println(builder3.toString());                // abcdefshyhy12
+        builder3.append(6.0);
+        System.out.println(builder3.toString());                // abcdefshyhy126.0
+        builder3.append(6.6f);
+        System.out.println(builder3.toString());                // abcdefshyhy126.06.6
+        builder3.append('c');
+        System.out.println(builder3.toString());                // abcdefshyhy126.06.6c
+        builder3.append(false);
+        System.out.println(builder3.toString());                // abcdefshyhy126.06.6cfalse
+
+        /** StringBuilder---插入元素   就比append多一个想插入的位置，在指定位置前插入 **/
+        builder3 = new StringBuilder("abc");
+        // 插入一个string  最前面插入
+        builder3.insert(0, "def");
+        System.out.println(builder3.toString());                // defabc
+        // 插入一个char[]数组  最后面插入
+        builder3.insert(6, new char[] {'s','h','y'});
+        System.out.println(builder3.toString());                // defabcshy
+        // 指定char[]数组的部分元素，从char[]数组的哪里开始，多少个元素去插入
+        builder3.insert(8, new char[] {'s','h','y'}, 1, 2);
+        System.out.println(builder3.toString());                // defabcshhyy
+
+        // 运行报错，ArrayIndexOutOfBoundsException，指定的长度超过了指定起始位置后的元素个数
+//        builder3.insert(1, new char[] {'s','h','y'}, 1, 3);
+
+        // 基本数据类型转换成string，去插入
+        builder3.insert(1, 1);
+        System.out.println(builder3.toString());                // d1efabcshhyy
+        builder3.insert(1, 2L);
+        System.out.println(builder3.toString());                // d21efabcshhyy
+        builder3.insert(1, 6.0);
+        System.out.println(builder3.toString());                // d6.021efabcshhyy
+        builder3.insert(1, 6.6f);
+        System.out.println(builder3.toString());                // d6.66.021efabcshhyy
+        builder3.insert(1, 'c');
+        System.out.println(builder3.toString());                // dc6.66.021efabcshhyy
+        builder3.insert(1, true);
+        System.out.println(builder3.toString());                // dtruec6.66.021efabcshhyy
+
+        /** StringBuilder--- 删除元素 **/
+        builder3 = new StringBuilder("abcdef");
+        // 删除指定下标位置的字符
+        builder3.deleteCharAt(1);
+        System.out.println(builder3.toString());                // acdef
+        // 删除指定下标区域的字符 startindex ~ endindex-1
+        builder3.delete(1, 2);
+        System.out.println(builder3.toString());                // adef
+
+        /** StringBuilder--- 修改元素 **/
+        builder3 = new StringBuilder("abc");
+        // 修改指定位置的字符
+        builder3.setCharAt(1, 'c');
+        System.out.println(builder3.toString());                // acc
+
+        /** StringBuilder--- 替换元素 **/
+        builder3 = new StringBuilder("abc");
+        // 修改指定位置区域的字符  startindex ~ endindex-1
+        builder3.replace(1, 3, "sh");
+        System.out.println(builder3.toString());                // ash
+
+        /** StringBuilder--- 翻转生成器的字符 **/
+        builder3 = new StringBuilder("abc");
+        builder3.reverse();
+        System.out.println(builder3.toString());                // cba
+
+        /** StringBuilder--- 以上所有方法都可以返回新生成器的引用 **/
+        builder3 = new StringBuilder("abc");
+        StringBuilder builder = builder3.reverse();
+        System.out.println(builder.toString());                 // cba
+
+        /** StringBuilder---获取生成器当前可用的容量大小 **/
+        builder1 = new StringBuilder();
+        builder2 = new StringBuilder(10);
+        builder3 = new StringBuilder("abc");
+        System.out.println(builder1.capacity());                 // 16
+        System.out.println(builder2.capacity());                 // 10
+        System.out.println(builder3.capacity());                 // 19
+
+        /** StringBuilder---获取生成器的实际大小 **/
+        builder1 = new StringBuilder();
+        builder2 = new StringBuilder(10);
+        builder3 = new StringBuilder("abc");
+        System.out.println(builder1.length());                 // 0 当length是0时，没有生成数组，只是分配了这么多的空间
+        System.out.println(builder2.length());                 // 0
+        System.out.println(builder3.length());                 // 3
+
+        /** StringBuilder---设置生成器的实际大小 **/
+        builder3 = new StringBuilder("abc");
+        builder3.setLength(2);
+        System.out.println(builder3.length());                 // 2
+        System.out.println(builder3.toString());               // ab
+        System.out.println(builder3.capacity());               // 19  改变实际大小，原来的容量大小不变
+
+        builder3 = new StringBuilder("abc");
+        builder3.setLength(6);
+        System.out.println(builder3.length());                 // 6
+        System.out.println(builder3.toString());               // abc     length只反映实际大小，当length设置大时，剩余数组的字符填充null字符，'\u0000'
+        System.out.println(builder3.capacity());               // 19  改变实际大小，原来的容量大小不变
+
+        /** StringBuilder---设置的容量为实际大小 **/
+        System.out.println(builder3.capacity());               // 19
+        builder3.trimToSize();
+        System.out.println(builder3.length());                 // 6
+        System.out.println(builder3.toString());               // abc   
+        System.out.println(builder3.capacity());               // 6  容量大小变成实际大小，null字符也算字符，也在实际大小里
+
+        builder3 = new StringBuilder("abc");
+        System.out.println(builder3.length());                 // 3
+        System.out.println(builder3.capacity());               // 19
+        builder3.trimToSize();
+        System.out.println(builder3.capacity());               // 3
+
+        /** StringBuilder---获取指定位置的字符 **/
+        char builder_char = builder3.charAt(1);
+        System.out.println(builder_char);                      // b
+
+
+
+
 
     }
 }
