@@ -304,7 +304,7 @@ public class StringOperation {
 
 
         /**
-         * 字符串生成器：StringBuilder、StringBuffer
+         * 字符串生成器：java.lang.StringBuilder、 java.lang.StringBuffer
          * StringBuilder修改缓冲区的方法是同步的，所以是线程安全的（同步方法，异步方法，加锁？）
          * StringBuilder和StringBuffer的构造方法相同，其他方法StringBuffer包含了StringBuilder所有的，甚至更多
          * 所有方法：1、改变原生成器的内容 2、返回新生成器的引用（很少用到）
@@ -454,9 +454,12 @@ public class StringOperation {
         char builder_char = builder3.charAt(1);
         System.out.println(builder_char);                      // b
 
-
-
-
+        /** StringBuilder---截取字串 **/
+        builder3 = new StringBuilder("abc");
+        // 截取从指定定位置开始到结尾
+        System.out.println(builder3.substring(1));        // bc
+        // 截取从指定区域，startindex ~ endindex-1
+        System.out.println(builder3.substring(1,2));           // b
 
     }
 }

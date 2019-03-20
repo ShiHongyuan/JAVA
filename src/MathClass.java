@@ -123,7 +123,5 @@ public class MathClass {
         double v5 = Math.sqrt(36);
         System.out.println(v5);    // 36除方 = 6.0
 
-        System.out.println("hhh");    // 36除方 = 6.0
-
     }
 }
