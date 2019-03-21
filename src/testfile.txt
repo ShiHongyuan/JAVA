@@ -5,6 +5,4 @@ this is a line
 shi&hong&yuan
 zhen#bang
 ha#
-haha # 
-
-
+haha #
