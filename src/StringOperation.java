@@ -454,12 +454,17 @@ public class StringOperation {
         char builder_char = builder3.charAt(1);
         System.out.println(builder_char);                      // b
 
+<<<<<<< Updated upstream
         /** StringBuilder---截取字串 **/
         builder3 = new StringBuilder("abc");
         // 截取从指定定位置开始到结尾
         System.out.println(builder3.substring(1));        // bc
         // 截取从指定区域，startindex ~ endindex-1
         System.out.println(builder3.substring(1,2));           // b
+=======
+
+
+>>>>>>> Stashed changes
 
     }
 }
