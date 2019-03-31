@@ -7,47 +7,26 @@ import java.util.Scanner;
 public class ExceptionClass {
     public static void main(String[] args) {
 
-        /** 娴偣鏁扮殑闄ゆ硶鍙互闄や互0
-         * 鏁存暟鐨勯櫎娉曚笉鑳介櫎浠?0锛屾姏鍑哄紓甯?
-         * 涓ゆ搷浣滄暟鍙鏈変竴涓槸娴偣鏁帮紝灏变細浼犳崲鎴愭诞鐐规暟鐨勯櫎娉?
+        /** 只要有一个操作数是浮点，算数就会变成浮点数计算
+         * 浮点计算除数是0，不会异常
+         * 整数计算除数是0，会报异常 java.lang.ArithmeticException
          * */
         System.out.println(2.0/0.0);    // Infinity
-        System.out.println(2.0/0);      // Infinity 涓ゆ搷浣滄暟鍙鏈変竴涓槸娴偣鏁帮紝灏变細浼犳崲鎴愭诞鐐规暟鐨勯櫎娉?
-        System.out.println(2/0.0);      // Infinity 涓ゆ搷浣滄暟鍙鏈変竴涓槸娴偣鏁帮紝灏变細浼犳崲鎴愭诞鐐规暟鐨勯櫎娉?
+        System.out.println(2.0/0);      // Infinity 浮点计算除数是0，不会异常
+        System.out.println(2/0.0);      // Infinity 浮点计算除数是0，不会异常
 
-        System.out.println(0/0.0);      // NaN
-        System.out.println(0.0/0);      // NaN
+        System.out.println(0/0.0);      // NaN   浮点计算除数是0，不会异常
+        System.out.println(0.0/0);      // NaN   浮点计算除数是0，不会异常
         System.out.println(0.0/0);      // NaN
 
-//        System.out.println(0/0);        // 鎶涘嚭寮傚父锛歫ava.lang.ArithmeticException: / by zero
-//        System.out.println(2/0);        // 鎶涘嚭寮傚父锛歫ava.lang.ArithmeticException: / by zero
+//        System.out.println(0/0);        // 整数计算，报异常java.lang.ArithmeticException: / by zero
+//        System.out.println(2/0);        // 整数计算，报异常java.lang.ArithmeticException: / by zero
 
         /**
-         * 鏁存暟涓婃孩锛岃秴杩囦簡int鐨勬渶澶у?硷紝娌℃湁鎶涘紓甯革紝杩欐槸jvm鐨勪竴涓棶棰?
+         * 超过int的最大值，本来应该报上溢异常的，但是jvm不会报错，直接为负数的最小值，
          * */
         System.out.println(Integer.MAX_VALUE + 1);   // -2147483648
 
-
-
-        /**
-         * 寮傚父澶勭悊-try-catch
-         * */
-
-        /** 閫氳繃throw璇彞鍦╰ry涓洿鎺ユ姏鍑哄紓甯革紝catch鎹曡幏 */
-
-
-
-        /** 鍦╰ry涓皟鐢ㄥ彲鑳芥姏鍑哄紓甯哥殑鍑芥暟锛岄棿鎺ユ姏鍑哄紓甯革紝catch鎹曡幏 */
-
-        /** finally */
-
-        /** 鍦╟atch涓噸鏂版姏鍑哄紓甯革細涓嶆兂澶勭悊寮傚父锛屾兂缁欒皟鐢ㄨ?呭鐞嗗紓甯? */
-
-        /** 鑾峰彇寮傚父淇℃伅 */
-
-        /** 閾惧紡寮傚父 */
-
-        /** 寮傚父鍒嗙被 */
 
         /**
          * 1、免检异常：程序设计的 逻辑  错误（class，file找不到不叫逻辑错误），一定要纠正程序
