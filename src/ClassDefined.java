@@ -117,6 +117,47 @@ public class ClassDefined {
         ClassDefined outter = new ClassDefined(1);
         nonstaticInnerClass nonstaticInner = outter.new nonstaticInnerClass();
         nonstaticInnerClass nonstaticInner2 = new ClassDefined(2).new nonstaticInnerClass();
+
+        /**
+         * 自定义类重写equals方法，但是方法参数写错了，相当于没有重写方法，重新扩展了一个方法，到底执行哪一个方法呢
+         * */
+        Circle1 circle1 = new Circle1(1);
+        Circle1 circle11 = new Circle1(1);
+        System.out.println(circle1.equals(circle11));
+
+        Circle2 circle2 = new Circle2(1);
+        Circle2 circle22 = new Circle2(1);
+        System.out.println(circle2.equals(circle22));
     }
+
+    static class Circle1 {
+        double radius;
+        public Circle1 (int radius) {
+            this.radius = radius;
+        }
+
+        public boolean equals (Circle1 circle) {
+            System.out.println("Circle1");
+            return this.radius == circle.radius;
+        }
+    }
+    static class Circle2 {
+        double radius;
+
+        public Circle2 (int radius) {
+            this.radius = radius;
+        }
+
+        public boolean equals (Object circle) {
+            if (circle instanceof Circle2) {
+                System.out.println("Circle2");
+                return this.radius == ((Circle2) circle).radius;
+            }
+            else
+                return false;
+        }
+    }
+
+
 
 }

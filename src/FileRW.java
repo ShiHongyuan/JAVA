@@ -329,5 +329,8 @@ public class FileRW {
         System.out.println(scanner2.next());             // haha
         scanner2.close();
 
+
+
+
     }
 }
