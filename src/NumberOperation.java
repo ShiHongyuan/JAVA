@@ -1,67 +1,66 @@
 public class NumberOperation {
     public static void main (String[] args) {
-
-        /**×Ô¶¯×°ÏäºÍ×Ô¶¯²ğÏä**/
+        /**ï¿½Ô¶ï¿½×°ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½**/
         int x = new Integer(3); System.out.println(x);     // 3
-        // ÕûÊı±È½ÏºÍÔËËãµÄÊ±ºòÊÇint£¬Integer»á×Ô¶¯²ğÏä
+        // ï¿½ï¿½ï¿½ï¿½ï¿½È½Ïºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½intï¿½ï¿½Integerï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½
         System.out.println(new Integer(3) + new Integer(3));  // int 3 + int 3 = 6
         System.out.println(new Integer(2) < new Integer(3));  // int 2 < int 3 = true
 
-        /**°ü×°Àà java.lang.*
+        /**ï¿½ï¿½×°ï¿½ï¿½ java.lang.*
          * java.lang.Character Boolean implements java.lang.Comparable extends java.lang.Object
          * java.lang.Integer Short Long Double Float Byte implements java.lang.Comparable extends java.lang.Number
-         * ¶¼ÖØĞ´ÁËObjectµÄ toString() ºÍ equals() ·½·¨
-         * ¶¼ÊµÏÖÁËComparable½Ó¿ÚµÄcompareTo()·½·¨
+         * ï¿½ï¿½ï¿½ï¿½Ğ´ï¿½ï¿½Objectï¿½ï¿½ toString() ï¿½ï¿½ equals() ï¿½ï¿½ï¿½ï¿½
+         * ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Comparableï¿½Ó¿Úµï¿½compareTo()ï¿½ï¿½ï¿½ï¿½
          */
 
 
-        /** ½Ó¿Ú java.lang.Comparable **/
+        /** ï¿½Ó¿ï¿½ java.lang.Comparable **/
         // public int compareTo(Object)
 
-        /** ³éÏóÀà java.lang.Number **/
-        // byte byteValue() °Ñ¼Ì³Ğ Number µÄ°ü×°Êı×ÖÀà×ª»»³É »ù±¾Êı¾İÀàĞÍbyte
-        // int intValue() °Ñ¼Ì³Ğ Number µÄ°ü×°Êı×ÖÀà×ª»»³É »ù±¾Êı¾İÀàĞÍint
-        // short shortValue() °Ñ¼Ì³Ğ Number µÄ°ü×°Êı×ÖÀà×ª»»³É »ù±¾Êı¾İÀàĞÍshort
-        // long longValue() °Ñ¼Ì³Ğ Number µÄ°ü×°Êı×ÖÀà×ª»»³É »ù±¾Êı¾İÀàĞÍlong
-        // float floatValue() °Ñ¼Ì³Ğ Number µÄ°ü×°Êı×ÖÀà×ª»»³É »ù±¾Êı¾İÀàĞÍfloat
-        // double doubleValue() °Ñ¼Ì³Ğ Number µÄ°ü×°Êı×ÖÀà×ª»»³É »ù±¾Êı¾İÀàĞÍdouble
+        /** ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ java.lang.Number **/
+        // byte byteValue() ï¿½Ñ¼Ì³ï¿½ Number ï¿½Ä°ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½byte
+        // int intValue() ï¿½Ñ¼Ì³ï¿½ Number ï¿½Ä°ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½int
+        // short shortValue() ï¿½Ñ¼Ì³ï¿½ Number ï¿½Ä°ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½short
+        // long longValue() ï¿½Ñ¼Ì³ï¿½ Number ï¿½Ä°ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½long
+        // float floatValue() ï¿½Ñ¼Ì³ï¿½ Number ï¿½Ä°ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½float
+        // double doubleValue() ï¿½Ñ¼Ì³ï¿½ Number ï¿½Ä°ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½double
 
-        /** °ü×°ÀàÃ»ÓĞÎŞ²Î¹¹Ôì·½·¨£¬¶ÔÏóµÄÄÚ²¿Öµ²»¿É±ä£¬¼´°ü×°ÀàµÄÊµÀı²»¿É±ä **/
-//        Integer integer = new Integer();   // ±àÒë±¨´í£¬Ã»ÓĞÎŞ²Î¹¹Ôì·½·¨
+        /** ï¿½ï¿½×°ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ş²Î¹ï¿½ï¿½ì·½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú²ï¿½Öµï¿½ï¿½ï¿½É±ä£¬ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½É±ï¿½ **/
+//        Integer integer = new Integer();   // ï¿½ï¿½ï¿½ë±¨ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ş²Î¹ï¿½ï¿½ì·½ï¿½ï¿½
 
 
-        /** °ü×°ÀàÊµ²Î´«µİµÄÒ²ÊÇÒıÓÃÖµ£¬µ«ÊÇÔÚº¯ÊıÄÚ²¿Èç¹ûnew Integer()»á¸Ä±äÒıÓÃÖµ£¬»òÕß=6Ò²»á¸Ä±äÒıÓÃÖµ£¬Óë»ù±¾Êı¾İÀàĞÍÏàÍ¬£¬ËùÒÔ¶¼»á±ä³ÉÒ»¸ö¸´ÖÆ´«²ÎµÄ½á¹û **/
+        /** ï¿½ï¿½×°ï¿½ï¿½Êµï¿½Î´ï¿½ï¿½İµï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úºï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ï¿½new Integer()ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½=6Ò²ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Æ´ï¿½ï¿½ÎµÄ½ï¿½ï¿½ **/
         Integer integer1 = 5;
         Integer integer2 = 5;
-        System.out.println(integer1 == integer2);   // true  Ö¸ÏòÍ¬Ò»¸ö³£Á¿£¬ËùÒÔ±äÁ¿µÄÒıÓÃÖµÏàÍ¬
+        System.out.println(integer1 == integer2);   // true  Ö¸ï¿½ï¿½Í¬Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½Í¬
 
         Integer integer11 = new Integer(5);
         Integer integer22 = new Integer(5);
         System.out.println(integer11 == integer22); // false
 
 
-        /** °ü×°Àà¶¼ÖØĞ´ÁËObjectµÄ toString() ºÍ equals() ·½·¨ **/
+        /** ï¿½ï¿½×°ï¿½à¶¼ï¿½ï¿½Ğ´ï¿½ï¿½Objectï¿½ï¿½ toString() ï¿½ï¿½ equals() ï¿½ï¿½ï¿½ï¿½ **/
 
-        /** °ü×°Àà¶¼ÊµÏÖÁËComparable½Ó¿ÚµÄcompareTo()·½·¨ **/
+        /** ï¿½ï¿½×°ï¿½à¶¼Êµï¿½ï¿½ï¿½ï¿½Comparableï¿½Ó¿Úµï¿½compareTo()ï¿½ï¿½ï¿½ï¿½ **/
 
 
 
 
         /** java.lang.Integer **/
-        // ¹¹Ôì·½·¨
+        // ï¿½ï¿½ï¿½ì·½ï¿½ï¿½
         Integer integerValue1 = new Integer(2);  // 2
         Integer integerValue2 = new Integer("2");   // 2
 
-        // ¼Ì³ĞNumberµÄ·½·¨
+        // ï¿½Ì³ï¿½Numberï¿½Ä·ï¿½ï¿½ï¿½
 
 
 
-        // À©Õ¹µÄÁ½¸ö¾²Ì¬±äÁ¿
+        // ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½
         System.out.println(Integer.MAX_VALUE);
         System.out.println(integerValue1.MIN_VALUE);
 
-        // À©Õ¹µÄËÄ¸ö¾²Ì¬·½·¨
-        // ×ª»»³ÉIntegerµÄ·½·¨
+        // ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½
+        // ×ªï¿½ï¿½ï¿½ï¿½Integerï¿½Ä·ï¿½ï¿½ï¿½
         Integer integerTemp = Integer.valueOf(1);
         System.out.println(integerTemp);
 
@@ -74,7 +73,7 @@ public class NumberOperation {
         integerTemp = Integer.valueOf("3", 2);
         System.out.println(integerTemp);
 
-        // ×ª»»³ÉintµÄ·½·¨
+        // ×ªï¿½ï¿½ï¿½ï¿½intï¿½Ä·ï¿½ï¿½ï¿½
         int intTemp = Integer.valueOf(1);
         System.out.println(integerTemp);
 
@@ -86,18 +85,6 @@ public class NumberOperation {
 
         intTemp = Integer.valueOf("3", 2);
         System.out.println(integerTemp);
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }

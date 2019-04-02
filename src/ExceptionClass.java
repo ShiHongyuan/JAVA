@@ -34,7 +34,7 @@ public class ExceptionClass {
          * （2）运行时异常：RuntimeException：ArithmeticException NullException IndexOutOfException IllegalArgumentException传递非法参数
          *
          * 2、必检异常：偶发的错误，不一定要纠正的
-         * ClassNotFoundException IOException  FileNotFoundException针对 File对象 不存在的情况
+         * ClassNotFoundException IOException (FileNotFoundException针对 File对象 不存在的情况 extends IOException)
          *
          * extends Throwable：
          * 1、错误：Error extends Throwable
@@ -258,5 +258,4 @@ public class ExceptionClass {
             throw new Exception("linkException exception", ex);
         }
     }
-
 }
