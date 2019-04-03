@@ -128,6 +128,11 @@ public class ClassDefined {
         Circle2 circle2 = new Circle2(1);
         Circle2 circle22 = new Circle2(1);
         System.out.println(circle2.equals(circle22));
+
+        /**
+         * 对于内部类，算作类的成员，static的方法里面只能调用static的成员，非static的成员不能在外部类没有被实例化的时候调用，所以static方法只能创建static的内部类
+         * 对于外部类，不算成员，static方法可以创建非static的外部类
+         * */
     }
 
     static class Circle1 {

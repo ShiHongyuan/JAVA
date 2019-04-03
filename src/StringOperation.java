@@ -461,5 +461,18 @@ public class StringOperation {
         // 截取从指定区域，startindex ~ endindex-1
         System.out.println(builder3.substring(1,2));           // b
 
+
+        /** 一个字符串和一个对象用+号连接，调用对象的toString()方法
+         *  一个字符串和一个基本数据类型用+号连接，直接显示基本数据类型值的字符串表示  **/
+        Integer a = 1;
+        Integer b = 1;
+        Character c1 = 'a';
+        char c2 = 'a';
+
+        System.out.println(a + " + " + b + "=" + (a+b));                          // 1 + 1=2
+        System.out.println(a.toString() + " + " + b.toString() + "=" + (a+b));    // 1 + 1=2  (a+b)的结果是int
+        System.out.println(c1 +"+"+c2);              // a+a
+        System.out.println(c1.toString()+"+"+c2);    // a+a
+        System.out.println((c1+c2));                   // 194 'a'转换成int相加 97+97=194
     }
 }

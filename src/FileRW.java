@@ -446,9 +446,9 @@ public class FileRW {
         printWriterStream1.close();
         printWriterStream2.close();
 
-        /** 继承根类---标志性实现类---读写二进制文件的方式是基本数据类型和字符串 java.io.FilterInputStream  java.io.FilterOutputStream **/
+        /** 继承根类---标记性实现类---读写二进制文件的方式是基本数据类型和字符串 java.io.FilterInputStream  java.io.FilterOutputStream **/
 
-        /** 标志性接口---读写二进制文件的方式是基本数据类型和字符串 java.io.DataInput java.io.DataOutput **/
+        /** 标记性接口---读写二进制文件的方式是基本数据类型和字符串 java.io.DataInput java.io.DataOutput **/
          /* java.io.DataInput */
         // boolean readBoolean() 读一个boolean
         // byte readByte() 读一个byte
@@ -474,7 +474,7 @@ public class FileRW {
         // void writeChars(String) 取出一个String的每个2个字节（char），写入（char跟系统的编码方式无关，这是与文本io的差别）
         // String writeUTF(String)  按照UTF的格式写字符串（跟系统的编码方式无关，这是与文本io的差别）
 
-        /** 继承标志性类FilterInputStream和FilterOutputStream，实现标志性接口DataInput和DataOutput---读写二进制文件的方式是基本数据类型和字符串 java.io.DataInputStream java.io.DataOutputStream **/
+        /** 继承标记性类FilterInputStream和FilterOutputStream，实现标记性接口DataInput和DataOutput---读写二进制文件的方式是基本数据类型和字符串 java.io.DataInputStream java.io.DataOutputStream **/
         /* java.io.DataOutputStream */
         // 构造方法
         DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream("src/filteroutputstream.txt"));
@@ -537,7 +537,7 @@ public class FileRW {
         dataInputStream.close();
         dataInputStream1.close();
 
-        /** 继承标志性类FilterInputStream和FilterOutputStream --- 读写二进制文件的方式是二进制,且为输入输出流创建缓存区 java.io.BufferedInputStream java.io.BufferedOutputStream **/
+        /** 继承标记性类FilterInputStream和FilterOutputStream --- 读写二进制文件的方式是二进制,且为输入输出流创建缓存区 java.io.BufferedInputStream java.io.BufferedOutputStream **/
         /* java.io.BufferedOutputStream 不存在会创建文件 */
         // 构造方法  --- 带缓存区，默认是512个字节，可以指定
         // 不指定，默认缓存区是512个字节
@@ -628,12 +628,80 @@ public class FileRW {
         objectOutputStream2.close();
         objectInputStream2.close();
 
-        /** 随机访问文件 **/
+        /**
+         * 随机访问文件 文件指针
+         * 继承Object，实现标记性接口DataInput和DataOutput---读写二进制文件的方式是基本数据类型和字符串 java.io.RandomAccessFile
+         */
+        // 构造方法 会报出FileNotFoundException的异常
+        // 文件存在，创建文件指针
+        // 文件不存在： 1、只读的文件会抛出异常，2、读写的文件新建一个空文件和文件指针
+        java.io.RandomAccessFile randomAccessFile = new RandomAccessFile("src/filteroutputstream.txt", "r");   // 只读
+
+        try {
+            RandomAccessFile randomAccessFile2 = new RandomAccessFile("src/randomaccessfile.txt", "r"); // 可读写
+        }
+        catch(FileNotFoundException ex) {
+            System.out.println(ex.getMessage());      // src/randomaccessfile.txt (No such file or directory)
+        }
+        RandomAccessFile randomAccessFile3 = new RandomAccessFile("src/randomaccessfile.txt", "rw"); // 可读写
+
+        RandomAccessFile randomAccessFile4 = new RandomAccessFile(new File("src/randomaccessfile.txt"), "rw"); // 可读写
+
+
+        // 文件存在，创建文件指针
+        // 文件字节数
+        System.out.println(randomAccessFile.length());     // 91
+        System.out.println(randomAccessFile3.length());    // 0
+        System.out.println(randomAccessFile4.length());    // 0
+
+        // 写数据
+        randomAccessFile3.write(1);                   // 写入1
+        byte[] byte1 = new byte[] {1,2,3};
+        randomAccessFile3.write(byte1);                  // 写入123
+        randomAccessFile3.write(byte1, 2, 1);    // 写入3
+
+        // 读数据
+        randomAccessFile3.read();
+        byte[] byte2 = new byte[] {1,2,3};
+        randomAccessFile3.read(byte2);
+        randomAccessFile3.read(byte2, 1, 1);
+
+        // 实现接口DataInput和DataOutput，基本数据类型和string方式读写
+
+
+        // 设置文件的新长度
+        randomAccessFile3.setLength(10);
+
+        // 文件指针跳过n个字节
+        randomAccessFile3.skipBytes(2);
+
+        // 设置文件指针相对于文件开始位置的偏移量
+        randomAccessFile3.seek(7);
+        randomAccessFile3.seek(0);                      // 文件开始位置
+        randomAccessFile3.seek(randomAccessFile3.length()); // 文件结束位置
+        randomAccessFile3.read();                           // 文件结束位置，没有字节了，返回-1
+
+        // 获取文件指针相对于文件开始位置的偏移量
+        randomAccessFile3.getFilePointer();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 
     /** 只有实现了java.io.Serializable 的对象或者数组才是可序列化的，才能写入输出流或者网络传输
-     *  Serializable是个标志性的接口，没有可实现的抽象方法，实现这个接口会启动java的序列化机制，自动完成存储对象和数组的过程
+     *  Serializable是个标记性的接口，没有可实现的抽象方法，实现这个接口会启动java的序列化机制，自动完成存储对象和数组的过程
      */
     static class TestObject implements Serializable{
         int n;
