@@ -610,7 +610,7 @@ public class FileRW {
         ObjectOutputStream objectOutputStream2 = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("src/filteroutputstream.txt")));
         /** 序列化接口java.io.Serializable
          *  序列化对象不会存储static变量的值
-         *  序列化对象，必须是每个数据域都是可序列化对象，否则可使用transient忽略数据域，不进行编码存储
+         *  序列化对象，必须是每个数据域都是可序列化对象，否则可使用transient忽略数据域，不进行编码存储，不会被持久化和恢复，transient只能修饰变量，不能修饰类和方法
          */
         // 序列化数组，要求数组的每个元素都是可序列化的
         int[] nums = {1, 2, 3};
@@ -684,19 +684,10 @@ public class FileRW {
         // 获取文件指针相对于文件开始位置的偏移量
         randomAccessFile3.getFilePointer();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        // 关闭文件，释放资源
+        randomAccessFile.close();
+        randomAccessFile3.close();
+        randomAccessFile4.close();
 
     }
 
@@ -705,7 +696,7 @@ public class FileRW {
      */
     static class TestObject implements Serializable{
         int n;
-        static int non;             // 序列化时不编码不存储
+        static int non;             // 序列化时不编码不存储，当对象被反序列化时，被transient修饰的变量值不会被持久化和恢复。transient只能修饰变量，不能修饰类和方法
         transient A a = new A();    // 由于A没有实现序列化接口，不可序列化，会影响到时TestObject的序列化，所以序列化时要忽略
         public TestObject (int n) {
             this.n = n;

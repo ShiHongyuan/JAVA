@@ -1,6 +1,9 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+
 public class IOoperation {
     public static void main(String[] args) {
-//        // sanner 控制台输入 1 2 3 4 567890
+//        // java.util.sanner 控制台输入 1 2 3 4 567890
 //        java.util.Scanner input = new java.util.Scanner(System.in);
 //        input.next(); // 以空白字符结束/t /f /r /n ' ' 但是不会以''结束
 //        System.out.println(input.next()); // 2
@@ -8,6 +11,13 @@ public class IOoperation {
 //        System.out.println(input.next()); // 4
 //
 //        System.out.println(input.nextLine()); // 读入一行才会结束  ' '567890
+
+        /** java.io.BufferedReader 控制台输入 **/
+        java.io.BufferedReader input = new BufferedReader(new java.io.InputStreamReader(System.in));
+        try {
+            String s = input.readLine();
+        }catch (IOException ex) {}
+
 
 
         /**

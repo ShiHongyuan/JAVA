@@ -31,7 +31,7 @@ public class ExceptionClass {
         /**
          * 1、免检异常：程序设计的 逻辑  错误（class，file找不到不叫逻辑错误），一定要纠正程序
          * （1）系统错误：Error ： LinkageError类依赖，一个类的编译造成另一个依赖类不兼容  VirtualMachineError虚拟机异常
-         * （2）运行时异常：RuntimeException：ArithmeticException NullException IndexOutOfException IllegalArgumentException传递非法参数
+         * （2）运行时异常：RuntimeException：ArithmeticException NullPointerException ArrayIndexOutOfBoundsException IllegalArgumentException传递非法参数
          *
          * 2、必检异常：偶发的错误，不一定要纠正的
          * ClassNotFoundException IOException (FileNotFoundException针对 File对象 不存在的情况 extends IOException)
@@ -208,6 +208,14 @@ public class ExceptionClass {
 //        finally {
 //            System.out.println("return也要执行2");
 //        }
+
+//        // 如果try，finally语句里均有return，忽略try的return，而使用finally的return.
+
+//        // finally不会被执行的情况：
+//        1、在finally语句块第一行发生了异常。 因为在其他行，finally块还是会得到执行
+//        2、在前面的代码中用了System.exit(int)已退出程序。 exit是带参函数 ；若该语句在异常语句之后，finally会执行
+//        3、程序所在的线程死亡。
+//        4、关闭CPU。
 
 
         /**
