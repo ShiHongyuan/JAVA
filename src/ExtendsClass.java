@@ -88,7 +88,41 @@ public class ExtendsClass extends Object{
             }
             return h;
         }
+    }
 
+
+    /**
+     * super 代表对父类对象的引用，指向父类对象，用来访问父类的变量和方法
+     * 在建立子类对象的时候，其实相当于同时建立了父类对象，这个实例既是子类的实例，也是父类的实例，多态性啊
+     * this、super不能用在static方法中
+     * */
+    public class Super {
+        protected int number;
+
+        protected void showNumber() {
+            // 变量的作用域在父类里，即使是子类调用的这个方法，输出的变量也是该父类自己的变量
+            System.out.println("number = " + number);
+        }
+    }
+
+    public class Sub extends Super {
+        int number = 20;
+        public void showNumber() {
+            System.out.println("number = " + number);
+        }
+        void testSuper() {
+            showNumber();         // 20  当子类有重写的名字一样的方法时，没有加super，匹配自己类的方法，输出自己类的变量值
+            super.showNumber();   // 0   当子类有重写的名字一样的方法时，加了super，匹配父类的方法，super调用了父类的方法，输出父类的变量值
+            super.number = 10;
+            super.showNumber();   // 10  super修改了父类的变量值，super调用了父类的方法，哪里类的方法里就访问哪个类自己的变量，输出被改变的父类的变量值，
+        }
+    }
+
+
+    public static void main(String[] args) {
+        ExtendsClass obj = new ExtendsClass();
+        Sub sub = obj.new Sub();
+        sub.testSuper();
     }
 
 

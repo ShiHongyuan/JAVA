@@ -1,5 +1,18 @@
 import java.util.Date;
 
+/**
+ * 声明类所在的包    package
+ * 没有声明 在默认包
+ * 引入其他包       import package.*
+ * 引入其他包的类    import package.classname
+ * public，default 可以用在类和类成员
+ * private，protected 只能用在类成员
+ *
+ * 数据域封装：
+ * 1、声明变量是private
+ * 2、get，set方法访问，boolean用is定义方法
+ * */
+
 public class ClassDefined {
     /**
      * 类的设计原则
@@ -39,6 +52,7 @@ public class ClassDefined {
     void getvars(int varInt, int varStatic) {
         System.out.println(varInt);
         System.out.println(varStatic);
+        /** this指向该类创建的当前实例，this.成员变量  this.成员方法 **/
         System.out.println(this.varInt);                  // 0
         System.out.println(ClassDefined.varStatic);       // 0
     }

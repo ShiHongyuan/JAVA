@@ -7,7 +7,7 @@ public class FinalClass {
 
     /**
      * final 修饰方法和成员方法
-     * 1、第一个原因是把方法锁定，任何继承类只能继承，不能修改它的含义
+     * 1、第一个原因是把方法锁定，任何继承类只能继承，不能修改它的内容
      * 2、早期Java实现版本会将final方法转为内嵌调用，提高效率，现在Java版本已经不需要这些优化了。类中所有的private方法都隐式地指定为final。
      */
     final void myFinalFuntion() {}
@@ -18,4 +18,18 @@ public class FinalClass {
             this.myFinalFuntion();
         }
     }
+
+
+
+    /**
+     * final 修饰类
+     * 表明这个类不能被继承，final类中的所有成员方法都会被隐式地指定为final方法
+     */
+    public final class finalClass {
+        finalClass() {}
+        public void fun() { }
+    }
+
+//    public class finalChildClass extends finalClass { } // 编译报错，cannot inherit from final class "FinalClass.finalClass"
+
 }
