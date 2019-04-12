@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.RandomAccess;
 
 public class InterfaceDefine {
     public static void main(String[] args) {
@@ -10,19 +11,31 @@ public class InterfaceDefine {
          */
 
         /**
+         * java.util.RandomAccess 可随机访问（通过下标访问），标志性接口
+         * 实现这个这个接口的 List 集合是支持快速随机访问的，如 ArrayList
+         * 该接口没有任何方法，由JVM自身平台实现
+         */
+
+
+        /**
          * java.lang.Comparable<T>  比较接口
          * public int compareTo(T o);
          */
 
+        /**
+         * java.lang.Comparator<T>  自定义比较器的接口
+         * public int compare(T o1, T o2);
+         */
+
 
         /**
-         * java.io.Serializable  可序列化，标记性接口
-         * 网络传输和读写文件的时候
+         * java.io.Serializable  可序列化，标志性接口
+         * 网络传输和读写文件的时候， 如 ArrayList
          */
 
         /**
-         * java.lang.Cloneable  可克隆，标记性接口
-         * 复制对象
+         * java.lang.Cloneable  可克隆，标志性接口
+         * 复制对象， 如 ArrayList
          * protected native Object clone() throws CloneNotSupportedException;  native说明不是java写的，不是核心api，是JVM自身平台实现的
          * 实现接口的类必须重写该方法，而且把可视性修饰符改为public，否则实例调用不了
          */
@@ -117,6 +130,9 @@ public class InterfaceDefine {
             return 0;
         }
     }
+
+
+
 
 
 
