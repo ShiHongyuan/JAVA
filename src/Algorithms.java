@@ -1,8 +1,3 @@
-import com.alibaba.fastjson.JSONObject;
-import jdk.nashorn.internal.ir.IdentNode;
-
-import java.security.Key;
-import java.time.Instant;
 import java.util.*;
 
 public class Algorithms {
@@ -10,29 +5,29 @@ public class Algorithms {
     /**
      * jsonDeep
      */
-    public class JsonDeep {
-        private JSONObject json;
-
-        public JSONObject getJson() {
-            return json;
-        }
-        public void setJson(JSONObject json) {
-            this.json = json;
-        }
-
-        public String getJsonString(){
-            System.out.println(json.toString());
-            System.out.println(json.toJSONString());
-//        JsonArray jsonArray = new JsonArray();
-            return json.toString();
-        }
-
-        public JsonDeep(String jsonString) {
-            super();
-            jsonString = "{'1':1,{'2':2},'22':22}}";
-            json = (JSONObject)JSONObject.parse(jsonString);
-        }
-    }
+//    public class JsonDeep {
+//        private JSONObject json;
+//
+//        public JSONObject getJson() {
+//            return json;
+//        }
+//        public void setJson(JSONObject json) {
+//            this.json = json;
+//        }
+//
+//        public String getJsonString(){
+//            System.out.println(json.toString());
+//            System.out.println(json.toJSONString());
+////        JsonArray jsonArray = new JsonArray();
+//            return json.toString();
+//        }
+//
+//        public JsonDeep(String jsonString) {
+//            super();
+//            jsonString = "{'1':1,{'2':2},'22':22}}";
+//            json = (JSONObject)JSONObject.parse(jsonString);
+//        }
+//    }
 
 
     public void jsonDeep() {
@@ -101,13 +96,13 @@ public class Algorithms {
     }
 
     /**
-     * ¶ş·Ö²éÕÒ
+     * äºŒåˆ†æŸ¥æ‰¾
      */
     public void binarySearch() {
         int[] a = new int[]{1,2,3,4,5,6,7,8,9,10};
         int key = 2;
         int index = this.binarySearch(a, key);
-        System.out.println("¶ş·Ö²éÕÒ---------------------");
+        System.out.println("äºŒåˆ†æŸ¥æ‰¾---------------------");
         System.out.println(index);
     }
 
@@ -132,12 +127,12 @@ public class Algorithms {
     }
 
     /**
-     * ¿ìËÙÅÅĞò
+     * å¿«é€Ÿæ’åº
      */
     public void quickSort() {
         int[] a = {10,2,3,9,4,8,5,7,6,1};
         this.quickSort(a, 0, a.length - 1);
-        System.out.println("¿ìËÙÅÅĞò---------------------");
+        System.out.println("å¿«é€Ÿæ’åº---------------------");
         System.out.println(Arrays.toString(a));
     }
 
@@ -149,6 +144,7 @@ public class Algorithms {
         int key = a[pivot];
         a[pivot] = a[left];
         a[left] = key;
+
 
         int i = left + 1;
         int j = right;
@@ -193,12 +189,12 @@ public class Algorithms {
 
 
     /**
-     * ²åÈëÅÅĞò
+     * æ’å…¥æ’åº
      */
     public void insertSort() {
         int[] a = new int[]{10,2,3,9,4,8,5,7,6,1};
         this.insertSort(a);
-        System.out.println("²åÈëÅÅĞò---------------------");
+        System.out.println("æ’å…¥æ’åº---------------------");
         System.out.println(Arrays.toString(a));
 
     }
@@ -208,7 +204,7 @@ public class Algorithms {
             return;
         }
         else {
-            // JAVA¼¯ºÏÖ»ÄÜ´æ·ÅÒıÓÃÀàĞÍµÄµÄÊı¾İ£¬²»ÄÜ´æ·Å»ù±¾Êı¾İÀàĞÍ
+            // JAVAé›†åˆåªèƒ½å­˜æ”¾å¼•ç”¨ç±»å‹çš„çš„æ•°æ®ï¼Œä¸èƒ½å­˜æ”¾åŸºæœ¬æ•°æ®ç±»å‹
             List<Integer> b = new ArrayList<Integer>();
             for (int key : a) {
                 int size = b.size();
@@ -236,12 +232,12 @@ public class Algorithms {
 
 
     /**
-     * ¼òµ¥Ñ¡ÔñÅÅĞò £¨Ã¿Ò»ÂÖÑ¡×îĞ¡»ò×î´óµÄ£¬ÔÚÒ»ÂÖµÄ×îºó½»»»£©
+     * ç®€å•é€‰æ‹©æ’åº ï¼ˆæ¯ä¸€è½®é€‰æœ€å°æˆ–æœ€å¤§çš„ï¼Œåœ¨ä¸€è½®çš„æœ€åäº¤æ¢ï¼‰
      */
     public void selectSort () {
         int[] a = new int[]{10,2,3,9,4,8,5,7,6,1};
         this.selectSort(a);
-        System.out.println("Ñ¡ÔñÅÅĞò---------------------");
+        System.out.println("é€‰æ‹©æ’åº---------------------");
         System.out.println(Arrays.toString(a));
     }
 
@@ -266,12 +262,12 @@ public class Algorithms {
     }
 
     /**
-     * Ã°ÅİÅÅĞò £¨Á½Á½±È½Ï£¬¾Í½»»»£©
+     * å†’æ³¡æ’åº ï¼ˆä¸¤ä¸¤æ¯”è¾ƒï¼Œå°±äº¤æ¢ï¼‰
      */
     public void bubbleSort () {
         int[] a = new int[]{10,2,3,9,4,8,5,7,6,1};
         this.bubbleSort(a);
-        System.out.println("Ã°ÅİÅÅĞò---------------------");
+        System.out.println("å†’æ³¡æ’åº---------------------");
         System.out.println(Arrays.toString(a));
     }
 
@@ -279,26 +275,26 @@ public class Algorithms {
         if (a.length <= 1) {
             return;
         }
-        int j = 1;
-        while (j <= a.length - 1) {
-            for (int i = 0; i < a.length - j; i++) {
+        int j = a.length - 1;
+        while (j > 0) {
+            for (int i = 0; i <= j; i++) {
                 if (a[i] > a[i+1]) {
                     int tmp = a[i];
                     a[i] = a[i+1];
                     a[i+1] = tmp;
                 }
             }
-            j++;
+            j--;
         }
     }
 
     /**
-     * ¹é²¢ÅÅĞò
+     * å½’å¹¶æ’åº
      */
     public void mergeSort() {
         int[] a = new int[]{10,2,3,9,4,8,5,7,6,1};
         this.mergeSort(a, 0, a.length - 1);
-        System.out.println("¹é²¢ÅÅĞò---------------------");
+        System.out.println("å½’å¹¶æ’åº---------------------");
         System.out.println(Arrays.toString(a));
     }
 
@@ -352,12 +348,12 @@ public class Algorithms {
 
 
     /**
-     * ¶ÑÅÅĞò
+     * å †æ’åº
      */
     public void heapSort() {
         int[] a = new int[]{10,2,3,9,4,8,5,7,6,1};
         this.heapSort(a);
-        System.out.println("¶ÑÅÅĞò---------------------");
+        System.out.println("å †æ’åº---------------------");
         System.out.println(Arrays.toString(a));
     }
 
@@ -365,14 +361,14 @@ public class Algorithms {
         if (a.length <= 1) {
             return;
         }
-        // ¶Ñ£¬Êı×é´Ó0¿ªÊ¼£¬¸¸½ÚµãÎªk/2£¬×Ó½ÚµãÊÇ2k£¬2k+1
-        // ¶Ñ£¬Êı×é´Ó1¿ªÊ¼£¬¸¸½ÚµãÎª£¨k/2 - 1£©£¬×Ó½ÚµãÊÇ2k+1£¬2k+2
-        // ¹¹½¨×î´ó¶Ñ£¬´Ó×îºóÒ»¸ö·ÇÒ¶×Ó½Úµã¿ªÊ¼£¬µ½×îÉÏ²ãµÄ¸ù½Úµã£¬Ã¿¸ö½ÚµãÈ¥ÏÂ³Áµ½¶ÔÓ¦µÄÎ»ÖÃ£¬ÄÜ¹¹½¨Ò»¸ö×î´ó¶Ñ
+        // å †ï¼Œæ•°ç»„ä»0å¼€å§‹ï¼Œçˆ¶èŠ‚ç‚¹ä¸ºk/2ï¼Œå­èŠ‚ç‚¹æ˜¯2kï¼Œ2k+1ï¼Œæœ€åä¸€ä¸ªéå¶å­èŠ‚ç‚¹length/2-1
+        // å †ï¼Œæ•°ç»„ä»1å¼€å§‹ï¼Œçˆ¶èŠ‚ç‚¹ä¸ºï¼ˆk/2 - 1ï¼‰ï¼Œå­èŠ‚ç‚¹æ˜¯2k+1ï¼Œ2k+2ï¼Œæœ€åä¸€ä¸ªéå¶å­èŠ‚ç‚¹(length-1)/2
+        // æ„å»ºæœ€å¤§å †ï¼Œä»æœ€åä¸€ä¸ªéå¶å­èŠ‚ç‚¹å¼€å§‹ï¼Œåˆ°æœ€ä¸Šå±‚çš„æ ¹èŠ‚ç‚¹ï¼Œæ¯ä¸ªèŠ‚ç‚¹å»ä¸‹æ²‰åˆ°å¯¹åº”çš„ä½ç½®ï¼Œèƒ½æ„å»ºä¸€ä¸ªæœ€å¤§å †
         for (int i = a.length/2 - 1; i >= 0; i--) {
             adjustHeap(a, i, a.length);
         }
         for (int i = a.length - 1; i > 0; i--) {
-            // ×î´ó¶ÑµÄ¸ù½ÚµãÊÇ×î´óµÄ£¬ºÍÊı×é×îºóÒ»¸öÊı½»»»Î»ÖÃ£¬ÔÚÎ´ÅÅĞò·¶Î§ÄÚ£¬ÏÂ³Á½»»»ºóµÄµÚÒ»¸öÊı£¬Íê³Éºó¸ù½ÚµãÓÖÊÇ×î´óµÄÁË£¬ÓÖ½»»»£¬ÓÖÏÂ³Á£¬n-1´Îºó¾ÍÅÅºÃĞòÁË
+            // æœ€å¤§å †çš„æ ¹èŠ‚ç‚¹æ˜¯æœ€å¤§çš„ï¼Œå’Œæ•°ç»„æœ€åä¸€ä¸ªæ•°äº¤æ¢ä½ç½®ï¼Œåœ¨æœªæ’åºèŒƒå›´å†…ï¼Œä¸‹æ²‰äº¤æ¢åçš„ç¬¬ä¸€ä¸ªæ•°ï¼Œå®Œæˆåæ ¹èŠ‚ç‚¹åˆæ˜¯æœ€å¤§çš„äº†ï¼Œåˆäº¤æ¢ï¼Œåˆä¸‹æ²‰ï¼Œn-1æ¬¡åå°±æ’å¥½åºäº†
             int tmp = a[i];
             a[i] = a[0];
             a[0] = tmp;
@@ -383,6 +379,17 @@ public class Algorithms {
 
     private void adjustHeap(int[] a, int key, int len) {
         int tmp = a[key];
+        while(2*key<len) {
+            int temp = a[2*key];
+            int i = 2*key;
+            if (2*key+1 < len && a[2*key]<a[2*key+1]) {
+                temp =  a[2*key+1];
+                i = 2*key + 1;
+            }
+            a[i] = a[key];
+            a[key] = temp;
+            key = i;
+        }
         for (int i = 2 * key + 1; i < len; i = 2 * key + 1) {
             if (i + 1 < len && a[i] < a[i+1]) {
                 i++;
@@ -400,12 +407,12 @@ public class Algorithms {
     }
 
     /**
-     * ¼ÆÊıÅÅĞò£¨ÎÈ¶¨ÅÅĞò£©  ÊÊºÏµÄ·¶Î§²¢²»¹ã£¬ÊÊºÏ´ıÅÅÔªËØÖµ·Ö²¼½ÏÁ¬Ğø£¬¿ç¶È½ÏĞ¡µÄÇé¿ö£¬·ñÔòºÜÀË·Ñ¿Õ¼ä
+     * è®¡æ•°æ’åºï¼ˆç¨³å®šæ’åºï¼‰  é€‚åˆçš„èŒƒå›´å¹¶ä¸å¹¿ï¼Œé€‚åˆå¾…æ’å…ƒç´ å€¼åˆ†å¸ƒè¾ƒè¿ç»­ï¼Œè·¨åº¦è¾ƒå°çš„æƒ…å†µï¼Œå¦åˆ™å¾ˆæµªè´¹ç©ºé—´
      */
     public void countSort() {
         int[] a = new int[]{15,1,6,4,5,2,2,9,10,12};
         this.countSort(a);
-        System.out.println("¼ÆÊıÅÅĞò---------------------");
+        System.out.println("è®¡æ•°æ’åº---------------------");
         System.out.println(Arrays.toString(a));
     }
 
@@ -413,7 +420,7 @@ public class Algorithms {
         if (a.length <= 1) {
             return;
         }
-        // ÕÒ³ö×î´ó×îĞ¡Öµ
+        // æ‰¾å‡ºæœ€å¤§æœ€å°å€¼
         int max = a[0];
         int min = a[0];
         for (int i: a) {
@@ -424,38 +431,38 @@ public class Algorithms {
                 min = i;
             }
         }
-        // ĞÂÊı×é¼ÇÂ¼Ã¿¸öÖµ³öÏÖµÄ¸öÊı
+        // æ–°æ•°ç»„è®°å½•æ¯ä¸ªå€¼å‡ºç°çš„ä¸ªæ•°
         int[] count = new int[max - min + 1];
         for (int i: a) {
             count[i - min]++;
         }
-        // ĞÂÊı×é¼ÇÂ¼Ã¿¸öÖµ³öÏÖµÄÆğÊ¼Î»ÖÃ
+        // æ–°æ•°ç»„è®°å½•æ¯ä¸ªå€¼å‡ºç°çš„èµ·å§‹ä½ç½®
         int[] index = new int[max - min + 1];
         index[0] = 0;
         for (int i = 1; i < count.length; i++) {
             index[i] = index[i-1] + count[i-1];
         }
-        // ĞÂÊı×é°´Ë³Ğò×°Öµ
+        // æ–°æ•°ç»„æŒ‰é¡ºåºè£…å€¼
         int[] tmp = new int[a.length];
         for (int i = 0; i < a.length; i++) {
             tmp[index[a[i] - min]] = a[i];
             index[a[i] - min]++;
         }
-        // ĞÂÊı×é¸²¸ÇÔ­Êı×é
+        // æ–°æ•°ç»„è¦†ç›–åŸæ•°ç»„
         for (int i = 0; i < tmp.length; i++) {
             a[i] = tmp[i];
         }
     }
 
     /**
-     * Í°ÅÅĞò
-     * Í°¸öÊı£ºarr.length
-     * Ó³Éäº¯Êı£ºbucketIndex = (value * arr.length) / (maxValue + 1)
+     * æ¡¶æ’åº
+     * æ¡¶ä¸ªæ•°ï¼šarr.length
+     * æ˜ å°„å‡½æ•°ï¼šbucketIndex = (value * arr.length) / (maxValue + 1)
      */
     public void bucketSort() {
         int[] a = new int[]{15,1,6,4,5,2,2,9,10,12};
         this.bucketSort(a);
-        System.out.println("Í°ÅÅĞò---------------------");
+        System.out.println("æ¡¶æ’åº---------------------");
         System.out.println(Arrays.toString(a));
     }
 
@@ -463,14 +470,14 @@ public class Algorithms {
         if (a.length <= 1) {
             return;
         }
-        // ÕÒ³ö×î´óÖµ
+        // æ‰¾å‡ºæœ€å¤§å€¼
         int max = a[0];
         for (int i: a) {
             if (max < i) {
                 max = i;
             }
         }
-        // °Ñ´ıÅÅÔªËØ·Ö²¼µ½²»Í¬µÄÍ°Àï
+        // æŠŠå¾…æ’å…ƒç´ åˆ†å¸ƒåˆ°ä¸åŒçš„æ¡¶é‡Œ
         List<Integer>[] buckets = new ArrayList[a.length];
         for (int i: a) {
             int bucketIndex = (i * a.length) / (max + 1);
@@ -479,7 +486,7 @@ public class Algorithms {
             }
             buckets[bucketIndex].add(i);
         }
-        // Ã¿¸öÍ°ÄÚ²¿½øĞĞÅÅĞò
+        // æ¯ä¸ªæ¡¶å†…éƒ¨è¿›è¡Œæ’åº
         for (List<Integer> bucket: buckets) {
             if (bucket != null) {
                 bucket.sort(null);
@@ -490,7 +497,7 @@ public class Algorithms {
 //            }
 //            quickSort(tmp, 0, tmp.length - 1);
         }
-        // Á¬½ÓÃ¿¸öÍ°µÄÊı¾İ
+        // è¿æ¥æ¯ä¸ªæ¡¶çš„æ•°æ®
         int cnt = 0;
         for (int i = 0; i < buckets.length; i++) {
             if (buckets[i] != null) {
@@ -503,15 +510,15 @@ public class Algorithms {
 
 
     /**
-     * »ùÊıÅÅĞò
-     * ×Ö·û´®ÓÉÈô¸É×Ö·û×é³É£¬ÕûÊıÓÉÈô¸ÉÎ»0~9Êı×Ö×é³É
-     * Ã¿Ò»ÂÖÅÅĞòÖĞÅÅĞò·½·¨±ØĞëÊÇÎÈ¶¨µÄ¡£·ñÔò»ùÊıÅÅĞò²»ÄÜµÃµ½ÕıÈ·µÄ½á¹û£¬ËùÒÔ»ùÊıÅÅĞòÊÇÎÈ¶¨ÅÅĞò¡£
-     * »ùÊıÊÇÊ²Ã´ÒâË¼£¬¶ÔÓÚÊ®½øÖÆÕûÊı£¬Ã¿Ò»Î»¶¼Ö»¿ÉÄÜÊÇ0~9ÖĞµÄÄ³Ò»¸ö£¬×Ü¹²10ÖÖ¿ÉÄÜ¡£ÄÇ10¾ÍÊÇËüµÄ»ù£¬Í¬Àí¶ş½øÖÆÊı×ÖµÄ»ùÎª2£»¶ÔÓÚ×Ö·û´®£¬Èç¹ûËüÊ¹ÓÃµÄÊÇ8Î»µÄÀ©Õ¹ASCII×Ö·û¼¯£¬ÄÇÃ´ËüµÄ»ù¾ÍÊÇ256
-     * Èô×Ö·û´®Ê¹ÓÃµÄÊÇ8Î»µÄASCIIÀ©Õ¹×Ö·û¼¯£¬Ôò»ùµÄ´óĞ¡ÊÇ256£¬»ùÓÚ»ùÊıÅÅĞòµÄ×Ö·û´®ÅÅĞò·½·¨³ÆÎªµÍÎ»ÓÅÏÈµÄ×Ö·û´®ÅÅĞò
-     * ¼ÈÈ»ÖªµÀÃ¿Ò»Î»µÄÊıÖµ·¶Î§£¬Ê¹ÓÃ¼ÆÊıÅÅĞòÒÔ¹Ø¼ü×Ö¶ÔÊı×é½øĞĞÅÅĞòÊÇ¸öÃ÷ÖÇµÄÑ¡Ôñ£º
-     *      ÒòÎªÊı¾İ·¶Î§È·¶¨ÇÒ¶¼²»´ó£¨»ùµÄ´óĞ¡£©£¬Òò´Ë²»»áÕ¼ÓÃ¶àÉÙ¿Õ¼ä£»
-     *      ¶øÇÒ¼ÆÊıÅÅĞò²»ÊÇ»ùÓÚ±È½Ï£¬±ÈÍ¨³£µÄ±È½ÏÅÅĞò·½·¨Ğ§ÂÊ¸ü¸ß£»
-     *      ¼ÆÊıÅÅĞòÊÇÎÈ¶¨ÅÅĞò£¬ÕâÒ»µãÖÁ¹ØÖØÒª¡£
+     * åŸºæ•°æ’åº
+     * å­—ç¬¦ä¸²ç”±è‹¥å¹²å­—ç¬¦ç»„æˆï¼Œæ•´æ•°ç”±è‹¥å¹²ä½0~9æ•°å­—ç»„æˆ
+     * æ¯ä¸€è½®æ’åºä¸­æ’åºæ–¹æ³•å¿…é¡»æ˜¯ç¨³å®šçš„ã€‚å¦åˆ™åŸºæ•°æ’åºä¸èƒ½å¾—åˆ°æ­£ç¡®çš„ç»“æœï¼Œæ‰€ä»¥åŸºæ•°æ’åºæ˜¯ç¨³å®šæ’åºã€‚
+     * åŸºæ•°æ˜¯ä»€ä¹ˆæ„æ€ï¼Œå¯¹äºåè¿›åˆ¶æ•´æ•°ï¼Œæ¯ä¸€ä½éƒ½åªå¯èƒ½æ˜¯0~9ä¸­çš„æŸä¸€ä¸ªï¼Œæ€»å…±10ç§å¯èƒ½ã€‚é‚£10å°±æ˜¯å®ƒçš„åŸºï¼ŒåŒç†äºŒè¿›åˆ¶æ•°å­—çš„åŸºä¸º2ï¼›å¯¹äºå­—ç¬¦ä¸²ï¼Œå¦‚æœå®ƒä½¿ç”¨çš„æ˜¯8ä½çš„æ‰©å±•ASCIIå­—ç¬¦é›†ï¼Œé‚£ä¹ˆå®ƒçš„åŸºå°±æ˜¯256
+     * è‹¥å­—ç¬¦ä¸²ä½¿ç”¨çš„æ˜¯8ä½çš„ASCIIæ‰©å±•å­—ç¬¦é›†ï¼Œåˆ™åŸºçš„å¤§å°æ˜¯256ï¼ŒåŸºäºåŸºæ•°æ’åºçš„å­—ç¬¦ä¸²æ’åºæ–¹æ³•ç§°ä¸ºä½ä½ä¼˜å…ˆçš„å­—ç¬¦ä¸²æ’åº
+     * æ—¢ç„¶çŸ¥é“æ¯ä¸€ä½çš„æ•°å€¼èŒƒå›´ï¼Œä½¿ç”¨è®¡æ•°æ’åºä»¥å…³é”®å­—å¯¹æ•°ç»„è¿›è¡Œæ’åºæ˜¯ä¸ªæ˜æ™ºçš„é€‰æ‹©ï¼š
+     *      å› ä¸ºæ•°æ®èŒƒå›´ç¡®å®šä¸”éƒ½ä¸å¤§ï¼ˆåŸºçš„å¤§å°ï¼‰ï¼Œå› æ­¤ä¸ä¼šå ç”¨å¤šå°‘ç©ºé—´ï¼›
+     *      è€Œä¸”è®¡æ•°æ’åºä¸æ˜¯åŸºäºæ¯”è¾ƒï¼Œæ¯”é€šå¸¸çš„æ¯”è¾ƒæ’åºæ–¹æ³•æ•ˆç‡æ›´é«˜ï¼›
+     *      è®¡æ•°æ’åºæ˜¯ç¨³å®šæ’åºï¼Œè¿™ä¸€ç‚¹è‡³å…³é‡è¦ã€‚
      */
 
 
@@ -520,49 +527,49 @@ public class Algorithms {
     public void RadixSort() {
         int[] a = {244, 167, 1234, 321, 29, 98, 1444, 111, 99, 6};
         RadixSort(a);
-        System.out.println("»ùÊıÅÅĞò---------------------");
+        System.out.println("åŸºæ•°æ’åº---------------------");
         System.out.println(Arrays.toString(a));
     }
 
     public void RadixSort(int[] a) {
-        // Ã¿Î»Êı×Ö·¶Î§0~9£¬»ùÎª10
+        // æ¯ä½æ•°å­—èŒƒå›´0~9ï¼ŒåŸºä¸º10
         int R = 10;
         int N = a.length;
         int[] aux = new int[N];
         int[] count = new int[R + 1];
-        // ÒÔ¹Ø¼ü×ÖÀ´ÅÅĞòµÄÂÖÊı£¬ÓÉÎ»Êı×î¶àµÄÊı×Ö¾ö¶¨£¬ÆäÓàÎ»ÊıÉÙµÄÊı×ÖÔÚ±È½Ï¸ßÎ»Ê±£¬×Ô¶¯ÓÃ0½øĞĞ±È½Ï
-        // ½«Êı×Ö×ª»»³É×Ö·û´®£¬×Ö·û´®µÄ³¤¶È¾ÍÊÇÊı×ÖµÄÎ»Êı£¬×Ö·û´®×î³¤µÄÄÇ¸öÊı×ÖÒ²ÓµÓĞ×î¶àµÄÎ»Êı
+        // ä»¥å…³é”®å­—æ¥æ’åºçš„è½®æ•°ï¼Œç”±ä½æ•°æœ€å¤šçš„æ•°å­—å†³å®šï¼Œå…¶ä½™ä½æ•°å°‘çš„æ•°å­—åœ¨æ¯”è¾ƒé«˜ä½æ—¶ï¼Œè‡ªåŠ¨ç”¨0è¿›è¡Œæ¯”è¾ƒ
+        // å°†æ•°å­—è½¬æ¢æˆå­—ç¬¦ä¸²ï¼Œå­—ç¬¦ä¸²çš„é•¿åº¦å°±æ˜¯æ•°å­—çš„ä½æ•°ï¼Œå­—ç¬¦ä¸²æœ€é•¿çš„é‚£ä¸ªæ•°å­—ä¹Ÿæ‹¥æœ‰æœ€å¤šçš„ä½æ•°
         int W = Arrays.stream(a).map(s -> String.valueOf(s).length()).max().getAsInt();
 
-        // ¹²ĞèÒªdÂÖ¼ÆÊıÅÅĞò, ´Ód = 0¿ªÊ¼£¬ËµÃ÷ÊÇ´Ó¸öÎ»¿ªÊ¼±È½Ï£¬·ûºÏ´ÓÓÒµ½×óµÄË³Ğò
+        // å…±éœ€è¦dè½®è®¡æ•°æ’åº, ä»d = 0å¼€å§‹ï¼Œè¯´æ˜æ˜¯ä»ä¸ªä½å¼€å§‹æ¯”è¾ƒï¼Œç¬¦åˆä»å³åˆ°å·¦çš„é¡ºåº
         for (int d = 0; d < W; d++) {
-            // 1. ¼ÆËãÆµÂÊ£¬ÔÚĞèÒªµÄÊı×é³¤¶ÈÉÏ¶îÍâ¼Ó1
+            // 1. è®¡ç®—é¢‘ç‡ï¼Œåœ¨éœ€è¦çš„æ•°ç»„é•¿åº¦ä¸Šé¢å¤–åŠ 1
             for (int i = 0; i < N; i++) {
-                // Ê¹ÓÃ¼Ó1ºóµÄË÷Òı£¬ÓĞÖØ¸´µÄ¸ÃÎ»ÖÃ¾Í×ÔÔö
+                // ä½¿ç”¨åŠ 1åçš„ç´¢å¼•ï¼Œæœ‰é‡å¤çš„è¯¥ä½ç½®å°±è‡ªå¢
                 count[digitAt(a[i], d) + 1]++;
             }
-            // 2. ÆµÂÊ -> ÔªËØµÄ¿ªÊ¼Ë÷Òı
+            // 2. é¢‘ç‡ -> å…ƒç´ çš„å¼€å§‹ç´¢å¼•
             for (int r = 0; r < R; r++) {
                 count[r + 1] += count[r];
             }
 
-            // 3. ÔªËØ°´ÕÕ¿ªÊ¼Ë÷Òı·ÖÀà£¬ÓÃµ½Ò»¸öºÍ´ıÅÅÊı×éÒ»Ñù´óÁÙÊ±Êı×é´æ·ÅÊı¾İ
+            // 3. å…ƒç´ æŒ‰ç…§å¼€å§‹ç´¢å¼•åˆ†ç±»ï¼Œç”¨åˆ°ä¸€ä¸ªå’Œå¾…æ’æ•°ç»„ä¸€æ ·å¤§ä¸´æ—¶æ•°ç»„å­˜æ”¾æ•°æ®
             for (int i = 0; i < N; i++) {
-                // Ìî³äÒ»¸öÊı¾İºó£¬×ÔÔö£¬ÒÔ±ãÏàÍ¬µÄÊı¾İ¿ÉÒÔÌîµ½ÏÂÒ»¸ö¿ÕÎ»
+                // å¡«å……ä¸€ä¸ªæ•°æ®åï¼Œè‡ªå¢ï¼Œä»¥ä¾¿ç›¸åŒçš„æ•°æ®å¯ä»¥å¡«åˆ°ä¸‹ä¸€ä¸ªç©ºä½
                 aux[count[digitAt(a[i], d)]++] = a[i];
             }
-            // 4. Êı¾İ»ØĞ´
+            // 4. æ•°æ®å›å†™
             for (int i = 0; i < N; i++) {
                 a[i] = aux[i];
             }
-            // ÖØÖÃcount[]£¬ÒÔ±ãÏÂÒ»ÂÖÍ³¼ÆÊ¹ÓÃ
+            // é‡ç½®count[]ï¼Œä»¥ä¾¿ä¸‹ä¸€è½®ç»Ÿè®¡ä½¿ç”¨
             for (int i = 0; i < count.length; i++) {
                 count[i] = 0;
             }
 
         }
     }
-    // ¸ù¾İd£¬»ñÈ¡Ä³¸öÖµµÄ¸öÎ»¡¢Ê®Î»¡¢°ÙÎ»µÈ£¬d = 0È¡³ö¸öÎ»£¬d = 1È¡³öÊ®Î»£¬ÒÔ´ËÀàÍÆ¡£¶ÔÓÚ²»´æÔÚµÄ¸ßÎ»£¬ÓÃ0²¹
+    // æ ¹æ®dï¼Œè·å–æŸä¸ªå€¼çš„ä¸ªä½ã€åä½ã€ç™¾ä½ç­‰ï¼Œd = 0å–å‡ºä¸ªä½ï¼Œd = 1å–å‡ºåä½ï¼Œä»¥æ­¤ç±»æ¨ã€‚å¯¹äºä¸å­˜åœ¨çš„é«˜ä½ï¼Œç”¨0è¡¥
     private int digitAt(int value, int d) {
         return (value / (int) Math.pow(10, d)) % 10;
     }
@@ -570,20 +577,20 @@ public class Algorithms {
 
 
     /**
-     * Ï£¶ûshellÅÅĞò
-     * Éè´ıÅÅĞòÔªËØĞòÁĞÓĞn¸öÔªËØ£¬Ê×ÏÈÈ¡Ò»¸öÕûÊıincrement£¨Ğ¡ÓÚn£©×÷Îª¼ä¸ô½«È«²¿ÔªËØ·ÖÎªincrement¸ö×ÓĞòÁĞ£¬
-     * ËùÓĞ¾àÀëÎªincrementµÄÔªËØ·ÅÔÚÍ¬Ò»¸ö×ÓĞòÁĞÖĞ£¬ÔÚÃ¿Ò»¸ö×ÓĞòÁĞÖĞ·Ö±ğÊµĞĞÖ±½Ó²åÈëÅÅĞò¡£È»ºóËõĞ¡¼ä¸ôincrement£¬
-     * ÖØ¸´ÉÏÊö×ÓĞòÁĞ»®·ÖºÍÅÅĞò¹¤×÷¡£Ö±µ½×îºóÈ¡increment=1£¬½«ËùÓĞÔªËØ·ÅÔÚÍ¬Ò»¸ö×ÓĞòÁĞÖĞÅÅĞòÎªÖ¹¡£
-     * Ï£¶ûÅÅĞòÊÇÒ»ÖÖ²»ÎÈ¶¨µÄÅÅĞòËã·¨
+     * å¸Œå°”shellæ’åº
+     * è®¾å¾…æ’åºå…ƒç´ åºåˆ—æœ‰nä¸ªå…ƒç´ ï¼Œé¦–å…ˆå–ä¸€ä¸ªæ•´æ•°incrementï¼ˆå°äºnï¼‰ä½œä¸ºé—´éš”å°†å…¨éƒ¨å…ƒç´ åˆ†ä¸ºincrementä¸ªå­åºåˆ—ï¼Œ
+     * æ‰€æœ‰è·ç¦»ä¸ºincrementçš„å…ƒç´ æ”¾åœ¨åŒä¸€ä¸ªå­åºåˆ—ä¸­ï¼Œåœ¨æ¯ä¸€ä¸ªå­åºåˆ—ä¸­åˆ†åˆ«å®è¡Œç›´æ¥æ’å…¥æ’åºã€‚ç„¶åç¼©å°é—´éš”incrementï¼Œ
+     * é‡å¤ä¸Šè¿°å­åºåˆ—åˆ’åˆ†å’Œæ’åºå·¥ä½œã€‚ç›´åˆ°æœ€åå–increment=1ï¼Œå°†æ‰€æœ‰å…ƒç´ æ”¾åœ¨åŒä¸€ä¸ªå­åºåˆ—ä¸­æ’åºä¸ºæ­¢ã€‚
+     * å¸Œå°”æ’åºæ˜¯ä¸€ç§ä¸ç¨³å®šçš„æ’åºç®—æ³•
      *
-     * ×î³õshellÌá³öÈ¡increment=n/2ÏòÏÂÈ¡Õû£¬increment=increment/2ÏòÏÂÈ¡Õû£¬Ö±µ½increment=1¡£µ«ÓÉÓÚÖ±µ½×îºóÒ»²½£¬
-     * ÔÚÆæÊıÎ»ÖÃµÄÔªËØ²Å»áÓëÅ¼ÊıÎ»ÖÃµÄÔªËØ½øĞĞ±È½Ï£¬ÕâÑùÊ¹ÓÃÕâ¸öĞòÁĞµÄĞ§ÂÊ»áºÜµÍ¡£
-     * ºóÀ´KnuthÌá³öÈ¡increment=n/3ÏòÏÂÈ¡Õû+1.»¹ÓĞÈËÌá³ö¶¼È¡ÆæÊıÎªºÃ£¬Ò²ÓĞÈËÌá³öincrement»¥ÖÊÎªºÃ
+     * æœ€åˆshellæå‡ºå–increment=n/2å‘ä¸‹å–æ•´ï¼Œincrement=increment/2å‘ä¸‹å–æ•´ï¼Œç›´åˆ°increment=1ã€‚ä½†ç”±äºç›´åˆ°æœ€åä¸€æ­¥ï¼Œ
+     * åœ¨å¥‡æ•°ä½ç½®çš„å…ƒç´ æ‰ä¼šä¸å¶æ•°ä½ç½®çš„å…ƒç´ è¿›è¡Œæ¯”è¾ƒï¼Œè¿™æ ·ä½¿ç”¨è¿™ä¸ªåºåˆ—çš„æ•ˆç‡ä¼šå¾ˆä½ã€‚
+     * åæ¥Knuthæå‡ºå–increment=n/3å‘ä¸‹å–æ•´+1.è¿˜æœ‰äººæå‡ºéƒ½å–å¥‡æ•°ä¸ºå¥½ï¼Œä¹Ÿæœ‰äººæå‡ºincrementäº’è´¨ä¸ºå¥½
      */
     public void shellSort() {
         int[] a = {244, 167, 1234, 321, 29, 98, 1444, 111, 99, 6};
         shellSort(a);
-        System.out.println("Ï£¶ûÅÅĞò---------------------");
+        System.out.println("å¸Œå°”æ’åº---------------------");
         System.out.println(Arrays.toString(a));
     }
 
@@ -614,18 +621,18 @@ public class Algorithms {
 
 
     /**
-     * »î¶¯µ÷ÓÃÎÊÌâ£¨Ì°ĞÄËã·¨£©
+     * æ´»åŠ¨è°ƒç”¨é—®é¢˜ï¼ˆè´ªå¿ƒç®—æ³•ï¼‰
      */
     public void greedy() {
         int[] activity = {1, 2, 3, 4, 5, 6, 7};
-        int[] sTime = {0, 1, 2, 4, 3, 6, 8};  // »î¶¯±àºÅ·Ö±ğÊÇ1£¬2£¬3£¬4£¬5£¬6£¬7
-        int[] fTime = {1, 3, 4, 7, 8, 8, 10}; // »î¶¯±àºÅ·Ö±ğÊÇ1£¬2£¬3£¬4£¬5£¬6£¬7
+        int[] sTime = {0, 1, 2, 4, 3, 6, 8};  // æ´»åŠ¨ç¼–å·åˆ†åˆ«æ˜¯1ï¼Œ2ï¼Œ3ï¼Œ4ï¼Œ5ï¼Œ6ï¼Œ7
+        int[] fTime = {1, 3, 4, 7, 8, 8, 10}; // æ´»åŠ¨ç¼–å·åˆ†åˆ«æ˜¯1ï¼Œ2ï¼Œ3ï¼Œ4ï¼Œ5ï¼Œ6ï¼Œ7
         int start = 0;
         int finish = 0;
         List<Integer> activeList = greedy(activity, sTime, fTime, start, finish);
-        System.out.println("»î¶¯µ÷ÓÃ£¨Ì°ĞÄËã·¨£©---------------------");
+        System.out.println("æ´»åŠ¨è°ƒç”¨ï¼ˆè´ªå¿ƒç®—æ³•ï¼‰---------------------");
         for (int i = 0; i < activeList.size(); i++) {
-            System.out.println(activeList.get(i));  // ÕıÈ·´ğ°¸Ó¦¸ÃÊÇ 1£¬2£¬4£¬7
+            System.out.println(activeList.get(i));  // æ­£ç¡®ç­”æ¡ˆåº”è¯¥æ˜¯ 1ï¼Œ2ï¼Œ4ï¼Œ7
         }
     }
     private  List<Integer> greedy(int[] activity, int[] sTime, int[] fTime, int start, int finish) {
@@ -704,12 +711,12 @@ public class Algorithms {
     }
 
     /**
-     * ºÍÎª0µÄ×î³¤×Ó´®
+     * å’Œä¸º0çš„æœ€é•¿å­ä¸²
      */
     public void sumZeroLongestSubstring () {
         int[] a = {1, 1, -1, -1, 1, 2, -2};
         int[] ret = sumZeroLongestSubstring(a);
-        System.out.println("ºÍÎª0µÄ×î³¤×Ó´®---------------------");
+        System.out.println("å’Œä¸º0çš„æœ€é•¿å­ä¸²---------------------");
         System.out.println(ret[0]);
         System.out.println(ret[1]);
         System.out.println(ret[1] - ret[0]);
@@ -759,16 +766,16 @@ public class Algorithms {
     }
 
     /**
-     * ×î³¤¹«¹²×ÓĞòÁĞ£¨¶¯Ì¬¹æ»®£©
-     * ¶¯Ì¬¹æ»®£ºÔÚÒ»¶¨Ô¼ÊøÌõ¼şÏÂÓÅ»¯Ä³ÖÖÖ¸±ê£¬¿É·Ö½âÎªÀëÉ¢µÄ×ÓÎÊÌâ£¬²»Í¬×ÓÎÊÌâµÄ×Ó×ÓÎÊÌâÒ»Ñù£¬²»Í¬×ÓÎÊÌâÒÀÀµÏàÍ¬µÄ×Ó×ÓÎÊÌâ
-     * ·ÖÖÎ·¨£º¿É·Ö½âÎªÀëÉ¢¶ÀÁ¢µÄ×ÓÎÊÌâ£¬²»Í¬×ÓÎÊÌâµÄ×Ó×ÓÎÊÌâ²»Ò»Ñù£¬²»Í¬×ÓÎÊÌâ²»ÒÀÀµÏàÍ¬µÄ×Ó×ÓÎÊÌâ
-     * ¶¯Ì¬¹æ»®ºÍ·ÖÖÎ·¨¶¼ÓÃµİ¹é
+     * æœ€é•¿å…¬å…±å­åºåˆ—ï¼ˆåŠ¨æ€è§„åˆ’ï¼‰
+     * åŠ¨æ€è§„åˆ’ï¼šåœ¨ä¸€å®šçº¦æŸæ¡ä»¶ä¸‹ä¼˜åŒ–æŸç§æŒ‡æ ‡ï¼Œå¯åˆ†è§£ä¸ºç¦»æ•£çš„å­é—®é¢˜ï¼Œä¸åŒå­é—®é¢˜çš„å­å­é—®é¢˜ä¸€æ ·ï¼Œä¸åŒå­é—®é¢˜ä¾èµ–ç›¸åŒçš„å­å­é—®é¢˜
+     * åˆ†æ²»æ³•ï¼šå¯åˆ†è§£ä¸ºç¦»æ•£ç‹¬ç«‹çš„å­é—®é¢˜ï¼Œä¸åŒå­é—®é¢˜çš„å­å­é—®é¢˜ä¸ä¸€æ ·ï¼Œä¸åŒå­é—®é¢˜ä¸ä¾èµ–ç›¸åŒçš„å­å­é—®é¢˜
+     * åŠ¨æ€è§„åˆ’å’Œåˆ†æ²»æ³•éƒ½ç”¨é€’å½’
      */
     public void longestSubsequence() {
         String s1 = "HELLO";
         String s2 = "UHOLSY";
         List<String> subString = longestSubsequence(s1, s2);
-        System.out.println("×î³¤¹«¹²×ÓĞòÁĞ---------------------");
+        System.out.println("æœ€é•¿å…¬å…±å­åºåˆ—---------------------");
         System.out.println(subString.toString());
         System.out.println(Arrays.toString(subString.toArray()));
     }
@@ -801,43 +808,49 @@ public class Algorithms {
 
 
     /**
-     * ×î³¤¹«¹²×Ó´®£¨¶¯Ì¬¹æ»®£©
+     * æœ€é•¿å…¬å…±å­ä¸²ï¼ˆåŠ¨æ€è§„åˆ’ï¼‰
      */
     public void longestSubstring() {
-        String s1 = "HELLO";
-        String s2 = "UHOLSY";
-        List<String> subString = longestSubstring(s1, s2);
-        System.out.println("×î³¤¹«¹²×Ó´®---------------------");
-        System.out.println(subString.toString());
-        System.out.println(Arrays.toString(subString.toArray()));
+        String s1 = "HELLOwHELLO12HELLO11";
+        String s2 = "HELLO2HELLO13HELLO22";
+        String subString = longestSubstring(s1, s2);
+        System.out.println("æœ€é•¿å…¬å…±å­ä¸²---------------------");
+        System.out.println(subString);
     }
 
-    public List<String> longestSubstring(String s1, String s2) {
+    public String longestSubstring(String s1, String s2) {
         List<String> subString = new ArrayList<>();
         char[] c1 = s1.toCharArray();
         char[] c2 = s2.toCharArray();
+        int max = 0;
+        String result = "";
         int[][] middleRet = new int[c1.length + 1][c2.length + 1];
         for (int i = 0; i < c1.length; i++) {
             for (int j = 0; j < c2.length; j++) {
                 if (c1[i] == c2[j]) {
                     middleRet[i + 1][j + 1] = middleRet[i][j] + 1;
+                    System.out.println(subString.size());
                     if (subString.size() == 0) {
                         subString.add(String.valueOf(c1[i]));
                     }
                     else if (c1[i - 1] == c2[j - 1]) {
                         subString.add(String.valueOf(c1[i]));
                     }
+//                    if (max < middleRet[i + 1][j + 1]) {
+//                        max = middleRet[i + 1][j + 1];
+//                        result = Arrays.toString(subString.toArray());
+//                    }
                 }
                 else {
                     middleRet[i + 1][j + 1] = 0;
                 }
             }
         }
-        return subString;
+        return result;
     }
 
     /**
-     * ¹ã¶ÈÓÅÏÈBFS£¨ÓÃÒ»¸ö¶şÎ¬Êı×éÀ´±íÊ¾ÓĞÏòÎŞÈ¨Í¼£¬1±íÊ¾ÓĞÖ¸Ïò£¬0±íÊ¾Ã»ÓĞÖ¸Ïò£¬Æğµã¼ÙÉèÎª0µã£¬ÖÕµã¼ÙÉèÎª6µã£¬ËÑË÷´Ó0µãµ½6µãµÄ×î¶Ì¾àÀë£©
+     * å¹¿åº¦ä¼˜å…ˆBFSï¼ˆç”¨ä¸€ä¸ªäºŒç»´æ•°ç»„æ¥è¡¨ç¤ºæœ‰å‘æ— æƒå›¾ï¼Œ1è¡¨ç¤ºæœ‰æŒ‡å‘ï¼Œ0è¡¨ç¤ºæ²¡æœ‰æŒ‡å‘ï¼Œèµ·ç‚¹å‡è®¾ä¸º0ç‚¹ï¼Œç»ˆç‚¹å‡è®¾ä¸º6ç‚¹ï¼Œæœç´¢ä»0ç‚¹åˆ°6ç‚¹çš„æœ€çŸ­è·ç¦»ï¼‰
      */
     public void breadFirstSearch() {
         int[][] graph = {{0,1,1,0,0,0,0},{0,0,0,0,1,0,0},{0,0,0,1,0,1,0},{0,0,0,0,1,0,0},{0,0,0,0,0,0,1},
@@ -845,8 +858,8 @@ public class Algorithms {
         int start = 0;
         int end = 6;
         List<Integer> shortestPath = breadFirstSearch(graph, start, end);
-        System.out.println("¹ã¶ÈÓÅÏÈËÑË÷£¨ÓĞÏòÎŞÈ¨Í¼£©---------------------");
-        System.out.println(shortestPath.toString()); // ½á¹ûÊÇ 0 -> 1 -> 4 -> 6
+        System.out.println("å¹¿åº¦ä¼˜å…ˆæœç´¢ï¼ˆæœ‰å‘æ— æƒå›¾ï¼‰---------------------");
+        System.out.println(shortestPath.toString()); // ç»“æœæ˜¯ 0 -> 1 -> 4 -> 6
     }
 
     private List<Integer> breadFirstSearch(int[][] graph, int start, int end) {
@@ -890,13 +903,13 @@ public class Algorithms {
     }
 
     /**
-     * Éî¶ÈÓÅÏÈDFS£¨»ØËİ£©
-     * Éî¶ÈÓÅÏÈ±éÀúÔÚ±àÂëÉÏ¿ÉÒÔÊ¹ÓÃÕ»»òÕßµİ¹éÊµÏÖ£¬µ±Ê¹ÓÃµİ¹éÊ±¾Í½Ğ×ö»ØËİ·¨£¬£¬°Ë»ÊºóÎÊÌâ-»ØËİ·¨£¬¿ÉÒÔÇó½âËùÓĞ¿ÉÄÜµÄ½â£¬
-     * ¶ø¹ã¶ÈÓÅÏÈÒ»°ã²»¿ÉÒÔÇóµÃËùÓĞ½â£¬µ«ÊÇ¿ÉÓ¦ÓÃÓÚ×îÓÅ½âÎÊÌâ£¬ÀûÓÃ·ÖÖ§ÏŞ½çµÄË¼Ïë£¬ËùÒÔÒ»°ãÇó½â×îÓÅ»¯ÎÊÌâÊ¹ÓÃ¹ã¶ÈÓÅÏÈ£¬
-     * Éî¶ÈÓÅÏÈÒ²¿ÉÒÔ¡£¡£
-     * Ïàµ±ÓÚÊ÷µÄÇ°Ğò±éÀú
+     * æ·±åº¦ä¼˜å…ˆDFSï¼ˆå›æº¯ï¼‰
+     * æ·±åº¦ä¼˜å…ˆéå†åœ¨ç¼–ç ä¸Šå¯ä»¥ä½¿ç”¨æ ˆæˆ–è€…é€’å½’å®ç°ï¼Œå½“ä½¿ç”¨é€’å½’æ—¶å°±å«åšå›æº¯æ³•ï¼Œï¼Œå…«çš‡åé—®é¢˜-å›æº¯æ³•ï¼Œå¯ä»¥æ±‚è§£æ‰€æœ‰å¯èƒ½çš„è§£ï¼Œ
+     * è€Œå¹¿åº¦ä¼˜å…ˆä¸€èˆ¬ä¸å¯ä»¥æ±‚å¾—æ‰€æœ‰è§£ï¼Œä½†æ˜¯å¯åº”ç”¨äºæœ€ä¼˜è§£é—®é¢˜ï¼Œåˆ©ç”¨åˆ†æ”¯é™ç•Œçš„æ€æƒ³ï¼Œæ‰€ä»¥ä¸€èˆ¬æ±‚è§£æœ€ä¼˜åŒ–é—®é¢˜ä½¿ç”¨å¹¿åº¦ä¼˜å…ˆï¼Œ
+     * æ·±åº¦ä¼˜å…ˆä¹Ÿå¯ä»¥ã€‚ã€‚
+     * ç›¸å½“äºæ ‘çš„å‰åºéå†
      *
-     * £¨ÓÃÒ»¸ö¶şÎ¬Êı×éÀ´±íÊ¾ÓĞÏòÎŞÈ¨Í¼£¬1±íÊ¾ÓĞÖ¸Ïò£¬0±íÊ¾Ã»ÓĞÖ¸Ïò£¬¼ÙÉè¸ù½ÚµãÎª0µã£¬Âú×ãÌõ¼şµÄ½ÚµãÊÇ6£¬ËÑË÷´Ó0µãµ½6µãµÄÂ·¾¶£¬·µ»ØÂú×ãÌõ¼şµÄ6½Úµã£©
+     * ï¼ˆç”¨ä¸€ä¸ªäºŒç»´æ•°ç»„æ¥è¡¨ç¤ºæœ‰å‘æ— æƒå›¾ï¼Œ1è¡¨ç¤ºæœ‰æŒ‡å‘ï¼Œ0è¡¨ç¤ºæ²¡æœ‰æŒ‡å‘ï¼Œå‡è®¾æ ¹èŠ‚ç‚¹ä¸º0ç‚¹ï¼Œæ»¡è¶³æ¡ä»¶çš„èŠ‚ç‚¹æ˜¯6ï¼Œæœç´¢ä»0ç‚¹åˆ°6ç‚¹çš„è·¯å¾„ï¼Œè¿”å›æ»¡è¶³æ¡ä»¶çš„6èŠ‚ç‚¹ï¼‰
      */
     public class TreeNode {
         private TreeNode leftNode;
@@ -946,48 +959,48 @@ public class Algorithms {
         String inorder = "ADEFGHMZ";
         String afterorder = "AEFDHZMG";
 
-        // Ç°Ğò±éÀú
+        // å‰åºéå†
         String preOrder = firstOrderTraversal(G);
-        System.out.println("DFS Ç°Ğò±éÀú---------------------");
+        System.out.println("DFS å‰åºéå†---------------------");
         System.out.println(preOrder);
-        // ÖĞĞò±éÀú
+        // ä¸­åºéå†
         String inOrder = inOrderTraversal(G);
-        System.out.println("DFS ÖĞĞò±éÀú---------------------");
+        System.out.println("DFS ä¸­åºéå†---------------------");
         System.out.println(inOrder);
-        // ºóĞò±éÀú
+        // ååºéå†
         String afterOrder = afterOrderTraversal(G);
-        System.out.println("DFS ºóĞò±éÀú---------------------");
+        System.out.println("DFS ååºéå†---------------------");
         System.out.println(afterOrder);
 
 
 
-        // ÒÑÖªÖĞĞòºÍÇ°Ğò±éÀú£¬ÇóºóĞò±éÀú
+        // å·²çŸ¥ä¸­åºå’Œå‰åºéå†ï¼Œæ±‚ååºéå†
         String afterOrderResult = preAndInToAfter(preorder, inorder);
-        System.out.println("DFS ÒÑÖªÖĞĞòºÍÇ°Ğò±éÀú£¬ÇóºóĞò±éÀú---------------------");
+        System.out.println("DFS å·²çŸ¥ä¸­åºå’Œå‰åºéå†ï¼Œæ±‚ååºéå†---------------------");
         System.out.println(afterOrderResult);
 
-        // ÒÑÖªÖĞĞòºÍºóĞò±éÀú£¬ÇóÇ°Ğò±éÀú
+        // å·²çŸ¥ä¸­åºå’Œååºéå†ï¼Œæ±‚å‰åºéå†
         String preOrderResult = afterAndInToPre(afterorder, inorder);
-        System.out.println("DFS ÒÑÖªÖĞĞòºÍºóĞò±éÀú£¬ÇóÇ°Ğò±éÀú---------------------");
+        System.out.println("DFS å·²çŸ¥ä¸­åºå’Œååºéå†ï¼Œæ±‚å‰åºéå†---------------------");
         System.out.println(preOrderResult);
 
-        // Çó×Ö·û´®µÄËùÓĞ×Ö·û×éºÏ
+        // æ±‚å­—ç¬¦ä¸²çš„æ‰€æœ‰å­—ç¬¦ç»„åˆ
         List<String> result = new ArrayList<>();
         allStringCombination("abc", result);
-        System.out.println("DFS ×Ö·û´®µÄËùÓĞ×Ö·û×éºÏ---------------------");
+        System.out.println("DFS å­—ç¬¦ä¸²çš„æ‰€æœ‰å­—ç¬¦ç»„åˆ---------------------");
         System.out.println(result.toString());
 
-        // ÇóÊı×éÀïºÍÎªtargetµÄËùÓĞ×éºÏ£¬Êı×éÔªËØ¿ÉÒÔÖØ¸´£¬µ«ÊÇ×éºÏ²»ÄÜÍêÈ«ÏàÍ¬
+        // æ±‚æ•°ç»„é‡Œå’Œä¸ºtargetçš„æ‰€æœ‰ç»„åˆï¼Œæ•°ç»„å…ƒç´ å¯ä»¥é‡å¤ï¼Œä½†æ˜¯ç»„åˆä¸èƒ½å®Œå…¨ç›¸åŒ
         int[] candidates = {2,3,5};
         int target = 8;
         List<Integer> out = new ArrayList<>();
         List<List<Integer>> result2 = new ArrayList<List<Integer>>();
         combinationSum(candidates, target, 0, out, result2);
-        System.out.println("DFS Êı×éÀïºÍÎªtargetµÄËùÓĞ×éºÏ---------------------");
+        System.out.println("DFS æ•°ç»„é‡Œå’Œä¸ºtargetçš„æ‰€æœ‰ç»„åˆ---------------------");
         System.out.println(result2.toString());
 
     }
-    // Ç°Ğò±éÀú
+    // å‰åºéå†
     public String firstOrderTraversal(TreeNode root) {
         StringBuilder preorder = new StringBuilder();
         if (root != null) {
@@ -998,7 +1011,7 @@ public class Algorithms {
         return preorder.toString();
 
     }
-    // ÖĞĞò±éÀú
+    // ä¸­åºéå†
     public String inOrderTraversal(TreeNode root) {
         StringBuilder inorder = new StringBuilder();
         if (root != null) {
@@ -1009,7 +1022,7 @@ public class Algorithms {
         return inorder.toString();
 
     }
-    // ºóĞò±éÀú
+    // ååºéå†
     public String afterOrderTraversal(TreeNode root) {
         StringBuilder afterOrder = new StringBuilder();
         if (root != null) {
@@ -1020,7 +1033,7 @@ public class Algorithms {
         return afterOrder.toString();
 
     }
-    // ÒÑÖªÖĞĞòºÍÇ°Ğò±éÀú£¬ÇóºóĞò±éÀú
+    // å·²çŸ¥ä¸­åºå’Œå‰åºéå†ï¼Œæ±‚ååºéå†
     public String preAndInToAfter(String preorder, String inorder) {
         if (inorder.length() <= 1) {
             return inorder;
@@ -1040,7 +1053,7 @@ public class Algorithms {
         return afterorder.toString();
 
     }
-    // ÒÑÖªÖĞĞòºÍºóĞò±éÀú£¬ÇóÇ°Ğò±éÀú
+    // å·²çŸ¥ä¸­åºå’Œååºéå†ï¼Œæ±‚å‰åºéå†
     public String afterAndInToPre(String afterorder, String inorder) {
         if (inorder.length() <= 1) {
             return inorder;
@@ -1084,7 +1097,7 @@ public class Algorithms {
             s.setCharAt(0, tmp);
         }
     }
-    // Çó×Ö·û´®µÄËùÓĞ×Ö·û×éºÏ
+    // æ±‚å­—ç¬¦ä¸²çš„æ‰€æœ‰å­—ç¬¦ç»„åˆ
     public void allSubstring(String str, int start, List<String> result) {
         if (start >= str.length() - 1) {
             result.add(str);
@@ -1110,13 +1123,13 @@ public class Algorithms {
         }
     }
 
-    // ÇóÊı×éÀïºÍÎªtargetµÄËùÓĞ×éºÏ£¬Êı×éÔªËØ¿ÉÒÔÖØ¸´£¬µ«ÊÇ×éºÏ²»ÄÜÍêÈ«ÏàÍ¬
+    // æ±‚æ•°ç»„é‡Œå’Œä¸ºtargetçš„æ‰€æœ‰ç»„åˆï¼Œæ•°ç»„å…ƒç´ å¯ä»¥é‡å¤ï¼Œä½†æ˜¯ç»„åˆä¸èƒ½å®Œå…¨ç›¸åŒ
     public void combinationSum(int[] candidates, int target, int start, List<Integer> out, List<List<Integer>> result) {
         if (target < 0) {
            return;
         }
         if (target == 0) {
-            // ListÖĞµÄ×ÓList²»ÄÜÔÚ¸³Öµµ½¸¸ListºóÊÍ·Åµô, ÓÉÓÚlistÏàµ±ÓÚÖ¸Õë±äÁ¿£¬µ±ÊÍ·ÅlistÖĞĞÅÏ¢Ê±£¬LlistÖĞ¸Õ¸Õ±»add½øÈ¥µÄÖµÒ²±»ÊÍ·ÅµôÁË£¬ËùÒÔÃ¿´ÎÒªnewÒ»¸ö¶ÔÏó
+            // Listä¸­çš„å­Listä¸èƒ½åœ¨èµ‹å€¼åˆ°çˆ¶Liståé‡Šæ”¾æ‰, ç”±äºlistç›¸å½“äºæŒ‡é’ˆå˜é‡ï¼Œå½“é‡Šæ”¾listä¸­ä¿¡æ¯æ—¶ï¼ŒLlistä¸­åˆšåˆšè¢«addè¿›å»çš„å€¼ä¹Ÿè¢«é‡Šæ”¾æ‰äº†ï¼Œæ‰€ä»¥æ¯æ¬¡è¦newä¸€ä¸ªå¯¹è±¡
             List<Integer> out1 = new ArrayList<>(out);
             result.add(out1);
             return;
@@ -1136,8 +1149,8 @@ public class Algorithms {
 //        int start = 0;
 //        int end = 6;
 //        int key = deepFirstSearch(graph, start, end);
-//        System.out.println("Éî¶ÈÓÅÏÈËÑË÷£¨ÓĞÏòÎŞÈ¨Í¼£©---------------------");
-//        System.out.println(key); // ½á¹ûÊÇÂú×ãÌõ¼şµÄ½Úµã
+//        System.out.println("æ·±åº¦ä¼˜å…ˆæœç´¢ï¼ˆæœ‰å‘æ— æƒå›¾ï¼‰---------------------");
+//        System.out.println(key); // ç»“æœæ˜¯æ»¡è¶³æ¡ä»¶çš„èŠ‚ç‚¹
 //    }
 
 //    private int deepFirstSearch(int[][] graph, int start, int end) {
@@ -1171,8 +1184,8 @@ public class Algorithms {
 //    }
 
     /**
-     * µÏ¿ËË¹ÌØÀ­ µÏ½ÜË¹ÌØÀ­Ëã·¨£¨ÓÃÒ»¸ö¶şÎ¬Êı×éÀ´±íÊ¾ÓĞÏò¼ÓÈ¨Í¼£¨·Ç¸ºÈ¨£©£¬n±íÊ¾ÓĞÖ¸ÏòÇÒÈ¨ÖØÊÇn£¬0±íÊ¾Ã»ÓĞÖ¸Ïò£¬Æğµã¼ÙÉèÎª0µã£¬ÖÕµã¼ÙÉèÎª6µã£¬
-     *           ËÑË÷´Ó0µãµ½6µãµÄ×î¶Ì¼ÓÈ¨¾àÀë£©
+     * è¿ªå…‹æ–¯ç‰¹æ‹‰ è¿ªæ°æ–¯ç‰¹æ‹‰ç®—æ³•ï¼ˆç”¨ä¸€ä¸ªäºŒç»´æ•°ç»„æ¥è¡¨ç¤ºæœ‰å‘åŠ æƒå›¾ï¼ˆéè´Ÿæƒï¼‰ï¼Œnè¡¨ç¤ºæœ‰æŒ‡å‘ä¸”æƒé‡æ˜¯nï¼Œ0è¡¨ç¤ºæ²¡æœ‰æŒ‡å‘ï¼Œèµ·ç‚¹å‡è®¾ä¸º0ç‚¹ï¼Œç»ˆç‚¹å‡è®¾ä¸º6ç‚¹ï¼Œ
+     *           æœç´¢ä»0ç‚¹åˆ°6ç‚¹çš„æœ€çŸ­åŠ æƒè·ç¦»ï¼‰
      */
     public void dijkstra() {
         int[][] graph = {{0,4,10,0,0,0,0},{0,0,0,0,21,0,0},{0,0,0,5,0,8,0},{0,0,0,0,5,0,0},{0,0,0,0,0,0,4},
@@ -1181,9 +1194,9 @@ public class Algorithms {
         int end = 6;
         List<Integer> shortestPath = new ArrayList<>();
         int shortestDist = dijkstra(graph, start, end, shortestPath);
-        System.out.println("µÏ¿ËË¹ÌØÀ­Ëã·¨£¨ÓĞÏò¼ÓÈ¨Í¼£¬·Ç¸ºÈ¨£©---------------------");
-        System.out.println("×î¶Ì¾àÀë£º" + shortestDist); // ½á¹ûÊÇ 24
-        System.out.println("×î¶ÌÂ·¾¶£º" + shortestPath.toString()); // ½á¹ûÊÇ 0 -> 2 -> 3 -> 4 -> 6
+        System.out.println("è¿ªå…‹æ–¯ç‰¹æ‹‰ç®—æ³•ï¼ˆæœ‰å‘åŠ æƒå›¾ï¼Œéè´Ÿæƒï¼‰---------------------");
+        System.out.println("æœ€çŸ­è·ç¦»ï¼š" + shortestDist); // ç»“æœæ˜¯ 24
+        System.out.println("æœ€çŸ­è·¯å¾„ï¼š" + shortestPath.toString()); // ç»“æœæ˜¯ 0 -> 2 -> 3 -> 4 -> 6
     }
 
     private int dijkstra(int[][] graph, int start, int end, List<Integer> shortestPath) {
@@ -1206,7 +1219,7 @@ public class Algorithms {
         }
         visited.add(start);
         while (visited.size() != graph.length) {
-            // Ñ¡³öµ±Ç°Ã»±»·ÃÎÊ¹ıµÄ×îĞ¡µÄ½Úµã
+            // é€‰å‡ºå½“å‰æ²¡è¢«è®¿é—®è¿‡çš„æœ€å°çš„èŠ‚ç‚¹
             int minDist = Integer.MAX_VALUE;
             int minDistIndex = -1;
             for (Integer key: costs.keySet()) {
@@ -1215,7 +1228,7 @@ public class Algorithms {
                     minDistIndex = key;
                 }
             }
-            // ¸üĞÂ×îĞ¡½ÚµãµÄÁÚ¾Ó½ÚµãµÄ×îĞ¡¾àÀëºÍ¸¸½Úµã
+            // æ›´æ–°æœ€å°èŠ‚ç‚¹çš„é‚»å±…èŠ‚ç‚¹çš„æœ€å°è·ç¦»å’Œçˆ¶èŠ‚ç‚¹
             if (minDistIndex == -1) {
                 break;
             }
@@ -1229,7 +1242,7 @@ public class Algorithms {
             }
             visited.add(minDistIndex);
         }
-        // Êä³öÆğµãµ½ÖÕµãÂ·¾¶
+        // è¾“å‡ºèµ·ç‚¹åˆ°ç»ˆç‚¹è·¯å¾„
         shortestDist = costs.get(end);
         int point = end;
         shortestPath.add(0, end);
@@ -1242,30 +1255,30 @@ public class Algorithms {
 
 
     /**
-     * ×î´ó¹«Ô¼Êı
+     * æœ€å¤§å…¬çº¦æ•°
      */
     public void gcd() {
         int a = 15;
         int b = 12;
         int c;
-        // Å·¼¸ÀïµÃËã·¨£¨Õ·×ªÏà³ı·¨£©
+        // æ¬§å‡ é‡Œå¾—ç®—æ³•ï¼ˆè¾—è½¬ç›¸é™¤æ³•ï¼‰
         c = gcd_divison(a, b);
-        System.out.println("×î´ó¹«Ô¼Êı£¨Õ·×ªÏà³ı·¨£©---------------------");
+        System.out.println("æœ€å¤§å…¬çº¦æ•°ï¼ˆè¾—è½¬ç›¸é™¤æ³•ï¼‰---------------------");
         System.out.println(c);
-        // Å·¼¸ÀïµÃËã·¨£¨µİ¹é£©
+        // æ¬§å‡ é‡Œå¾—ç®—æ³•ï¼ˆé€’å½’ï¼‰
         c = gcd_recursive(a, b);
-        System.out.println("×î´ó¹«Ô¼Êı£¨µİ¹é£©---------------------");
+        System.out.println("æœ€å¤§å…¬çº¦æ•°ï¼ˆé€’å½’ï¼‰---------------------");
         System.out.println(c);
-        // Ïà¼õ·¨
+        // ç›¸å‡æ³•
         c = gcd_subtract(a, b);
-        System.out.println("×î´ó¹«Ô¼Êı£¨Ïà¼õ·¨£©---------------------");
+        System.out.println("æœ€å¤§å…¬çº¦æ•°ï¼ˆç›¸å‡æ³•ï¼‰---------------------");
         System.out.println(c);
-        // Çî¾Ù·¨
+        // ç©·ä¸¾æ³•
         c = gcd_exhansition(a, b);
-        System.out.println("×î´ó¹«Ô¼Êı£¨Çî¾Ù·¨£©---------------------");
+        System.out.println("æœ€å¤§å…¬çº¦æ•°ï¼ˆç©·ä¸¾æ³•ï¼‰---------------------");
         System.out.println(c);
     }
-    // Å·¼¸ÀïµÃËã·¨£¨Õ·×ªÏà³ı·¨£©
+    // æ¬§å‡ é‡Œå¾—ç®—æ³•ï¼ˆè¾—è½¬ç›¸é™¤æ³•ï¼‰
     private int gcd_divison(int a, int b) {
         a = Math.abs(a);
         b = Math.abs(b);
@@ -1283,7 +1296,7 @@ public class Algorithms {
         }
         return a;
     }
-    // Å·¼¸ÀïµÃËã·¨£¨µİ¹é£©
+    // æ¬§å‡ é‡Œå¾—ç®—æ³•ï¼ˆé€’å½’ï¼‰
     private int gcd_recursive(int a, int b) {
         a = Math.abs(a);
         b = Math.abs(b);
@@ -1295,7 +1308,7 @@ public class Algorithms {
         }
         return b > 0 ? gcd_recursive(b, a%b) : a;
     }
-    // Å·¼¸ÀïµÃËã·¨£¨Ïà¼õ·¨£©
+    // æ¬§å‡ é‡Œå¾—ç®—æ³•ï¼ˆç›¸å‡æ³•ï¼‰
     private int gcd_subtract(int a, int b) {
         a = Math.abs(a);
         b = Math.abs(b);
@@ -1313,7 +1326,7 @@ public class Algorithms {
         }
         return a;
     }
-    // Å·¼¸ÀïµÃËã·¨£¨Çî¾Ù·¨£©
+    // æ¬§å‡ é‡Œå¾—ç®—æ³•ï¼ˆç©·ä¸¾æ³•ï¼‰
     private int gcd_exhansition(int a, int b) {
         a = Math.abs(a);
         b = Math.abs(b);
@@ -1333,19 +1346,19 @@ public class Algorithms {
     }
 
     /**
-     * ×îĞ¡¹«±¶Êı£¬Çó×îĞ¡¹«±¶ÊıµÄ»ù´¡ÊÇÇó×î´ó¹«Ô¼Êı£¬×îĞ¡¹«±¶Êı=×îĞ¡¹«Ô¼Êı * a/×îĞ¡¹«Ô¼Êı * b/×îĞ¡¹«Ô¼Êı
+     * æœ€å°å…¬å€æ•°ï¼Œæ±‚æœ€å°å…¬å€æ•°çš„åŸºç¡€æ˜¯æ±‚æœ€å¤§å…¬çº¦æ•°ï¼Œæœ€å°å…¬å€æ•°=æœ€å¤§å…¬çº¦æ•° * a/æœ€å¤§å…¬çº¦æ•° * b/æœ€å¤§å…¬çº¦æ•°
      */
     public void lcm() {
         int a = 15;
         int b = 12;
         int c;
-        // Å·¼¸ÀïµÃËã·¨£¨ÓÃ×î´ó¹«Ô¼ÊıÇó£©
+        // æ¬§å‡ é‡Œå¾—ç®—æ³•ï¼ˆç”¨æœ€å¤§å…¬çº¦æ•°æ±‚ï¼‰
         c = lcm_gcd(a, b);
-        System.out.println("×îĞ¡¹«±¶Êı£¨×î´ó¹«Ô¼Êı·¨£©---------------------");
+        System.out.println("æœ€å°å…¬å€æ•°ï¼ˆæœ€å¤§å…¬çº¦æ•°æ³•ï¼‰---------------------");
         System.out.println(c);
-        // Çî¾Ù·¨
+        // ç©·ä¸¾æ³•
         c = lcm_exhansition(a, b);
-        System.out.println("×îĞ¡¹«±¶Êı£¨Çî¾Ù·¨£©---------------------");
+        System.out.println("æœ€å°å…¬å€æ•°ï¼ˆç©·ä¸¾æ³•ï¼‰---------------------");
         System.out.println(c);
     }
 
@@ -1372,161 +1385,161 @@ public class Algorithms {
 
 
     /**
-     * Ê÷£ºÒ»ÖÖ·ÇÏßĞÔµÄÊı¾İ½á¹¹
-     * 1¡¢Ê÷Ã»ÓĞ»·£¬Í¼¿ÉÒÔÓĞ»·£¬ÕâÊÇÊ÷ºÍÍ¼µÄÇø±ğ
-     * 2¡¢É­ÁÖ¡¢Ç°ÇıºÍºó¼Ì¡¢Ê÷µÄ¶È£¬Ò¶×Ó½Úµã¶ÈÊÇ0
-     * 3¡¢½ÚµãµÄË«Ç×£¬×æÏÈ£¬º¢×Ó£¬×ÓËï
-     * 4¡¢Ê÷µÄ²ã´Î£¬¸ù½ÚµãÊÇµÚÒ»²ã£¬Ê÷µÄ¸ß¶È¾ÍÊÇÊ÷µÄ²ãÊı
+     * æ ‘ï¼šä¸€ç§éçº¿æ€§çš„æ•°æ®ç»“æ„
+     * 1ã€æ ‘æ²¡æœ‰ç¯ï¼Œå›¾å¯ä»¥æœ‰ç¯ï¼Œè¿™æ˜¯æ ‘å’Œå›¾çš„åŒºåˆ«
+     * 2ã€æ£®æ—ã€å‰é©±å’Œåç»§ã€æ ‘çš„åº¦ï¼Œå¶å­èŠ‚ç‚¹åº¦æ˜¯0
+     * 3ã€èŠ‚ç‚¹çš„åŒäº²ï¼Œç¥–å…ˆï¼Œå­©å­ï¼Œå­å­™
+     * 4ã€æ ‘çš„å±‚æ¬¡ï¼Œæ ¹èŠ‚ç‚¹æ˜¯ç¬¬ä¸€å±‚ï¼Œæ ‘çš„é«˜åº¦å°±æ˜¯æ ‘çš„å±‚æ•°
      */
 
     /**
-     * ¶ş²æÊ÷£º·ÇÒ¶×Ó½Úµã×î¶àÖ»ÓĞÁ½¸öº¢×Ó½Úµã£¬Ò»×óÒ»ÓÒ£¬¶ş²æÊ÷µÄ×ÓÊ÷Ò²ÊÇ¶ş²æÊ÷
+     * äºŒå‰æ ‘ï¼šéå¶å­èŠ‚ç‚¹æœ€å¤šåªæœ‰ä¸¤ä¸ªå­©å­èŠ‚ç‚¹ï¼Œä¸€å·¦ä¸€å³ï¼ŒäºŒå‰æ ‘çš„å­æ ‘ä¹Ÿæ˜¯äºŒå‰æ ‘
      */
 
     /**
-     * ÍêÈ«¶ş²æÊ÷:
-     * 1¡¢Ò¶×Ó½ÚµãÖ»ÄÜÔÚk»òÕßk-1²ã£¬Ò²¾ÍÊÇËµ£¬1µ½k-1²ã±ØĞëÊÇ×î´ó½ÚµãÊı
-     * 2¡¢k²ã¿ÉÒÔ²»Âú£¬µ«ÊÇ½Úµã¶¼±ØĞëÔÚ×ó±ß
-     * 3¡¢ÈÎºÎÒ»¸ö½Úµã²»ÄÜÖ»ÓĞ×ó×ÓÊ÷Ã»ÓĞÓÒ×ÓÊ÷
-     * 4¡¢ËùÒÔ¸¸½ÚµãºÍ×Ó½ÚµãµÄË÷ÒıÊÇÓĞ¹æÂÉµÄ£º0£¬1£¬2£¬3£¨k/2 2k+1 2k+2£©1£¬2£¬3£¬4£¨k/2 2k 2k+1£©
+     * å®Œå…¨äºŒå‰æ ‘:
+     * 1ã€å¶å­èŠ‚ç‚¹åªèƒ½åœ¨kæˆ–è€…k-1å±‚ï¼Œä¹Ÿå°±æ˜¯è¯´ï¼Œ1åˆ°k-1å±‚å¿…é¡»æ˜¯æœ€å¤§èŠ‚ç‚¹æ•°
+     * 2ã€kå±‚å¯ä»¥ä¸æ»¡ï¼Œä½†æ˜¯èŠ‚ç‚¹éƒ½å¿…é¡»åœ¨å·¦è¾¹
+     * 3ã€ä»»ä½•ä¸€ä¸ªèŠ‚ç‚¹ä¸èƒ½åªæœ‰å·¦å­æ ‘æ²¡æœ‰å³å­æ ‘
+     * 4ã€æ‰€ä»¥çˆ¶èŠ‚ç‚¹å’Œå­èŠ‚ç‚¹çš„ç´¢å¼•æ˜¯æœ‰è§„å¾‹çš„ï¼š0ï¼Œ1ï¼Œ2ï¼Œ3ï¼ˆk/2 2k 2k+1ï¼‰1ï¼Œ2ï¼Œ3ï¼Œ4ï¼ˆk/2 2k+1 2k+2ï¼‰
      */
 
     /**
-     * Âú¶ş²æÊ÷£º1µ½k²ãÒ¶×Ó½Úµã¶¼ÓĞ
+     * æ»¡äºŒå‰æ ‘ï¼š1åˆ°kå±‚å¶å­èŠ‚ç‚¹éƒ½æœ‰
      */
 
     /**
-     * ¶ş²æÊ÷ËÑË÷Ê÷£º×ó×ÓÊ÷¶¼±È½ÚµãĞ¡£¬ÓÒ×ÓÊ÷¶¼±È½Úµã´ó£¬¶ş²æÅÅĞòÊ÷µÄÖĞĞò±éÀúÒ»¶¨ÊÇ´ÓĞ¡µ½´óµÄ
+     * äºŒå‰æ ‘æœç´¢æ ‘ï¼šå·¦å­æ ‘éƒ½æ¯”èŠ‚ç‚¹å°ï¼Œå³å­æ ‘éƒ½æ¯”èŠ‚ç‚¹å¤§ï¼ŒäºŒå‰æ’åºæ ‘çš„ä¸­åºéå†ä¸€å®šæ˜¯ä»å°åˆ°å¤§çš„
      */
 
     /**
-     * Æ½ºâ¶ş²æÊ÷£ºÒ»¸ö¿ÉÒÔ±£³ÖÆ½ºâµÄ¶ş²æËÑË÷Ê÷£¬ÎªÁË±£Ö¤¶ş²æËÑË÷Ê÷²»ÖÁÓÚÌ«ÇãĞ±£¬¾¡Á¿±£Ö¤Á½±ßÆ½ºâ
-     * 1¡¢Ò»¿Å¿ÕÊ÷
-     * 2¡¢×óÓÒ×ÓÊ÷µÄ¸ß¶ÈÖ®²î²»´óÓÚ 1
-     * 3¡¢×ÓÊ÷Ò²±ØĞëÊÇÒ»¿ÅÆ½ºâ¶ş²æÊ÷
+     * å¹³è¡¡äºŒå‰æ ‘ï¼šä¸€ä¸ªå¯ä»¥ä¿æŒå¹³è¡¡çš„äºŒå‰æœç´¢æ ‘ï¼Œä¸ºäº†ä¿è¯äºŒå‰æœç´¢æ ‘ä¸è‡³äºå¤ªå€¾æ–œï¼Œå°½é‡ä¿è¯ä¸¤è¾¹å¹³è¡¡
+     * 1ã€ä¸€é¢—ç©ºæ ‘
+     * 2ã€å·¦å³å­æ ‘çš„é«˜åº¦ä¹‹å·®ä¸å¤§äº 1
+     * 3ã€å­æ ‘ä¹Ÿå¿…é¡»æ˜¯ä¸€é¢—å¹³è¡¡äºŒå‰æ ‘
      */
 
     /**
-     * ×îÓÅËÑË÷¶ş²æÊ÷£¨¶¯Ì¬¹æ»®£©£ºÃ¿¸ö½Úµã¶¼ÓĞÒ»¸ö±»·ÃÎÊµÄ¸ÅÂÊÖµ£¬¹¹ÔìÒ»¸ö¶ş²æÊ÷¾ßÓĞ×îĞ¡µÄÆ½ËÑË÷´ú¼Û£¬ÓÃ¶¯Ì¬¹æ»®Ìæ»»Ã¿¸ö½ÚµãÎª¸ù½ÚµãÀ´±È½ÏÀ´½â
+     * æœ€ä¼˜æœç´¢äºŒå‰æ ‘ï¼ˆåŠ¨æ€è§„åˆ’ï¼‰ï¼šæ¯ä¸ªèŠ‚ç‚¹éƒ½æœ‰ä¸€ä¸ªè¢«è®¿é—®çš„æ¦‚ç‡å€¼ï¼Œæ„é€ ä¸€ä¸ªäºŒå‰æ ‘å…·æœ‰æœ€å°çš„å¹³æœç´¢ä»£ä»·ï¼Œç”¨åŠ¨æ€è§„åˆ’æ›¿æ¢æ¯ä¸ªèŠ‚ç‚¹ä¸ºæ ¹èŠ‚ç‚¹æ¥æ¯”è¾ƒæ¥è§£
      */
 
     /**
-     * ºìºÚÊ÷£ºÊÇÒ»ÖÖÆ½ºâµÄ¶ş²æ²éÕÒÊ÷µÄÊı¾İ½á¹¹£¬¾ÍÊÇ²»»á×óÍÈÌØ±ğ³¤»òÕßÓÒÍÈÌØ±ğ³¤£¬STLÖĞµÄmap¾ÍÊÇÓÃµÄºìºÚÊ÷
-     * 1¡¢½ÚµãÊÇºìÉ«»òÕßºÚÉ«µÄ
-     * 2¡¢¸ù½ÚµãÊÇºÚÉ«
-     * 3¡¢Ò¶×Ó½Úµã±ØĞëÊÇºÚÉ«¿Õ½Úµã£¨null£©
-     * 4¡¢Ã¿¸öºìÉ«½ÚµãµÄÁ½¸ö×Ó½Úµã±ØĞëÊÇºÚÉ«µÄ£¬µ«²»ÊÇËµ·ÇÒ¶×Ó½ÚµãÒ»¶¨ÊÇºìÉ«µÄ£¬Ò²¿ÉÒÔÊÇºÚÉ«µÄ
-     * 5¡¢´ÓÈÎÒâ½Úµãµ½Ã¿¸öÒ¶×Ó½ÚµãµÄÂ·¾¶°üº¬µÄºÚÉ«½ÚµãÊı¶¼ÊÇÒ»Ñù¶àµÄ
-     * ÔÚ²åÈë¡¢É¾³ı½ÚµãµÄÊ±ºò£¬ÆÆ»µÁË¹æÔò¾ÍĞèÒªµ÷ÕûºìºÚÊ÷£º
-     * 1¡¢±äÉ«
-     * 2¡¢ÏÈ°ÑÄÜ±äÉ«µÄÏÈ±äÉ«£¬µ±±äÉ«½øĞĞ²»ÏÂÈ¥ÁË£¬¾ÍĞı×ª--×óĞı×ª¡¢ÓÒĞı×ª
+     * çº¢é»‘æ ‘ï¼šæ˜¯ä¸€ç§å¹³è¡¡çš„äºŒå‰æŸ¥æ‰¾æ ‘çš„æ•°æ®ç»“æ„ï¼Œå°±æ˜¯ä¸ä¼šå·¦è…¿ç‰¹åˆ«é•¿æˆ–è€…å³è…¿ç‰¹åˆ«é•¿ï¼ŒSTLä¸­çš„mapå°±æ˜¯ç”¨çš„çº¢é»‘æ ‘
+     * 1ã€èŠ‚ç‚¹æ˜¯çº¢è‰²æˆ–è€…é»‘è‰²çš„
+     * 2ã€æ ¹èŠ‚ç‚¹æ˜¯é»‘è‰²
+     * 3ã€å¶å­èŠ‚ç‚¹å¿…é¡»æ˜¯é»‘è‰²ç©ºèŠ‚ç‚¹ï¼ˆnullï¼‰
+     * 4ã€æ¯ä¸ªçº¢è‰²èŠ‚ç‚¹çš„ä¸¤ä¸ªå­èŠ‚ç‚¹å¿…é¡»æ˜¯é»‘è‰²çš„ï¼Œä½†ä¸æ˜¯è¯´éå¶å­èŠ‚ç‚¹ä¸€å®šæ˜¯çº¢è‰²çš„ï¼Œä¹Ÿå¯ä»¥æ˜¯é»‘è‰²çš„
+     * 5ã€ä»ä»»æ„èŠ‚ç‚¹åˆ°æ¯ä¸ªå¶å­èŠ‚ç‚¹çš„è·¯å¾„åŒ…å«çš„é»‘è‰²èŠ‚ç‚¹æ•°éƒ½æ˜¯ä¸€æ ·å¤šçš„
+     * åœ¨æ’å…¥ã€åˆ é™¤èŠ‚ç‚¹çš„æ—¶å€™ï¼Œç ´åäº†è§„åˆ™å°±éœ€è¦è°ƒæ•´çº¢é»‘æ ‘ï¼š
+     * 1ã€å˜è‰²
+     * 2ã€å…ˆæŠŠèƒ½å˜è‰²çš„å…ˆå˜è‰²ï¼Œå½“å˜è‰²è¿›è¡Œä¸ä¸‹å»äº†ï¼Œå°±æ—‹è½¬--å·¦æ—‹è½¬ã€å³æ—‹è½¬
      */
 
     /**
-     * BÊ÷£º¾ÍÊÇ¶ş²æËÑË÷Ê÷
-     * ÈçºÎ±£³ÖBÊ÷½áµã·Ö²¼¾ùÔÈµÄÆ½ºâËã·¨ÊÇÆ½ºâ¶ş²æÊ÷µÄ¹Ø¼ü£»Æ½ºâËã·¨ÊÇÒ»ÖÖÔÚBÊ÷ÖĞ²åÈëºÍÉ¾³ı½áµãµÄ²ßÂÔ£º
-     * ÓÉÓÚM/2µÄÏŞÖÆ£¬ÔÚ²åÈë½áµãÊ±£¬Èç¹û½áµãÒÑÂú£¬ĞèÒª½«½áµã·ÖÁÑÎªÁ½¸ö¸÷Õ¼M/2µÄ½áµã£»É¾³ı½áµãÊ±£¬Ğè½«Á½¸ö²»×ãM/2µÄĞÖµÜ½áµãºÏ²¢
+     * Bæ ‘ï¼šå°±æ˜¯äºŒå‰æœç´¢æ ‘
+     * å¦‚ä½•ä¿æŒBæ ‘ç»“ç‚¹åˆ†å¸ƒå‡åŒ€çš„å¹³è¡¡ç®—æ³•æ˜¯å¹³è¡¡äºŒå‰æ ‘çš„å…³é”®ï¼›å¹³è¡¡ç®—æ³•æ˜¯ä¸€ç§åœ¨Bæ ‘ä¸­æ’å…¥å’Œåˆ é™¤ç»“ç‚¹çš„ç­–ç•¥ï¼š
+     * ç”±äºM/2çš„é™åˆ¶ï¼Œåœ¨æ’å…¥ç»“ç‚¹æ—¶ï¼Œå¦‚æœç»“ç‚¹å·²æ»¡ï¼Œéœ€è¦å°†ç»“ç‚¹åˆ†è£‚ä¸ºä¸¤ä¸ªå„å M/2çš„ç»“ç‚¹ï¼›åˆ é™¤ç»“ç‚¹æ—¶ï¼Œéœ€å°†ä¸¤ä¸ªä¸è¶³M/2çš„å…„å¼Ÿç»“ç‚¹åˆå¹¶
      *
-     * ËùÒÔB-Ê÷µÄĞÔÄÜ×ÜÊÇµÈ¼ÛÓÚ¶ş·Ö²éÕÒ£¨ÓëMÖµÎŞ¹Ø£©£¬Ò²¾ÍÃ»ÓĞBÊ÷Æ½ºâµÄÎÊÌâ
+     * æ‰€ä»¥B-æ ‘çš„æ€§èƒ½æ€»æ˜¯ç­‰ä»·äºäºŒåˆ†æŸ¥æ‰¾ï¼ˆä¸Må€¼æ— å…³ï¼‰ï¼Œä¹Ÿå°±æ²¡æœ‰Bæ ‘å¹³è¡¡çš„é—®é¢˜
      */
 
     /**
-     * B-Ê÷£ºÒ»ÖÖ¶àÂ·ËÑË÷Ê÷£¨²»ÊÇ¶ş²æµÄ£©
-     * 1¡¢¶¨ÒåÈÎÒâ·ÇÒ¶×Ó½áµã×î¶àÖ»ÓĞM¸ö¶ù×Ó£»ÇÒM>2£»
-     * 2¡¢¸ù½áµãµÄ¶ù×ÓÊıÎª[2, M]
-     * 3¡¢³ı¸ù½áµãÒÔÍâµÄ·ÇÒ¶×Ó½áµãµÄ¶ù×ÓÊıÎª[M/2, M]
-     * 4¡¢Ã¿¸ö½áµã´æ·ÅÖÁÉÙM/2-1£¨È¡ÉÏÕû£©ºÍÖÁ¶àM-1¸ö¹Ø¼ü×Ö£»£¨ÖÁÉÙ2¸ö¹Ø¼ü×Ö£©
-     * 5¡¢·ÇÒ¶×Ó½áµãµÄ¹Ø¼ü×Ö¸öÊı=Ö¸Ïò¶ù×ÓµÄÖ¸Õë¸öÊı - 1
-     * 6¡¢¹Ø¼ü´Ê£ºK[1], K[2], ¡­, K[M]£»ÇÒK[i] < K[i+1]
-     *    Ö¸Õë£ºP[1], P[2], ¡­, P[M]£»ÆäÖĞP[1]Ö¸Ïò¹Ø¼ü×ÖĞ¡ÓÚK[1]µÄ×ÓÊ÷£¬P[M]Ö¸Ïò¹Ø¼ü×Ö´óÓÚK[M-1]µÄ×ÓÊ÷£¬ÆäËüP[i]Ö¸Ïò¹Ø¼ü×ÖÊôÓÚ(K[i-1], K[i])µÄ×ÓÊ÷
-     * 7¡¢ËùÓĞÒ¶×Ó½áµãÎ»ÓÚÍ¬Ò»²ã
-     * 8¡¢¹Ø¼ü×ÖÔÚËùÓĞ½ÚµãÉÏ£¬Ò¶×Ó½Úµã´æ´¢¹Ø¼ü×Ö£¬·ÇÒ¶×Ó½Úµã´æ´¢¹Ø¼ü×ÖºÍÖ¸Ïò×Ó½ÚµãµÄÖ¸Õë£¬×Ó½ÚµãÄÜÂú×ã×î¶àÖ»ÓĞM¸öº¢×ÓµÄÌõ¼ş£¬¾ÍÊÇÒ¶×Ó½Úµã£¬·ñÔò¾ÍÊÇ·ÇÒ¶×Ó½Úµã
-     *    ·ÇÒ¶×Ó½áµã¿ÉÒÔÃüÖĞ
+     * B-æ ‘ï¼šä¸€ç§å¤šè·¯æœç´¢æ ‘ï¼ˆä¸æ˜¯äºŒå‰çš„ï¼‰
+     * 1ã€å®šä¹‰ä»»æ„éå¶å­ç»“ç‚¹æœ€å¤šåªæœ‰Mä¸ªå„¿å­ï¼›ä¸”M>2ï¼›
+     * 2ã€æ ¹ç»“ç‚¹çš„å„¿å­æ•°ä¸º[2, M]
+     * 3ã€é™¤æ ¹ç»“ç‚¹ä»¥å¤–çš„éå¶å­ç»“ç‚¹çš„å„¿å­æ•°ä¸º[M/2, M]
+     * 4ã€æ¯ä¸ªç»“ç‚¹å­˜æ”¾è‡³å°‘M/2-1ï¼ˆå–ä¸Šæ•´ï¼‰å’Œè‡³å¤šM-1ä¸ªå…³é”®å­—ï¼›ï¼ˆè‡³å°‘2ä¸ªå…³é”®å­—ï¼‰
+     * 5ã€éå¶å­ç»“ç‚¹çš„å…³é”®å­—ä¸ªæ•°=æŒ‡å‘å„¿å­çš„æŒ‡é’ˆä¸ªæ•° - 1
+     * 6ã€å…³é”®è¯ï¼šK[1], K[2], â€¦, K[M]ï¼›ä¸”K[i] < K[i+1]
+     *    æŒ‡é’ˆï¼šP[1], P[2], â€¦, P[M]ï¼›å…¶ä¸­P[1]æŒ‡å‘å…³é”®å­—å°äºK[1]çš„å­æ ‘ï¼ŒP[M]æŒ‡å‘å…³é”®å­—å¤§äºK[M-1]çš„å­æ ‘ï¼Œå…¶å®ƒP[i]æŒ‡å‘å…³é”®å­—å±äº(K[i-1], K[i])çš„å­æ ‘
+     * 7ã€æ‰€æœ‰å¶å­ç»“ç‚¹ä½äºåŒä¸€å±‚
+     * 8ã€å…³é”®å­—åœ¨æ‰€æœ‰èŠ‚ç‚¹ä¸Šï¼Œå¶å­èŠ‚ç‚¹å­˜å‚¨å…³é”®å­—ï¼Œéå¶å­èŠ‚ç‚¹å­˜å‚¨å…³é”®å­—å’ŒæŒ‡å‘å­èŠ‚ç‚¹çš„æŒ‡é’ˆï¼Œå­èŠ‚ç‚¹èƒ½æ»¡è¶³æœ€å¤šåªæœ‰Mä¸ªå­©å­çš„æ¡ä»¶ï¼Œå°±æ˜¯å¶å­èŠ‚ç‚¹ï¼Œå¦åˆ™å°±æ˜¯éå¶å­èŠ‚ç‚¹
+     *    éå¶å­ç»“ç‚¹å¯ä»¥å‘½ä¸­
      *
-     * B-Ê÷ÖĞ²åÈëºÍÉ¾³ı½áµãµÄ²ßÂÔ£º
-     * ÓÉÓÚM/2µÄÏŞÖÆ£¬ÔÚ²åÈë½áµãÊ±£¬Èç¹û½áµãÒÑÂú£¬ĞèÒª½«½áµã·ÖÁÑÎªÁ½¸ö¸÷Õ¼M/2µÄ½áµã£»É¾³ı½áµãÊ±£¬Ğè½«Á½¸ö²»×ãM/2µÄĞÖµÜ½áµãºÏ²¢
+     * B-æ ‘ä¸­æ’å…¥å’Œåˆ é™¤ç»“ç‚¹çš„ç­–ç•¥ï¼š
+     * ç”±äºM/2çš„é™åˆ¶ï¼Œåœ¨æ’å…¥ç»“ç‚¹æ—¶ï¼Œå¦‚æœç»“ç‚¹å·²æ»¡ï¼Œéœ€è¦å°†ç»“ç‚¹åˆ†è£‚ä¸ºä¸¤ä¸ªå„å M/2çš„ç»“ç‚¹ï¼›åˆ é™¤ç»“ç‚¹æ—¶ï¼Œéœ€å°†ä¸¤ä¸ªä¸è¶³M/2çš„å…„å¼Ÿç»“ç‚¹åˆå¹¶
      *
-     * B-Ê÷µÄ²éÕÒĞÔÄÜ£º
-     * ËùÒÔB-Ê÷µÄĞÔÄÜ×ÜÊÇµÈ¼ÛÓÚ¶ş·Ö²éÕÒ£¨ÓëMÖµÎŞ¹Ø£©£¬Ò²¾ÍÃ»ÓĞBÊ÷Æ½ºâµÄÎÊÌâ
+     * B-æ ‘çš„æŸ¥æ‰¾æ€§èƒ½ï¼š
+     * æ‰€ä»¥B-æ ‘çš„æ€§èƒ½æ€»æ˜¯ç­‰ä»·äºäºŒåˆ†æŸ¥æ‰¾ï¼ˆä¸Må€¼æ— å…³ï¼‰ï¼Œä¹Ÿå°±æ²¡æœ‰Bæ ‘å¹³è¡¡çš„é—®é¢˜
      */
 
     /**
-     * B+Ê÷£ºÒ»ÖÖ¶àÂ·ËÑË÷Ê÷£¬ÊÇB-Ê÷µÄ±äÌå
-     * 1¡¢¶¨ÒåÈÎÒâ·ÇÒ¶×Ó½áµã×î¶àÖ»ÓĞM¸ö¶ù×Ó£»ÇÒM>2£»
-     * 2¡¢¸ù½áµãµÄ¶ù×ÓÊıÎª[2, M]
-     * 3¡¢³ı¸ù½áµãÒÔÍâµÄ·ÇÒ¶×Ó½áµãµÄ¶ù×ÓÊıÎª[M/2, M]
-     * 4¡¢Ã¿¸ö½áµã´æ·ÅÖÁÉÙM/2-1£¨È¡ÉÏÕû£©ºÍÖÁ¶àM-1¸ö¹Ø¼ü×Ö£»£¨ÖÁÉÙ2¸ö¹Ø¼ü×Ö£©
-     * 5¡¢·ÇÒ¶×Ó½áµãµÄ¹Ø¼ü×Ö¸öÊı=Ö¸Ïò¶ù×ÓµÄÖ¸Õë¸öÊı
-     * 6¡¢¹Ø¼ü´Ê£ºK[1], K[2], ¡­, K[M-1]£»ÇÒK[i] < K[i+1]
-     *    Ö¸Õë£ºP[1], P[2], ¡­, P[M]£»ÆäÖĞP[1]Ö¸Ïò¹Ø¼ü×ÖĞ¡ÓÚ[K[1],K[2])µÄ×ÓÊ÷£¬P[M]Ö¸Ïò¹Ø¼ü×Ö´óÓÚ[K[M],ÎŞÇî´ó)µÄ×ÓÊ÷£¬ÆäËüP[i]Ö¸Ïò¹Ø¼ü×ÖÊôÓÚ[K[i], K[i+1])µÄ×ÓÊ÷
-     * 7¡¢ËùÓĞÒ¶×Ó½áµãÎ»ÓÚÍ¬Ò»²ã
-     * 8¡¢ËùÓĞ¹Ø¼ü×ÖÔÚÒ¶×Ó½ÚµãÉÏ£¬·ÇÒ¶×Ó½Úµã´æ´¢µÄÖ»ÊÇ¹Ø¼ü×ÖµÄ·¶Î§ºÍÖ¸Ïò×Ó½ÚµãµÄÖ¸Õë£¬Ö»ÔÚÒ¶×Ó½Úµã²ÅÃüÖĞ
-     * 9¡¢ËùÓĞÒ¶×Ó½áµã¶¼ÓĞÒ»¸öÖ¸ÏòĞÖµÜÒ¶×Ó½ÚµãµÄÁ´Ö¸Õë
-     * 10¡¢É¾³ı½ÚµãÊ±£¬½Úµã¹Ø¼ü×Ö¸öÊıĞ¡ÓÚM/2£¬¾ÍÒª×öºÏ²¢²Ù×÷
+     * B+æ ‘ï¼šä¸€ç§å¤šè·¯æœç´¢æ ‘ï¼Œæ˜¯B-æ ‘çš„å˜ä½“
+     * 1ã€å®šä¹‰ä»»æ„éå¶å­ç»“ç‚¹æœ€å¤šåªæœ‰Mä¸ªå„¿å­ï¼›ä¸”M>2ï¼›
+     * 2ã€æ ¹ç»“ç‚¹çš„å„¿å­æ•°ä¸º[2, M]
+     * 3ã€é™¤æ ¹ç»“ç‚¹ä»¥å¤–çš„éå¶å­ç»“ç‚¹çš„å„¿å­æ•°ä¸º[M/2, M]
+     * 4ã€æ¯ä¸ªç»“ç‚¹å­˜æ”¾è‡³å°‘M/2-1ï¼ˆå–ä¸Šæ•´ï¼‰å’Œè‡³å¤šM-1ä¸ªå…³é”®å­—ï¼›ï¼ˆè‡³å°‘2ä¸ªå…³é”®å­—ï¼‰
+     * 5ã€éå¶å­ç»“ç‚¹çš„å…³é”®å­—ä¸ªæ•°=æŒ‡å‘å„¿å­çš„æŒ‡é’ˆä¸ªæ•°
+     * 6ã€å…³é”®è¯ï¼šK[1], K[2], â€¦, K[M-1]ï¼›ä¸”K[i] < K[i+1]
+     *    æŒ‡é’ˆï¼šP[1], P[2], â€¦, P[M]ï¼›å…¶ä¸­P[1]æŒ‡å‘å…³é”®å­—å°äº[K[1],K[2])çš„å­æ ‘ï¼ŒP[M]æŒ‡å‘å…³é”®å­—å¤§äº[K[M],æ— ç©·å¤§)çš„å­æ ‘ï¼Œå…¶å®ƒP[i]æŒ‡å‘å…³é”®å­—å±äº[K[i], K[i+1])çš„å­æ ‘
+     * 7ã€æ‰€æœ‰å¶å­ç»“ç‚¹ä½äºåŒä¸€å±‚
+     * 8ã€æ‰€æœ‰å…³é”®å­—åœ¨å¶å­èŠ‚ç‚¹ä¸Šï¼Œéå¶å­èŠ‚ç‚¹å­˜å‚¨çš„åªæ˜¯å…³é”®å­—çš„èŒƒå›´å’ŒæŒ‡å‘å­èŠ‚ç‚¹çš„æŒ‡é’ˆï¼Œåªåœ¨å¶å­èŠ‚ç‚¹æ‰å‘½ä¸­
+     * 9ã€æ‰€æœ‰å¶å­ç»“ç‚¹éƒ½æœ‰ä¸€ä¸ªæŒ‡å‘å…„å¼Ÿå¶å­èŠ‚ç‚¹çš„é“¾æŒ‡é’ˆ
+     * 10ã€åˆ é™¤èŠ‚ç‚¹æ—¶ï¼ŒèŠ‚ç‚¹å…³é”®å­—ä¸ªæ•°å°äºM/2ï¼Œå°±è¦åšåˆå¹¶æ“ä½œ
      *
-     * B+Ê÷µÄ²éÕÒĞÔÄÜ£º
-     * B+Ê÷µÄĞÔÄÜ×ÜÊÇµÈ¼ÛÓÚ¶ş·Ö²éÕÒ
+     * B+æ ‘çš„æŸ¥æ‰¾æ€§èƒ½ï¼š
+     * B+æ ‘çš„æ€§èƒ½æ€»æ˜¯ç­‰ä»·äºäºŒåˆ†æŸ¥æ‰¾
      *
-     * B+Ê÷ÌØĞÔ£º
-     * 1¡¢ËùÓĞ¹Ø¼ü×Ö¶¼³öÏÖÔÚÒ¶×Ó½áµãµÄÁ´±íÖĞ£¨³íÃÜË÷Òı£©£¬ÇÒÁ´±íÖĞµÄ¹Ø¼ü×ÖÇ¡ºÃÊÇÓĞĞòµÄ£¬²»¿ÉÄÜÔÚ·ÇÒ¶×Ó½áµãÃüÖĞ
-     * 2¡¢·ÇÒ¶×Ó½áµãÏàµ±ÓÚÊÇÒ¶×Ó½áµãµÄË÷Òı£¨Ï¡ÊèË÷Òı£©£¬Ò¶×Ó½áµãÏàµ±ÓÚÊÇ´æ´¢£¨¹Ø¼ü×Ö£©µÄÊı¾İ²ã£¬¸üÊÊºÏÎÄ¼şË÷ÒıÏµÍ³
+     * B+æ ‘ç‰¹æ€§ï¼š
+     * 1ã€æ‰€æœ‰å…³é”®å­—éƒ½å‡ºç°åœ¨å¶å­ç»“ç‚¹çš„é“¾è¡¨ä¸­ï¼ˆç¨ å¯†ç´¢å¼•ï¼‰ï¼Œä¸”é“¾è¡¨ä¸­çš„å…³é”®å­—æ°å¥½æ˜¯æœ‰åºçš„ï¼Œä¸å¯èƒ½åœ¨éå¶å­ç»“ç‚¹å‘½ä¸­
+     * 2ã€éå¶å­ç»“ç‚¹ç›¸å½“äºæ˜¯å¶å­ç»“ç‚¹çš„ç´¢å¼•ï¼ˆç¨€ç–ç´¢å¼•ï¼‰ï¼Œå¶å­ç»“ç‚¹ç›¸å½“äºæ˜¯å­˜å‚¨ï¼ˆå…³é”®å­—ï¼‰çš„æ•°æ®å±‚ï¼Œæ›´é€‚åˆæ–‡ä»¶ç´¢å¼•ç³»ç»Ÿ
      */
 
     /**
-     * B*Ê÷£ºÒ»ÖÖ¶àÂ·ËÑË÷Ê÷£¬ÊÇB+Ê÷µÄ±äÌå
-     * 1¡¢·ÇÒ¶×Ó½áµã¹Ø¼ü×Ö¸öÊıÖÁÉÙÎª(2/3)*M£¬B+Ê÷ÊÇÉÙÎª(1/2)*M£¬±ÈB+Ê÷Ìá¸ßÁËÒ»¸ö½Úµã¿éµÄÀûÓÃÂÊ£¬
-     *    ËùÒÔB*Ê÷·ÖÅäĞÂ½áµãµÄ¸ÅÂÊ±ÈB+Ê÷ÒªµÍ£¬¿Õ¼äÊ¹ÓÃÂÊ¸ü¸ß
-     * 2¡¢É¾³ı½ÚµãÊ±£¬½Úµã¹Ø¼ü×Ö¸öÊıĞ¡ÓÚ2/3*M£¬¾ÍÒª×öºÏ²¢²Ù×÷
-     * 3¡¢ÔÚB+Ê÷µÄ·Ç¸ùºÍ·ÇÒ¶×Ó½áµãÔÙÔö¼ÓÖ¸ÏòĞÖµÜµÄÖ¸Õë
+     * B*æ ‘ï¼šä¸€ç§å¤šè·¯æœç´¢æ ‘ï¼Œæ˜¯B+æ ‘çš„å˜ä½“
+     * 1ã€éå¶å­ç»“ç‚¹å…³é”®å­—ä¸ªæ•°è‡³å°‘ä¸º(2/3)*Mï¼ŒB+æ ‘æ˜¯å°‘ä¸º(1/2)*Mï¼Œæ¯”B+æ ‘æé«˜äº†ä¸€ä¸ªèŠ‚ç‚¹å—çš„åˆ©ç”¨ç‡ï¼Œ
+     *    æ‰€ä»¥B*æ ‘åˆ†é…æ–°ç»“ç‚¹çš„æ¦‚ç‡æ¯”B+æ ‘è¦ä½ï¼Œç©ºé—´ä½¿ç”¨ç‡æ›´é«˜
+     * 2ã€åˆ é™¤èŠ‚ç‚¹æ—¶ï¼ŒèŠ‚ç‚¹å…³é”®å­—ä¸ªæ•°å°äº2/3*Mï¼Œå°±è¦åšåˆå¹¶æ“ä½œ
+     * 3ã€åœ¨B+æ ‘çš„éæ ¹å’Œéå¶å­ç»“ç‚¹å†å¢åŠ æŒ‡å‘å…„å¼Ÿçš„æŒ‡é’ˆ
      */
 
     /**
-     * BÊ÷£º¶ş²æÊ÷£¬Ã¿¸ö½áµãÖ»´æ´¢Ò»¸ö¹Ø¼ü×Ö£¬µÈÓÚÔòÃüÖĞ£¬Ğ¡ÓÚ×ß×ó½áµã£¬´óÓÚ×ßÓÒ½áµã£»
-     * B-Ê÷£º¶àÂ·ËÑË÷Ê÷£¬Ã¿¸ö½áµã´æ´¢M/2µ½M¸ö¹Ø¼ü×Ö£¬·ÇÒ¶×Ó½áµã´æ´¢Ö¸Ïò¹Ø¼ü×Ö·¶Î§µÄ×Ó½áµã£»ËùÓĞ¹Ø¼ü×ÖÔÚÕû¿ÅÊ÷ÖĞ³öÏÖ£¬ÇÒÖ»³öÏÖÒ»´Î£¬·ÇÒ¶×Ó½áµã¿ÉÒÔÃüÖĞ£»
-     * B+Ê÷£ºÔÚB-Ê÷»ù´¡ÉÏ£¬ÎªÒ¶×Ó½áµãÔö¼ÓÁ´±íÖ¸Õë£¬ËùÓĞ¹Ø¼ü×Ö¶¼ÔÚÒ¶×Ó½áµãÖĞ³öÏÖ£¬·ÇÒ¶×Ó½áµã×÷ÎªÒ¶×Ó½áµãµÄË÷Òı£»B+Ê÷×ÜÊÇµ½Ò¶×Ó½áµã²ÅÃüÖĞ£»
-     * B*Ê÷£ºÔÚB+Ê÷»ù´¡ÉÏ£¬Îª·ÇÒ¶×Ó½áµãÒ²Ôö¼ÓÁ´±íÖ¸Õë£¬½«½áµãµÄ×îµÍÀûÓÃÂÊ´Ó1/2Ìá¸ßµ½2/3£»
+     * Bæ ‘ï¼šäºŒå‰æ ‘ï¼Œæ¯ä¸ªç»“ç‚¹åªå­˜å‚¨ä¸€ä¸ªå…³é”®å­—ï¼Œç­‰äºåˆ™å‘½ä¸­ï¼Œå°äºèµ°å·¦ç»“ç‚¹ï¼Œå¤§äºèµ°å³ç»“ç‚¹ï¼›
+     * B-æ ‘ï¼šå¤šè·¯æœç´¢æ ‘ï¼Œæ¯ä¸ªç»“ç‚¹å­˜å‚¨M/2åˆ°Mä¸ªå…³é”®å­—ï¼Œéå¶å­ç»“ç‚¹å­˜å‚¨æŒ‡å‘å…³é”®å­—èŒƒå›´çš„å­ç»“ç‚¹ï¼›æ‰€æœ‰å…³é”®å­—åœ¨æ•´é¢—æ ‘ä¸­å‡ºç°ï¼Œä¸”åªå‡ºç°ä¸€æ¬¡ï¼Œéå¶å­ç»“ç‚¹å¯ä»¥å‘½ä¸­ï¼›
+     * B+æ ‘ï¼šåœ¨B-æ ‘åŸºç¡€ä¸Šï¼Œä¸ºå¶å­ç»“ç‚¹å¢åŠ é“¾è¡¨æŒ‡é’ˆï¼Œæ‰€æœ‰å…³é”®å­—éƒ½åœ¨å¶å­ç»“ç‚¹ä¸­å‡ºç°ï¼Œéå¶å­ç»“ç‚¹ä½œä¸ºå¶å­ç»“ç‚¹çš„ç´¢å¼•ï¼›B+æ ‘æ€»æ˜¯åˆ°å¶å­ç»“ç‚¹æ‰å‘½ä¸­ï¼›
+     * B*æ ‘ï¼šåœ¨B+æ ‘åŸºç¡€ä¸Šï¼Œä¸ºéå¶å­ç»“ç‚¹ä¹Ÿå¢åŠ é“¾è¡¨æŒ‡é’ˆï¼Œå°†ç»“ç‚¹çš„æœ€ä½åˆ©ç”¨ç‡ä»1/2æé«˜åˆ°2/3ï¼›
      */
 
     /**
-     * Å·¼¸ÀïµÃËã·¨£¨À©Õ¹Å·¼¸ÀïµÃ¡¢Å·À­¶¨Àí¡¢·ÑÂíĞ¡¶¨Àí£©
+     * æ¬§å‡ é‡Œå¾—ç®—æ³•ï¼ˆæ‰©å±•æ¬§å‡ é‡Œå¾—ã€æ¬§æ‹‰å®šç†ã€è´¹é©¬å°å®šç†ï¼‰
      */
 
     /**
-     * Å·À­¶¨Àí£ºÅ·À­º¯Êı¦Õ(n)ÊÇĞ¡ÓÚ»òµÈÓÚnµÄÕıÕûÊıÖĞÓën»¥ÖÊµÄÊıµÄÊıÄ¿
-     * Å·À­º¯Êı£º
-     * 1¡¢ µ±n=1£¬¦Õ(1)=1
-     * 2¡¢ µ±nÎªÖÊÊı£¬¦Õ(n)=n-1£¬ÒòÎªÖÊÊıÓëĞ¡ÓÚËüµÄÃ¿Ò»¸öÊı£¬¶¼¹¹³É»¥ÖÊ¹ØÏµ
-     * 3¡¢ n = p^k (pÎªÖÊÊı£¬kÎªÖ¸Êı£¬ÇÒ´óÓÚµÈÓÚ1)£¬nÊÇÖÊÊıµÄk´Î·½£¬Ôò¦Õ(p^k) = p^k - p^(k-1) = p^k£¨1 - 1/p£©= p^(k-1)(p-1£©
-     * 4¡¢ nÊÇÁ½¸ö»¥ÖÊµÄÕûÊıÖ®»ı£¬Èç£ºn = p1 * p1£¬Ôò ¦Õ(n) = ¦Õ(p1p2) = ¦Õ(p1)¦Õ(p2)
-     * 5¡¢ Å·À­º¯ÊıÍ¨ÓÃ¹«Ê½£ºn=(p1^a1)*(p2^a2)*¡­¡­*(pk^ak), ¦Õ(n)=n*(1-1/p1)*(1-1/p2)*¡­¡­*(1-1/pk)
-     * Å·À­¶¨Àí£ºa^(¦Õ(m))Í¬Óà1(mod m) (aÓëm»¥ÖÊ)
+     * æ¬§æ‹‰å®šç†ï¼šæ¬§æ‹‰å‡½æ•°Ï†(n)æ˜¯å°äºæˆ–ç­‰äºnçš„æ­£æ•´æ•°ä¸­ä¸näº’è´¨çš„æ•°çš„æ•°ç›®
+     * æ¬§æ‹‰å‡½æ•°ï¼š
+     * 1ã€ å½“n=1ï¼ŒÏ†(1)=1
+     * 2ã€ å½“nä¸ºè´¨æ•°ï¼ŒÏ†(n)=n-1ï¼Œå› ä¸ºè´¨æ•°ä¸å°äºå®ƒçš„æ¯ä¸€ä¸ªæ•°ï¼Œéƒ½æ„æˆäº’è´¨å…³ç³»
+     * 3ã€ n = p^k (pä¸ºè´¨æ•°ï¼Œkä¸ºæŒ‡æ•°ï¼Œä¸”å¤§äºç­‰äº1)ï¼Œnæ˜¯è´¨æ•°çš„kæ¬¡æ–¹ï¼Œåˆ™Ï†(p^k) = p^k - p^(k-1) = p^kï¼ˆ1 - 1/pï¼‰= p^(k-1)(p-1ï¼‰
+     * 4ã€ næ˜¯ä¸¤ä¸ªäº’è´¨çš„æ•´æ•°ä¹‹ç§¯ï¼Œå¦‚ï¼šn = p1 * p1ï¼Œåˆ™ Ï†(n) = Ï†(p1p2) = Ï†(p1)Ï†(p2)
+     * 5ã€ æ¬§æ‹‰å‡½æ•°é€šç”¨å…¬å¼ï¼šn=(p1^a1)*(p2^a2)*â€¦â€¦*(pk^ak), Ï†(n)=n*(1-1/p1)*(1-1/p2)*â€¦â€¦*(1-1/pk)
+     * æ¬§æ‹‰å®šç†ï¼ša^(Ï†(m))åŒä½™1(mod m) (aä¸mäº’è´¨)
      */
 
     /**
-     * ÆÓËØ±´Ò¶Ë¹
-     * 1¡¢ÊäÈëÊÇËùÓĞ´ı·ÖÀàÊı¾İ£¬Êä³öÊÇÌØÕ÷ÊôĞÔºÍÑµÁ·Ñù±¾£¬ÌáÈ¡ÌØÕ÷ÊôĞÔ£¬ºÍÊÖ¹¤·ÖÀà»®·Ö£¬ĞÎ³ÉÑµÁ·Ñù±¾
-     * 2¡¢·ÖÀàÆ÷ÑµÁ·£¬ÊäÈëÊÇÌØÕ÷ÊôĞÔºÍÑµÁ·Ñù±¾£¬Êä³öÊÇ·ÖÀàÆ÷£¬Ö÷Òª¹¤×÷ÊÇ¼ÆËãÃ¿¸öÀà±ğÔÚÑµÁ·Ñù±¾ÖĞµÄ³öÏÖÆµÂÊ¼°Ã¿¸öÌØÕ÷ÊôĞÔ»®·Ö¶ÔÃ¿¸öÀà±ğµÄÌõ¼ş¸ÅÂÊ¹À¼Æ
-     * 3¡¢Ê¹ÓÃ·ÖÀàÆ÷¶Ô´ı·ÖÀàÏî½øĞĞ·ÖÀà£¬ÊäÈëÊÇ·ÖÀàÆ÷ºÍ´ı·ÖÀàÏî£¬Êä³öÊÇ´ı·ÖÀàÏîÓëÀà±ğµÄÓ³Éä¹ØÏµ
+     * æœ´ç´ è´å¶æ–¯
+     * 1ã€è¾“å…¥æ˜¯æ‰€æœ‰å¾…åˆ†ç±»æ•°æ®ï¼Œè¾“å‡ºæ˜¯ç‰¹å¾å±æ€§å’Œè®­ç»ƒæ ·æœ¬ï¼Œæå–ç‰¹å¾å±æ€§ï¼Œå’Œæ‰‹å·¥åˆ†ç±»åˆ’åˆ†ï¼Œå½¢æˆè®­ç»ƒæ ·æœ¬
+     * 2ã€åˆ†ç±»å™¨è®­ç»ƒï¼Œè¾“å…¥æ˜¯ç‰¹å¾å±æ€§å’Œè®­ç»ƒæ ·æœ¬ï¼Œè¾“å‡ºæ˜¯åˆ†ç±»å™¨ï¼Œä¸»è¦å·¥ä½œæ˜¯è®¡ç®—æ¯ä¸ªç±»åˆ«åœ¨è®­ç»ƒæ ·æœ¬ä¸­çš„å‡ºç°é¢‘ç‡åŠæ¯ä¸ªç‰¹å¾å±æ€§åˆ’åˆ†å¯¹æ¯ä¸ªç±»åˆ«çš„æ¡ä»¶æ¦‚ç‡ä¼°è®¡
+     * 3ã€ä½¿ç”¨åˆ†ç±»å™¨å¯¹å¾…åˆ†ç±»é¡¹è¿›è¡Œåˆ†ç±»ï¼Œè¾“å…¥æ˜¯åˆ†ç±»å™¨å’Œå¾…åˆ†ç±»é¡¹ï¼Œè¾“å‡ºæ˜¯å¾…åˆ†ç±»é¡¹ä¸ç±»åˆ«çš„æ˜ å°„å…³ç³»
      */
 
     /**
-     * RSA£¬ÊÇÒ»ÖÖ·Ç¶Ô³Æ¼ÓÃÜËã·¨
-     * Ñ¡È¡Ò»¶ÔºÜ´óµÄËØÊı£¨ÖÊÊı£©p,q£¬ÈÃn=pq£¬¼ÆËãf(n)=(p-1)(q-1),¹«Ô¿KU=(e,n),eÓë(p-1)(q-1)»¥ÖÊ£¬ÇÒ1<e<(p-1)(q-1)
-     * Ë½Ô¿KR=(d,n),de¡Ô1 mod (p-1)(q-1) Ò²ÊÇ d¡Ôe-1 mod (p-1)(q-1)£¬ËùÒÔÆÆ½âË½Ô¿µÄ¹Ø¼üÊÇÎªÇódÒªÇópºÍq
-     * ¹«Ô¿Ë½Ô¿µÄ³¤¶È£¨Ä£³¤¶È£©Òªµ½1024Î»ÉõÖÁ2048Î»²ÅÄÜ±£Ö¤°²È«£¬Òò´Ë£¬p¡¢q¡¢eµÄÑ¡È¡¡¢¹«Ô¿Ë½Ô¿µÄÉú³É£¬¼ÓÃÜ½âÃÜÄ£Ö¸ÊıÔËËã¶¼ÓĞÒ»¶¨µÄ¼ÆËã³ÌĞò£¬ĞèÒªÑöÕÌ¼ÆËã»ú¸ßËÙÍê³É
-     * µ±pºÍqÊÇÒ»¸ö´óËØÊıµÄÊ±ºò£¬´ÓËüÃÇµÄ»ıpqÈ¥·Ö½âÒò×ÓpºÍq£¬ÕâÊÇÒ»¸ö¹«ÈÏµÄÊıÑ§ÄÑÌâ¡£±ÈÈçµ±pq´óµ½1024Î»Ê±£¬Æù½ñÎªÖ¹»¹Ã»ÓĞÈËÄÜ¹»ÀûÓÃÈÎºÎ¼ÆËã¹¤¾ßÈ¥Íê³É·Ö½âÒò×ÓµÄÈÎÎñ
+     * RSAï¼Œæ˜¯ä¸€ç§éå¯¹ç§°åŠ å¯†ç®—æ³•
+     * é€‰å–ä¸€å¯¹å¾ˆå¤§çš„ç´ æ•°ï¼ˆè´¨æ•°ï¼‰p,qï¼Œè®©n=pqï¼Œè®¡ç®—f(n)=(p-1)(q-1),å…¬é’¥KU=(e,n),eä¸(p-1)(q-1)äº’è´¨ï¼Œä¸”1<e<(p-1)(q-1)
+     * ç§é’¥KR=(d,n),deâ‰¡1 mod (p-1)(q-1) ä¹Ÿæ˜¯ dâ‰¡e-1 mod (p-1)(q-1)ï¼Œæ‰€ä»¥ç ´è§£ç§é’¥çš„å…³é”®æ˜¯ä¸ºæ±‚dè¦æ±‚på’Œq
+     * å…¬é’¥ç§é’¥çš„é•¿åº¦ï¼ˆæ¨¡é•¿åº¦ï¼‰è¦åˆ°1024ä½ç”šè‡³2048ä½æ‰èƒ½ä¿è¯å®‰å…¨ï¼Œå› æ­¤ï¼Œpã€qã€eçš„é€‰å–ã€å…¬é’¥ç§é’¥çš„ç”Ÿæˆï¼ŒåŠ å¯†è§£å¯†æ¨¡æŒ‡æ•°è¿ç®—éƒ½æœ‰ä¸€å®šçš„è®¡ç®—ç¨‹åºï¼Œéœ€è¦ä»°ä»—è®¡ç®—æœºé«˜é€Ÿå®Œæˆ
+     * å½“på’Œqæ˜¯ä¸€ä¸ªå¤§ç´ æ•°çš„æ—¶å€™ï¼Œä»å®ƒä»¬çš„ç§¯pqå»åˆ†è§£å› å­på’Œqï¼Œè¿™æ˜¯ä¸€ä¸ªå…¬è®¤çš„æ•°å­¦éš¾é¢˜ã€‚æ¯”å¦‚å½“pqå¤§åˆ°1024ä½æ—¶ï¼Œè¿„ä»Šä¸ºæ­¢è¿˜æ²¡æœ‰äººèƒ½å¤Ÿåˆ©ç”¨ä»»ä½•è®¡ç®—å·¥å…·å»å®Œæˆåˆ†è§£å› å­çš„ä»»åŠ¡
      *
-     * ¼ÓÃÜ½âÃÜ¹ı³ÌÓÃÅ·À­¶¨Àí£¬
-     * Ôò¼ÓÃÜÎª£ºÃ¿Ò»¸ö·ûºÅ±íÊ¾³ÉÊı×Öm£¬¼ÓÃÜºóÊı×Ö¡Ôm^e mod n£¬ËùÒÔ¼ÓÃÜºóÊı×Ö = m^e mod n
-     * Ôò½âÃÜÎª£º½âÃÜºóÊı×Ö¡Ôm^d mod n£¬ËùÒÔ½âÃÜºóÊı×Ö = m^d mod n£¬ÔÙ°Ñ½âÃÜºóÊı×Ö»¹Ô­³É·ûºÅ
+     * åŠ å¯†è§£å¯†è¿‡ç¨‹ç”¨æ¬§æ‹‰å®šç†ï¼Œ
+     * åˆ™åŠ å¯†ä¸ºï¼šæ¯ä¸€ä¸ªç¬¦å·è¡¨ç¤ºæˆæ•°å­—mï¼ŒåŠ å¯†åæ•°å­—â‰¡m^e mod nï¼Œæ‰€ä»¥åŠ å¯†åæ•°å­— = m^e mod n
+     * åˆ™è§£å¯†ä¸ºï¼šè§£å¯†åæ•°å­—â‰¡m^d mod nï¼Œæ‰€ä»¥è§£å¯†åæ•°å­— = m^d mod nï¼Œå†æŠŠè§£å¯†åæ•°å­—è¿˜åŸæˆç¬¦å·
      */
 
     public void RSA() {
         String rawString = "shihongyuan";
-        // ¹«Ô¿Ë½Ô¿
+        // å…¬é’¥ç§é’¥
         int[] public_key = {3, 33};
         int[] secret_key = {7, 33};
-        // ±àÂë±í
+        // ç¼–ç è¡¨
         Map<String, Integer> codeMap= new HashMap<>();
         codeMap.put("a", 1);
         codeMap.put("b", 2);
@@ -1555,11 +1568,11 @@ public class Algorithms {
         codeMap.put("y", 25);
         codeMap.put("z", 26);
 
-        System.out.println("RSA¹«Ô¿ÃØÔ¿(¼ÓÃÜºó) ---------------------");
+        System.out.println("RSAå…¬é’¥ç§˜é’¥(åŠ å¯†å) ---------------------");
         String encodeString = RSA_encode(rawString, codeMap, public_key);
         System.out.println(rawString + " -> " + encodeString);
 
-        System.out.println("RSA¹«Ô¿ÃØÔ¿(½âÃÜºó) ---------------------");
+        System.out.println("RSAå…¬é’¥ç§˜é’¥(è§£å¯†å) ---------------------");
         String decodeString = RSA_decode(encodeString, codeMap, secret_key);
         System.out.println(encodeString + " -> " + decodeString);
     }
@@ -1600,50 +1613,50 @@ public class Algorithms {
     }
 
     /**
-     * ¶Ô³Æ¼ÓÃÜ£º¹«Ô¿µÈÓÚË½Ô¿£¬ÓÃ¶Ô³ÆË½Ô¿¼ÓÃÜ£¬¶Ô³ÆË½Ô¿½âÃÜ
-     * ·Ç¶Ô³Æ¼ÓÃÜ£º¹«Ô¿²»µÈÓÚË½Ô¿£¬ÓÃ¶Ô·½µÄ¹«Ô¿¼ÓÃÜ£¬¶Ô·½ÓÃ×Ô¼ºµÄË½Ô¿½âÃÜ
+     * å¯¹ç§°åŠ å¯†ï¼šå…¬é’¥ç­‰äºç§é’¥ï¼Œç”¨å¯¹ç§°ç§é’¥åŠ å¯†ï¼Œå¯¹ç§°ç§é’¥è§£å¯†
+     * éå¯¹ç§°åŠ å¯†ï¼šå…¬é’¥ä¸ç­‰äºç§é’¥ï¼Œç”¨å¯¹æ–¹çš„å…¬é’¥åŠ å¯†ï¼Œå¯¹æ–¹ç”¨è‡ªå·±çš„ç§é’¥è§£å¯†
      */
 
     /**
-     * Êı×ÖÇ©Ãû£¨Ò²½ĞÊı×ÖÕªÒª£¬»òÊı×ÖÖ¸ÎÆ£©£ºÎªÁËÑéÖ¤ĞÅÏ¢È·ÊµÊÇ¶Ô·½·¢ËÍµÄ£¬ÖĞ¼äÃ»ÓĞ±»ÆäËûÈËÌæ»»»ò´Û¸Ä
-     * 1¡¢ÏÈ¶ÔÎÄÕÂ½øĞĞhashÔËËã£¬hashÖµh1½Ğ×öÕªÒª£¬³£¼ûhashËã·¨£ºMD2¡¢MD4¡¢MD5¡¢HAVAL¡¢SHA
-     * 2¡¢ÓÃ×Ô¼ºË½Ô¿¶ÔÕªÒª¼ÓÃÜ£¬Éú³ÉµÄ¶«Î÷½Ğ¡°Êı×ÖÇ©Ãû¡±
-     * 3¡¢°ÑÊı×ÖÇ©Ãû¼ÓÔÚEmailÕıÎÄºóÃæ£¬Ò»Æğ·¢ËÍ¸øB£¨ÎªÁË·ÀÖ¹ÓÊ¼ş±»ÇÔÌıÄã¿ÉÒÔÓÃ¼ÌĞø¹«Ô¿¼ÓÃÜ£©
-     * 4¡¢BÊÕµ½ÓÊ¼şºó£¨Èç¹ûÓÃ¹«Ô¿ÕûÌå¼ÓÃÜ£¬ÕâÀïĞèÒªÏÈÓÃ×Ô¼ºË½Ô¿½âÃÜ£©ÓÃAµÄ¹«Ô¿¶ÔÊı×ÖÇ©Ãû½âÃÜ£¬³É¹¦Ôò´ú±íEmailÈ·ÊµÀ´×ÔA£¬Ê§°ÜËµÃ÷ÓĞÈËÃ°³ä
-     * 5¡¢B¶ÔÓÊ¼şÕıÎÄÖ´ĞĞ¹şÏ£ÔËËãµÃµ½hashÖµh2£¬¶Ô±ÈÊı×ÖÇ©ÃûµÄhashÖµh1ºÍ×Ô¼ºÔËËãµÃµ½µÄh2
+     * æ•°å­—ç­¾åï¼ˆä¹Ÿå«æ•°å­—æ‘˜è¦ï¼Œæˆ–æ•°å­—æŒ‡çº¹ï¼‰ï¼šä¸ºäº†éªŒè¯ä¿¡æ¯ç¡®å®æ˜¯å¯¹æ–¹å‘é€çš„ï¼Œä¸­é—´æ²¡æœ‰è¢«å…¶ä»–äººæ›¿æ¢æˆ–ç¯¡æ”¹
+     * 1ã€å…ˆå¯¹æ–‡ç« è¿›è¡Œhashè¿ç®—ï¼Œhashå€¼h1å«åšæ‘˜è¦ï¼Œå¸¸è§hashç®—æ³•ï¼šMD2ã€MD4ã€MD5ã€HAVALã€SHA
+     * 2ã€ç”¨è‡ªå·±ç§é’¥å¯¹æ‘˜è¦åŠ å¯†ï¼Œç”Ÿæˆçš„ä¸œè¥¿å«â€œæ•°å­—ç­¾åâ€
+     * 3ã€æŠŠæ•°å­—ç­¾ååŠ åœ¨Emailæ­£æ–‡åé¢ï¼Œä¸€èµ·å‘é€ç»™Bï¼ˆä¸ºäº†é˜²æ­¢é‚®ä»¶è¢«çªƒå¬ä½ å¯ä»¥ç”¨ç»§ç»­å…¬é’¥åŠ å¯†ï¼‰
+     * 4ã€Bæ”¶åˆ°é‚®ä»¶åï¼ˆå¦‚æœç”¨å…¬é’¥æ•´ä½“åŠ å¯†ï¼Œè¿™é‡Œéœ€è¦å…ˆç”¨è‡ªå·±ç§é’¥è§£å¯†ï¼‰ç”¨Açš„å…¬é’¥å¯¹æ•°å­—ç­¾åè§£å¯†ï¼ŒæˆåŠŸåˆ™ä»£è¡¨Emailç¡®å®æ¥è‡ªAï¼Œå¤±è´¥è¯´æ˜æœ‰äººå†’å……
+     * 5ã€Bå¯¹é‚®ä»¶æ­£æ–‡æ‰§è¡Œå“ˆå¸Œè¿ç®—å¾—åˆ°hashå€¼h2ï¼Œå¯¹æ¯”æ•°å­—ç­¾åçš„hashå€¼h1å’Œè‡ªå·±è¿ç®—å¾—åˆ°çš„h2
      */
 
     /**
-     * Êı×ÖÖ¤Êé£ºÎªÁËµÃµ½¶Ô·½¿É¿¿µÄ¹«Ô¿£¬ÎªÁË·ÀÖ¹¶Ô·½µÄ¹«Ô¿ÔÙ±¾µØ±»Ìæ»»£¬ÒÔÖÁÓÚºóÃæµÄÑéÖ¤ÎŞÒâÒå
-     * 1¡¢¶Ô·½È¥Ö¤ÊéÖĞĞÄÉú³ÉÊı×ÖÖ¤Êé£¬°üº¬¹ıÆÚÊ±¼ä£¬°äÖ¤»ú¹¹£¬¶Ô·½µÄ¹«Ô¿µÈĞÅÏ¢£¬ÓÉÖ¤ÊéÖĞĞÄÓÃË½Ô¿½«ÕâĞ©ĞÅÏ¢¼ÓÃÜ
-     * 2¡¢²»Í¬µÄÖ¤ÊéÖĞĞÄµÄ¹«Ô¿£¨½Ğ¸ùÖ¤Êé£©¶¼»á´æÔÚä¯ÀÀÆ÷£¬»áÈ¥»ñÈ¡£¬²»ÈİÒ×±»Ìæ»»
-     * 3¡¢¶Ô·½·¢ËÍÎÄÕÂ²»½ö¼ÓÉÏÊı×ÖÇ©Ãû£¬ÔÙ¼ÓÉÏÊı×ÖÖ¤Êé
-     * 4¡¢BÊÕµ½ÓÊ¼şºó£¬ÏÈÓÃÖ¤ÊéÖĞĞÄµÄ¸ùÖ¤Êé½âÃÜÊı×ÖÖ¤Êé£¬ÄÃµ½¶Ô·½µÄ¹«Ô¿£¬ÔÙÈ¥½âÃÜÊı×ÖÇ©Ãû£¬ÔÙ×ö½ÓÏÂÀ´µÄÑéÖ¤£¬¾ÍÄÜ±£Ö¤Õâ¸ö¶Ô·½µÄ¹«Ô¿ÊÇÕıÈ·µÄÁË
-     *   ¸ùÖ¤ÊéÊÇ×ÔÑéÖ¤Ö¤Êé£¬CA»ú¹¹ÊÇ»ñµÃÉç»á¾ø¶ÔÈÏ¿ÉºÍÓĞ¾ø¶ÔÈ¨ÍşµÄµÚÈı·½»ú¹¹£¬ÕâÒ»µã±£Ö¤ÁË¸ùÖ¤ÊéµÄ¾ø¶Ô¿É¿¿¡£Èç¹û¸ùÖ¤Êé¶¼ÓĞÎÊÌâÄÇÃ´Õû¸ö¼ÓÃÜÌåÏµºÁÎŞÒâÒå
+     * æ•°å­—è¯ä¹¦ï¼šä¸ºäº†å¾—åˆ°å¯¹æ–¹å¯é çš„å…¬é’¥ï¼Œä¸ºäº†é˜²æ­¢å¯¹æ–¹çš„å…¬é’¥å†æœ¬åœ°è¢«æ›¿æ¢ï¼Œä»¥è‡³äºåé¢çš„éªŒè¯æ— æ„ä¹‰
+     * 1ã€å¯¹æ–¹å»è¯ä¹¦ä¸­å¿ƒç”Ÿæˆæ•°å­—è¯ä¹¦ï¼ŒåŒ…å«è¿‡æœŸæ—¶é—´ï¼Œé¢è¯æœºæ„ï¼Œå¯¹æ–¹çš„å…¬é’¥ç­‰ä¿¡æ¯ï¼Œç”±è¯ä¹¦ä¸­å¿ƒç”¨ç§é’¥å°†è¿™äº›ä¿¡æ¯åŠ å¯†
+     * 2ã€ä¸åŒçš„è¯ä¹¦ä¸­å¿ƒçš„å…¬é’¥ï¼ˆå«æ ¹è¯ä¹¦ï¼‰éƒ½ä¼šå­˜åœ¨æµè§ˆå™¨ï¼Œä¼šå»è·å–ï¼Œä¸å®¹æ˜“è¢«æ›¿æ¢
+     * 3ã€å¯¹æ–¹å‘é€æ–‡ç« ä¸ä»…åŠ ä¸Šæ•°å­—ç­¾åï¼Œå†åŠ ä¸Šæ•°å­—è¯ä¹¦
+     * 4ã€Bæ”¶åˆ°é‚®ä»¶åï¼Œå…ˆç”¨è¯ä¹¦ä¸­å¿ƒçš„æ ¹è¯ä¹¦è§£å¯†æ•°å­—è¯ä¹¦ï¼Œæ‹¿åˆ°å¯¹æ–¹çš„å…¬é’¥ï¼Œå†å»è§£å¯†æ•°å­—ç­¾åï¼Œå†åšæ¥ä¸‹æ¥çš„éªŒè¯ï¼Œå°±èƒ½ä¿è¯è¿™ä¸ªå¯¹æ–¹çš„å…¬é’¥æ˜¯æ­£ç¡®çš„äº†
+     *   æ ¹è¯ä¹¦æ˜¯è‡ªéªŒè¯è¯ä¹¦ï¼ŒCAæœºæ„æ˜¯è·å¾—ç¤¾ä¼šç»å¯¹è®¤å¯å’Œæœ‰ç»å¯¹æƒå¨çš„ç¬¬ä¸‰æ–¹æœºæ„ï¼Œè¿™ä¸€ç‚¹ä¿è¯äº†æ ¹è¯ä¹¦çš„ç»å¯¹å¯é ã€‚å¦‚æœæ ¹è¯ä¹¦éƒ½æœ‰é—®é¢˜é‚£ä¹ˆæ•´ä¸ªåŠ å¯†ä½“ç³»æ¯«æ— æ„ä¹‰
      */
 
     /**
      * https:http + ssl/tls
-     * tls£º×öµÄÊÇ¿Í»§¶Ë·¢ÆğÁ¬½ÓÇëÇó£¨Í¬Ê±°Ñ×Ô¼ºÖ§³ÖµÄ¼ÓÃÜ¹æÔò·¢¸ø·şÎñ·½£©£¬¿Í»§¶ËÑéÖ¤·şÎñ·½·¢À´µÄ¸ùÖ¤Êé£¨ÒÔ¼°·şÎñ·½ÌôÑ¡µÄÒ»×é¼ÓÃÜËã·¨ºÍhashËã·¨£©£¬È»ºóÉú³ÉËæ»úÊı£¨¶Ô³Æ¼ÓÃÜË½Ô¿£©£¬ÓÃ·şÎñ·½¹«Ô¿¼ÓÃÜ£¬·¢¸ø·şÎñ·½£¬
-     * ·şÎñ·½ÊÕµ½Ë½Ô¿½âÃÜ³É¹¦£¬»ñµÃ¼ÓÃÜË½Ô¿£¬¼ÆËãÎÕÊÖÏûÏ¢hashÖµ£¬ÓÃ¼ÓÃÜË½Ô¿¼ÓÃÜÎÕÊÖÏûÏ¢¸ø¿Í»§¶Ë£¬¿Í»§¶ËÓÃ¼ÓÃÜË½Ô¿½âÃÜÎÕÊÖÏûÏ¢£¬¼ÆËãhashÖµÊÇ·ñÓë·şÎñ·½·¢ËÍÀ´µÄÒ»ÖÂ£¬ÔÙÓÃ¼ÓÃÜË½Ô¿¼ÓÃÜÎÕÊÖÏûÏ¢ºÍÏûÏ¢µÄhashÖµ¸ø·şÎñ·½£¬
-     * ·şÎñ·½ÊÕµ½ÎÕÊÖÏûÏ¢£¬ÓÃ¼ÓÃÜË½Ô¿½âÃÜ²¢¼ÆËãhashÖµ¶Ô±È£¬´ËÊ±ÎÕÊÖ¹ı³Ì½áÊø
-     * ssl£ºÔÚÓ¦ÓÃ²ãÖ®ÏÂ£¬´«Êä²ãÖ®ÉÏ£¬×öµÄ¾ÍÊÇ¶Ô·şÎñ·½ºÍ¿Í»§¶ËÖ®¼ä»¥´«µÄÏûÏ¢ÓÃ¼ÓÃÜË½Ô¿½øĞĞ¼ÓÃÜºó·¢ËÍ£¬½ÓÊÕºóÓÃ¼ÓÃÜË½Ô¿½øĞĞ½âÃÜ
+     * tlsï¼šåšçš„æ˜¯å®¢æˆ·ç«¯å‘èµ·è¿æ¥è¯·æ±‚ï¼ˆåŒæ—¶æŠŠè‡ªå·±æ”¯æŒçš„åŠ å¯†è§„åˆ™å‘ç»™æœåŠ¡æ–¹ï¼‰ï¼Œå®¢æˆ·ç«¯éªŒè¯æœåŠ¡æ–¹å‘æ¥çš„æ ¹è¯ä¹¦ï¼ˆä»¥åŠæœåŠ¡æ–¹æŒ‘é€‰çš„ä¸€ç»„åŠ å¯†ç®—æ³•å’Œhashç®—æ³•ï¼‰ï¼Œç„¶åç”Ÿæˆéšæœºæ•°ï¼ˆå¯¹ç§°åŠ å¯†ç§é’¥ï¼‰ï¼Œç”¨æœåŠ¡æ–¹å…¬é’¥åŠ å¯†ï¼Œå‘ç»™æœåŠ¡æ–¹ï¼Œ
+     * æœåŠ¡æ–¹æ”¶åˆ°ç§é’¥è§£å¯†æˆåŠŸï¼Œè·å¾—åŠ å¯†ç§é’¥ï¼Œè®¡ç®—æ¡æ‰‹æ¶ˆæ¯hashå€¼ï¼Œç”¨åŠ å¯†ç§é’¥åŠ å¯†æ¡æ‰‹æ¶ˆæ¯ç»™å®¢æˆ·ç«¯ï¼Œå®¢æˆ·ç«¯ç”¨åŠ å¯†ç§é’¥è§£å¯†æ¡æ‰‹æ¶ˆæ¯ï¼Œè®¡ç®—hashå€¼æ˜¯å¦ä¸æœåŠ¡æ–¹å‘é€æ¥çš„ä¸€è‡´ï¼Œå†ç”¨åŠ å¯†ç§é’¥åŠ å¯†æ¡æ‰‹æ¶ˆæ¯å’Œæ¶ˆæ¯çš„hashå€¼ç»™æœåŠ¡æ–¹ï¼Œ
+     * æœåŠ¡æ–¹æ”¶åˆ°æ¡æ‰‹æ¶ˆæ¯ï¼Œç”¨åŠ å¯†ç§é’¥è§£å¯†å¹¶è®¡ç®—hashå€¼å¯¹æ¯”ï¼Œæ­¤æ—¶æ¡æ‰‹è¿‡ç¨‹ç»“æŸ
+     * sslï¼šåœ¨åº”ç”¨å±‚ä¹‹ä¸‹ï¼Œä¼ è¾“å±‚ä¹‹ä¸Šï¼Œåšçš„å°±æ˜¯å¯¹æœåŠ¡æ–¹å’Œå®¢æˆ·ç«¯ä¹‹é—´äº’ä¼ çš„æ¶ˆæ¯ç”¨åŠ å¯†ç§é’¥è¿›è¡ŒåŠ å¯†åå‘é€ï¼Œæ¥æ”¶åç”¨åŠ å¯†ç§é’¥è¿›è¡Œè§£å¯†
      *
-     * httpsÖĞ³£ÓÃµÄ
-     * ·Ç¶Ô³Æ¼ÓÃÜËã·¨£ºRSA£¬DSA/DSS
-     * ¶Ô³Æ¼ÓÃÜËã·¨£ºAES£¬RC4£¬3DES
-     * HASHËã·¨£ºMD5£¬SHA1£¬SHA256
+     * httpsä¸­å¸¸ç”¨çš„
+     * éå¯¹ç§°åŠ å¯†ç®—æ³•ï¼šRSAï¼ŒDSA/DSS
+     * å¯¹ç§°åŠ å¯†ç®—æ³•ï¼šAESï¼ŒRC4ï¼Œ3DES
+     * HASHç®—æ³•ï¼šMD5ï¼ŒSHA1ï¼ŒSHA256
      *
-     * sslÖ¤Êé»á¹ıÆÚÊÇÒòÎª£º±ÈÈçÓĞµÄ¹«Ë¾×ªÈÃ¸øÆäËû¹«Ë¾ÁË£¬Èç¹ûÖ¤Êé»¹±£ÁôÓĞĞ§£¬ÆäËû¹«Ë¾¾Í¿ÉÒÔÀûÓÃÕâ¸öÖ¤Êé×öÈÎºÎÏûÏ¢´«²¥£¬ÓÃµÄÊÇÔ­¹«Ë¾µÄÃûÒå£¬
-     * ËùÒÔ°ä·¢Ö¤ÊéÊ±ÓĞĞ§ÆÚÒ»°ãÊÇ2Äê£¬2Äêºó×Ô¶¯¹ıÆÚ£¬±ØĞëÖØĞÂÈ¥ÉêÇë
+     * sslè¯ä¹¦ä¼šè¿‡æœŸæ˜¯å› ä¸ºï¼šæ¯”å¦‚æœ‰çš„å…¬å¸è½¬è®©ç»™å…¶ä»–å…¬å¸äº†ï¼Œå¦‚æœè¯ä¹¦è¿˜ä¿ç•™æœ‰æ•ˆï¼Œå…¶ä»–å…¬å¸å°±å¯ä»¥åˆ©ç”¨è¿™ä¸ªè¯ä¹¦åšä»»ä½•æ¶ˆæ¯ä¼ æ’­ï¼Œç”¨çš„æ˜¯åŸå…¬å¸çš„åä¹‰ï¼Œ
+     * æ‰€ä»¥é¢å‘è¯ä¹¦æ—¶æœ‰æ•ˆæœŸä¸€èˆ¬æ˜¯2å¹´ï¼Œ2å¹´åè‡ªåŠ¨è¿‡æœŸï¼Œå¿…é¡»é‡æ–°å»ç”³è¯·
      */
 
     /**
-     * Å£¶Ùµü´ú·¨Çó¿ª·½  Xn+1 = (Xn + a/Xn) / 2  µ±Xn+1Ğ¡ÓÚÒ»¶¨ÖµÊ±£¬¾ÍÈÏÎªXn+1ÊÇ¿ª·ÅµÄ½á¹ûÁË
-     * ³Ë³ı·¨ Óë ÒÆÎ»ÔËËã£º
-     * ³ËÒÔÒ»¸ö2µÄn´Î·½µÄÊı£¬×óÒÆnÎ»£ºa << 1 (a*2)  a << 2 (a*4) ...
-     * ³ıÒÔÒ»¸ö2µÄn´Î·½µÄÊı£¬ÓÒÒÆnÎ»£ºa >> 1 (a/2)  a >> 2 (a/4) ...
-     * ×ª»»£ºa*9 = a*8 + a = a << 3 + a       a/9 = a/8 +1/a = a >> 3 + 1/a
+     * ç‰›é¡¿è¿­ä»£æ³•æ±‚å¼€æ–¹  Xn+1 = (Xn + a/Xn) / 2  å½“Xn+1å°äºä¸€å®šå€¼æ—¶ï¼Œå°±è®¤ä¸ºXn+1æ˜¯å¼€æ”¾çš„ç»“æœäº†
+     * ä¹˜é™¤æ³• ä¸ ç§»ä½è¿ç®—ï¼š
+     * ä¹˜ä»¥ä¸€ä¸ª2çš„næ¬¡æ–¹çš„æ•°ï¼Œå·¦ç§»nä½ï¼ša << 1 (a*2)  a << 2 (a*4) ...
+     * é™¤ä»¥ä¸€ä¸ª2çš„næ¬¡æ–¹çš„æ•°ï¼Œå³ç§»nä½ï¼ša >> 1 (a/2)  a >> 2 (a/4) ...
+     * è½¬æ¢ï¼ša*9 = a*8 + a = a << 3 + a       a/9 = a/8 +1/a = a >> 3 + 1/a
      */
     public int mySqrt(int x) {
         if (x == 0) return 0;
@@ -1655,7 +1668,7 @@ public class Algorithms {
         return r;
     }
 
-    // ¶ş·Ö²éÕÒ£¬µ±x±È½Ï´óÊ±£¬»áºÄÊ±·Ç³£¸ß
+    // äºŒåˆ†æŸ¥æ‰¾ï¼Œå½“xæ¯”è¾ƒå¤§æ—¶ï¼Œä¼šè€—æ—¶éå¸¸é«˜
     public int mySqrtERFEN(int x) {
         if (x == 0) return 0;
         int min = 1;
@@ -1725,7 +1738,7 @@ public class Algorithms {
         algorithms.RSA();
         algorithms.mySqrt(8);  // 2
 
-        // Ê®½øÖÆÕûÊı×ª»»Îª¶ş½øÖÆÕûÊı£ºÓÃ2Õû³ıÊ®½øÖÆÕûÊı£¬¿ÉÒÔµÃµ½Ò»¸öÉÌºÍÓàÊı£»ÔÙÓÃ2È¥³ıÉÌ£¬ÓÖ»áµÃµ½Ò»¸öÉÌºÍÓàÊı£¬Èç´Ë½øĞĞ£¬Ö±µ½ÉÌÎª0Ê±ÎªÖ¹£¬È»ºó°ÑÏÈµÃµ½µÄÓàÊı×÷Îª¶ş½øÖÆÊıµÄµÍÎ»ÓĞĞ§Î»£¬ºóµÃµ½µÄÓàÊı×÷Îª¶ş½øÖÆÊıµÄ¸ßÎ»ÓĞĞ§Î»£¬ÒÀ´ÎÅÅÁĞÆğÀ´
+        // åè¿›åˆ¶æ•´æ•°è½¬æ¢ä¸ºäºŒè¿›åˆ¶æ•´æ•°ï¼šç”¨2æ•´é™¤åè¿›åˆ¶æ•´æ•°ï¼Œå¯ä»¥å¾—åˆ°ä¸€ä¸ªå•†å’Œä½™æ•°ï¼›å†ç”¨2å»é™¤å•†ï¼Œåˆä¼šå¾—åˆ°ä¸€ä¸ªå•†å’Œä½™æ•°ï¼Œå¦‚æ­¤è¿›è¡Œï¼Œç›´åˆ°å•†ä¸º0æ—¶ä¸ºæ­¢ï¼Œç„¶åæŠŠå…ˆå¾—åˆ°çš„ä½™æ•°ä½œä¸ºäºŒè¿›åˆ¶æ•°çš„ä½ä½æœ‰æ•ˆä½ï¼Œåå¾—åˆ°çš„ä½™æ•°ä½œä¸ºäºŒè¿›åˆ¶æ•°çš„é«˜ä½æœ‰æ•ˆä½ï¼Œä¾æ¬¡æ’åˆ—èµ·æ¥
         int a = 10;
         String binary = "";
         while(a != 0) {
@@ -1734,7 +1747,7 @@ public class Algorithms {
             binary += String.valueOf(r);
         }
 
-        // Ê®½øÖÆĞ¡Êı×ª»»³É¶ş½øÖÆĞ¡Êı:ÓÃ2³ËÊ®½øÖÆĞ¡Êı£¬¿ÉÒÔµÃµ½»ı£¬½«»ıµÄÕûÊı²¿·ÖÈ¡³ö£¬ÔÙÓÃ2³ËÓàÏÂµÄĞ¡Êı²¿·Ö£¬ÓÖµÃµ½Ò»¸ö»ı£¬ÔÙ½«»ıµÄÕûÊı²¿·ÖÈ¡³ö£¬Èç´Ë½øĞĞ£¬Ö±µ½»ıÖĞµÄĞ¡Êı²¿·ÖÎªÁã£¬´ËÊ±0»ò1Îª¶ş½øÖÆµÄ×îºóÒ»Î»¡£»òÕß´ïµ½ËùÒªÇóµÄ¾«¶ÈÎªÖ¹
+        // åè¿›åˆ¶å°æ•°è½¬æ¢æˆäºŒè¿›åˆ¶å°æ•°:ç”¨2ä¹˜åè¿›åˆ¶å°æ•°ï¼Œå¯ä»¥å¾—åˆ°ç§¯ï¼Œå°†ç§¯çš„æ•´æ•°éƒ¨åˆ†å–å‡ºï¼Œå†ç”¨2ä¹˜ä½™ä¸‹çš„å°æ•°éƒ¨åˆ†ï¼Œåˆå¾—åˆ°ä¸€ä¸ªç§¯ï¼Œå†å°†ç§¯çš„æ•´æ•°éƒ¨åˆ†å–å‡ºï¼Œå¦‚æ­¤è¿›è¡Œï¼Œç›´åˆ°ç§¯ä¸­çš„å°æ•°éƒ¨åˆ†ä¸ºé›¶ï¼Œæ­¤æ—¶0æˆ–1ä¸ºäºŒè¿›åˆ¶çš„æœ€åä¸€ä½ã€‚æˆ–è€…è¾¾åˆ°æ‰€è¦æ±‚çš„ç²¾åº¦ä¸ºæ­¢
         double b = 0.5;
         binary = "";
         while(b != 0) {
@@ -1744,9 +1757,51 @@ public class Algorithms {
         }
     }
 
-    // ci £º branchpipeline:±àÒë + ×öÒ»Ğ©Ìá²âÇ°µÄ±£Ö¤£¬ÅÜĞÂcase£¬Ó³ÉäĞÂcase£¬Ó°ÏìÃæÆÀ¹À£¬pft£¬bda£¬Ìá²â×¼Èë
-    //       ºÏÖ÷¸É-> changepipeline:±àÒë£¬ºÏmaster hook -> masterpipeline:±àÒë£¬ÅÜÈ«Á¿master case£¬Ã¿¸öÏîÄ¿¸ºÔğÈËµÃ¹Ø×¢×Ô¼ºµÄdevºÏmasterµÄÂÌµÆÇé¿ö£¨±¨¾¯µÈ£©
-    //       À­RB -> RBpipeline:±àÒë£¬·¢²¼£¬Ô¤ÉÏÏß
+    /**
+     * ç”¨æ•°ç»„å®ç°FIFO å…ˆè¿›å…ˆå‡º é˜Ÿåˆ—
+     */
+    // ç±»çš„æ„é€ å‡½æ•°ï¼Œä¼ å…¥æ•°ç»„çš„å›ºå®šé•¿åº¦lengthï¼Œåˆ›å»ºä¸€ä¸ªæ•°ç»„
+    int length = 10;
+    char[] buffer = new char[length];
+
+    // åˆå§‹åŒ–ï¼Œå–æ•°æ®çš„ç´¢å¼•ï¼Œæ”¾æ•°æ®çš„ç´¢å¼•ï¼Œéƒ½ä¸º0
+    int tail = 0;  // ä¸‹æ¬¡putçš„ä½ç½®ï¼Œä»0å¼€å§‹ï¼Œå…ˆè¿›å…ˆå‡º
+    int head = 0;  // ä¸‹æ¬¡takeçš„ä½ç½®ï¼Œä»0å¼€å§‹ï¼Œå…ˆè¿›å…ˆå‡º
+    int count = 0; // é˜Ÿåˆ—çš„å…ƒç´ ä¸ªæ•°
+
+
+    // æ”¾æ•°æ® put
+    public synchronized void put (char c) throws InterruptedException {
+        while (count >= length) {
+            wait();
+        }
+        buffer[tail] = c;
+        tail  = (tail + 1) % length; // å¾ªç¯ä½ç½®ï¼Œå®ç°å¾ªç¯é˜Ÿåˆ—
+        count++;
+        notifyAll();
+    }
+    // å–æ•°æ® take
+    public synchronized char take () throws InterruptedException {
+        while (count <= 0) {
+            wait();
+        }
+        char c = buffer[head];
+        head = (head + 1) % length; // å¾ªç¯ä½ç½®ï¼Œå®ç°å¾ªç¯é˜Ÿåˆ—
+        count--;
+        return c;
+    }
+
+    /**
+     * ç”¨æ•°ç»„å®ç°æ ˆï¼šåè¿›åå‡ºï¼Œtailä¸å˜ï¼Œhead=tail
+     */
+
+    /**
+     * ä¼˜å…ˆé˜Ÿåˆ—ï¼šæŒ‰ç…§ä¸€ç§ä¼˜å…ˆçº§å‡ºå»ï¼Œ
+     *          FIFOé˜Ÿåˆ—æ˜¯ä¸€ç§è¶Šæ—©è¿›æ¥ä¼˜å…ˆçº§è¶Šé«˜çš„é˜Ÿåˆ—ï¼Œ
+     *          æ ˆæ˜¯ä¸€ç§è¶Šæ™šè¿›æ¥ä¼˜å…ˆçº§è¶Šé«˜çš„é˜Ÿåˆ—ã€‚
+     */
+
+
 
 
 }

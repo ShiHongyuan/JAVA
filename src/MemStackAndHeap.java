@@ -2,32 +2,32 @@ public class MemStackAndHeap {
     public static void stackTest() {
         int a = 1;
         int b = 1;
-        System.out.println("�����������ͣ��̵߳�ջ�д�Ż����������ͱ������������зű��������ݣ�����ջ���ݿ��Թ�����" +
-                "��ͬ�ı���ָ��ͬһ������" + (a == b)); // True
+        System.out.println("基本数据类型，线程的栈中存放基本数据类型变量，常量池中放变量的数据，由于栈数据可以共享，" +
+                "不同的变量指向同一个数据" + (a == b)); // True
 
         String s1 = "1";
         String s2 = "1";
-        System.out.println("String���ǻ����������ͣ�ջ�д������ֵ���ã��������д������ֵ��������ջ���ݿ��Թ�����" +
-                "��ͬ������ָ��ͬһ������ֵ" + (s1 == s2)); // True
+        System.out.println("String不是基本数据类型，栈中存放字面值引用，常量池中存放字面值对象，由于栈数据可以共享，" +
+                "不同的引用指向同一个字面值" + (s1 == s2)); // True
 
         String ss1 = new String("1");
         String ss2 = new String("1");
-        System.out.println("new��������ڶ��п����ڴ�ռ䣬ջ�д�Ŷ���ľ��������������ñ����������ڶ��еĶ��󲻿��Թ�����" +
-                "ջ�в�ͬ�Ķ�����ָ����в�ͬ�Ķ���" + (ss1 == ss2)); // False
+        System.out.println("new的类对象在堆中开辟内存空间，栈中存放对象的句柄（即对象的引用变量），由于堆中的对象不可以共享，" +
+                "栈中不同的对象句柄指向堆中不同的对象" + (ss1 == ss2)); // False
 
         System.out.println(s1 == ss1); // False
 
         /**
-         * ����ͨ�� ��ֵ������ ����ʵ�δ��βε�ԭ��
-         * 1�������������ͺͳ�����ֵ��ֵ��ֵ
-         * 2�����������õ�ַ��ֵ���������µĿռ�
+         * 但是通过 赋值操作符 就是实参传形参的原理
+         * 1、基本数据类型和常量赋值是值赋值
+         * 2、对象是引用地址赋值，不开辟新的空间
          */
         String s11 = "123";
-        String s22 = s11;                  // ֵ���ƣ�s1��s2�����ָ�����صĲ�ͬ�ĵ�ַ
+        String s22 = s11;                  // 值复制，s1和s2存的是指向常量池的不同的地址
         System.out.println(s11 == s22);    // true
 
         String s111 = new String("123");
-        String s222 = s111;                // ���õ�ַ���ƣ�s11��s22�������ͬ��ָ����ڴ�ĵ�ַ��û�п����µĿռ�
+        String s222 = s111;                // 引用地址复制，s11和s22存的是相同的指向堆内存的地址，没有开辟新的空间
         System.out.println(s111 == s222);  // true
 
         System.out.println(s11 == s222);   // false
@@ -37,11 +37,11 @@ public class MemStackAndHeap {
     public static void stringEqualTest() {
         String ss3 = new String("2");
         String ss4 = new String("2");
-        System.out.println("��װ���ͣ���ͬ������ָ��ͬ�ĶѶ���==��ʾ���ö�����ͬ����True������false " + (ss3 == ss4)); // False
+        System.out.println("包装类型：不同的引用指向不同的堆对象，==表示引用对象相同返回True，否则false " + (ss3 == ss4)); // False
 
         String ss5 = new String("2");
         String ss6 = new String("2");
-        System.out.println("��װ���ͣ���ͬ�ĶѶ�����ַ�������ֵ��ȣ�equals��ʾ��������ֵ��ͬ����True " + (ss5.equals(ss6))); // True
+        System.out.println("包装类型：不同的堆对象的字符串字面值相等，equals表示对象字面值相同返回True " + (ss5.equals(ss6))); // True
 
 
     }
@@ -50,8 +50,8 @@ public class MemStackAndHeap {
         CustomObject obj1 = new CustomObject();
         CustomObject obj2 = new CustomObject();
         DecimalToBinary d = new DecimalToBinary();
-        System.out.println("�Զ���Object����ͬ������ָ��ͬ�ĶѶ���==��ʾ���ö�����ͬ����True������false " + (obj1 == obj2)); // False
-        System.out.println("�Զ���Object����ͬ�ĶѶ������ȣ�equals��==һ����ʾ���ö�����ͬ����True������false " + (obj1.equals(obj2))); // False
+        System.out.println("自定义Object：不同的引用指向不同的堆对象，==表示引用对象相同返回True，否则false " + (obj1 == obj2)); // False
+        System.out.println("自定义Object：不同的堆对象的相等，equals跟==一样表示引用对象相同返回True，否则false " + (obj1.equals(obj2))); // False
     }
 
     class CustomObject {
@@ -61,19 +61,19 @@ public class MemStackAndHeap {
 
 
     public static void finalTest() {
-        // ��������ȷ��B1 = "b"��������ȷ���ĳ�����ֱ��˫���Ŷ���ĳ���û�������ˣ����ܱ����b1 = "ab"���ͻ���볣����;
+        // 编译期能确定B1 = "b"，编译期确定的常量跟直接双引号定义的常量没有区别了，就能编译成b1 = "ab"，就会放入常量池;
         String a1 = "ab";
         final String B1 = "b";
         String b1 = "a" + B1;
         System.out.println((a1 == b1)); //result = true
 
-        // �����ڲ���ȷ��bb = "b"��b = "a" + bb����String��new��ʽ�����µĶ����ַ���ƴ����String����ķ���
+        // 编译期不能确定bb = "b"，b = "a" + bb会用String的new方式开辟新的对象，字符串拼接是String对象的方法
         String a = "ab";
         String bb = "b";
         String b = "a" + bb;
         System.out.println((a == b)); //result = false
 
-        // �����ڲ���ȷ��getBB() = "b"��b = "a" + B2����String��new��ʽ�����µĶ����ַ���ƴ����String����ķ���
+        // 编译期不能确定getBB() = "b"，b = "a" + B2会用String的new方式开辟新的对象，字符串拼接是String对象的方法
         String a2 = "ab";
         final String B2 = getBB();
         String b2 = "a" + B2;
@@ -103,53 +103,53 @@ public class MemStackAndHeap {
 
     public static void main(String[] args) {
         /****************************************************************************************
-         * �߳�ջ�ڴ����ŵ��ǼĴ��ٶȿ졢�����ڼĴ�����ջ���ݿ��Թ�����ȱ�������ݵĴ�С�����������Ǳ���ȷ���ģ�������
-         * ��ջ�ڴ��еı��������ñ����˳����������Java���Զ��ͷŵ�Ϊ�ñ�����������ڴ�ռ䣬���ڴ�ռ�����������������á�
-         * ���ڹ��������ݣ���û������ָ������ʱ��������ݾͻ���ʧ��������ȴ����������������ա�
-         * ջ�еı���ָ����ڴ��еı����������Java�е�ָ��
-         * �߳�˽��
+         * 线程栈内存其优点是寄存速度快、仅次于寄存器，栈数据可以共享、缺点是数据的大小及生存周期是必须确定的，不够灵活。
+         * 在栈内存中的变量，当该变量退出该作用域后，Java会自动释放掉为该变量所分配的内存空间，该内存空间可以立即被另作他用。
+         * 对于共享的数据，当没有引用指向数据时，这个数据就会消失，而不会等待垃圾回收器来回收。
+         * 栈中的变量指向堆内存中的变量，这就是Java中的指针
+         * 线程私有
          ****************************************************************************************/
 
 
         /****************************************************************************************
-         * ���ڴ����������new�����Ķ�������顣�������ʼ�����Բ�new������Ҳ�Ǽ̳ж���
-         * �ѵ������ǿ��Զ�̬�ط����ڴ��С��������Ҳ�������ȸ��߱���������Ϊ����������ʱ��̬�����ڴ�ģ���ȱ���ǣ�����Ҫ������ʱ��̬ �����ڴ棬��ȡ�ٶȽ�����
-         * �ڶ��з�����ڴ棬��Java��������Զ�������������������GC����
-         * ����Ͷ�����û�����ñ���ָ������ʱ�򣬲ű�Ϊ�����������ڱ�ʹ�ã����� Ȼռ���ڴ�ռ䲻�ţ�������һ����ȷ����ʱ�䱻�������������ߣ��ͷŵ�������Ҳ�� Java �Ƚ�ռ�ڴ��ԭ��
+         * 堆内存用来存放由new创建的对象和数组。（数组初始化可以不new，但是也是继承对象）
+         * 堆的优势是可以动态地分配内存大小，生存期也不必事先告诉编译器，因为它是在运行时动态分配内存的，但缺点是，由于要在运行时动态 分配内存，存取速度较慢。
+         * 在堆中分配的内存，由Java虚拟机的自动垃圾回收器来管理（GC）。
+         * 数组和对象在没有引用变量指向它的时候，才变为垃圾，不能在被使用，但仍 然占据内存空间不放，在随后的一个不确定的时间被垃圾回收器收走（释放掉）。这也是 Java 比较占内存的原因。
          *
-         * �ں��������β�ʱ��ʵ���Ƕ��ڴ�ʱ��ʵ�λ������ı䣬ʵ���ǳ����غ�ջ��ʱ��ʵ�β������ı�
-         * class�ĳ�Ա���������ڶ���
-         * �̹߳���
+         * 在函数传递形参时，实参是堆内存时，实参会联动改变，实参是常量池和栈中时，实参不联动改变
+         * class的成员变量对象在堆中
+         * 线程共用
          ****************************************************************************************/
 
         /****************************************************************************************
-         * �������ں�����method area�У��ڱ����ھ�ȷ���ˣ��߳�ջ�ڴ棬���ڴ涼�������ڲſ���ȷ��������method area��
-         * ���ֱ�ӳ�����string,integer�� floating point�������Ͷ��������ͣ��ֶκͷ����ķ������ã�����ȡ�
-         * final���εı�����ջ�У�ֵ���ڳ�������
-         * �̹߳���
+         * 常量池在函数的method area中，在编译期就确定了，线程栈内存，堆内存都在运行期才开辟确定，不在method area里
+         * 存放直接常量（string,integer和 floating point常量）和对其他类型，字段和方法的符号引用，代码等。
+         * final修饰的变量在栈中，值都在常量池中
+         * 线程共用
          ****************************************************************************************/
 
         /*****
-         * �����ַ�����һ�������װ����
-         * ���������ö��Ǵ洢��ջ�еģ�����Ǳ������Ѿ�������(ֱ����˫���Ŷ����)�ľʹ洢�ڳ������У�����������ڣ�new�����ģ�����ȷ���ľʹ洢�ڶ��С�
-         * ����ͨ��new����һ���ַ���������Ϊ��china����ʱ������ȥ�������в����Ƿ��Ѿ����ˡ�china���������û�����ڳ������д���һ�����ַ�������Ȼ������ٴ���һ���������дˡ�china������Ŀ�������
-         * ��Ҳ�����е������⣺Strings=newString(��xyz��);������������һ���������������������ԭ��û�С�xyz��,��������
-         * ��Ȼ��ֱ����˫���Ŷ�����ַ�����Ϊ��china�����ı�������ֱ��ָ�����صġ�china������
+         * 对于字符串，一种特殊包装类型
+         * 其对象的引用都是存储在栈中的，如果是编译期已经创建好(直接用双引号定义的)的就存储在常量池中，如果是运行期（new出来的）才能确定的就存储在堆中。
+         * 对于通过new产生一个字符串（假设为“china”）时，会先去常量池中查找是否已经有了“china”对象，如果没有则在常量池中创建一个此字符串对象，然后堆中再创建一个常量池中此”china”对象的拷贝对象。
+         * 这也就是有道面试题：Strings=newString(“xyz”);产生几个对象？一个或两个，如果常量池中原来没有”xyz”,就是两个
+         * 当然，直接用双引号定义的字符串（为“china”）的变量可以直接指向常量池的“china”对象
          */
 
         /********************************************************
-         * ������������
+         * 基本数据类型
          * int, short, long, byte, float, double, boolean, char
-         * ���ڻ����������ͣ������ֵ�ڳ������У��������߳�ջ��
+         * 对于基本数据类型，其对象值在常量池中，引用在线程栈内
          ********************************************************/
         MemStackAndHeap.stackTest();
 
 
 
-        // ��װ���͵� == �� equals
+        // 包装类型的 == 和 equals
         stringEqualTest();
 
-        // �Զ���object�� == �� equals
+        // 自定义object的 == 和 equals
         MemStackAndHeap memStackAndHeap = new MemStackAndHeap();
         memStackAndHeap.objectEqualTest();
 
@@ -162,9 +162,9 @@ public class MemStackAndHeap {
         }
 
         int c = 666;
-        Integer a = 666;   // ʹ�ó������еĶ���
-        Integer b = new Integer(666); // �����¶���
-        Integer d = new Integer(666); // �����¶���
+        Integer a = 666;   // 使用常量池中的对象
+        Integer b = new Integer(666); // 创建新对象
+        Integer d = new Integer(666); // 创建新对象
         if (a.equals(c)) {
             System.out.println("equals true");
         }
@@ -178,22 +178,22 @@ public class MemStackAndHeap {
             System.out.println("equals true");
         }
 
-        System.out.println(a == c); // true  Integer��int�Ƚ�ʱ���Զ�����������ֵ�Ƚϣ�����a��c�ǲ�ͬ�ĳ����ض���
-        System.out.println(b == c); // true  Integer��int�Ƚ�ʱ���Զ�����������ֵ�Ƚϣ�����b��c�ǲ�ͬ�Ķ���
-        System.out.println(b == a); // false Integerֱ�ӱȽϣ�һ���ڳ����أ�һ���ڶ��У���ͬ��Integer���󣬷���false
-        System.out.println(d == b); // false Integerֱ�ӱȽϣ��ڶ��еĲ�ͬ��Integer���󣬷���false
+        System.out.println(a == c); // true  Integer和int比较时，自动拆箱后进行数值比较，但是a和c是不同的常量池对象
+        System.out.println(b == c); // true  Integer和int比较时，自动拆箱后进行数值比较，但是b和c是不同的对象
+        System.out.println(b == a); // false Integer直接比较，一个在常量池，一个在堆中，不同的Integer对象，返回false
+        System.out.println(d == b); // false Integer直接比较，在堆中的不同的Integer对象，返回false
 
         Integer i11 = 333;
         Integer i22 = 333;
-        System.out.println(i11 == i22);// ���false  �ڳ���-128-127ʱ��Integer���ڳ������д�������
+        System.out.println(i11 == i22);// 输出false  在超出-128-127时，Integer会在常量池中创建对象
 
         Integer i33 = 3;
         Integer i44 = 3;
-        System.out.println(i33 == i44);// true ��-128-127��Χ��ʱ��Integer����intһ��ʹ�ó����صĻ�����󣬲��ᴴ���µĶ���
+        System.out.println(i33 == i44);// true 在-128-127范围内时，Integer会像int一样使用常量池的缓存对象，不会创建新的对象
 
 
-        // ������������ʵ����ֵ���ݣ�String�Ͱ�װ���ʹ��ݵ�ʵ���ǵ�ַ����������������ָ���ֵ��final�ģ������ڻ��½������൱��ֵ����
-        // ���˻����������ͣ�String�Ͱ�װ�����ⶼ�����ô��ݣ��ı�ʵ�ζ����ֵ��ԭֵҲ����
+        // 基本数据类型实参是值传递，String和包装类型传递的实参是地址，但是由于其引用指向的值是final的，函数内会新建对象，相当于值传递
+        // 除了基本数据类型，String和包装类型外都是引用传递，改变实参对象的值，原值也改了
 
         Integer intA = new Integer(6);
         Integer intB  = IntegerTrans(intA);
@@ -208,10 +208,10 @@ public class MemStackAndHeap {
         memStackAndHeap.compareObjectTrans();
 
 
-        // ÿһ��ѭ���������µĻ��������������ã���ѭ����ÿһ����󶼻�������һ�����ɵ����ö���
-        // ��һ��ѭ������ǰ���ö���test = null���ᱻgc��������
+        // 每一次循环都生成新的基本数据类型引用，在循环的每一次完后都会销毁这一次生成的引用对象
+        // 在一次循环结束前，让对象test = null，会被gc立即回收
         for (int i = 0; i< 3; i++) {
-//            System.out.println(testValue == testValue1);   // ����testValue��testValue1������
+//            System.out.println(testValue == testValue1);   // 报错testValue、testValue1不存在
             int testValue = i;
             int testValue1 = testValue;
         }
@@ -236,9 +236,9 @@ public class MemStackAndHeap {
     }
 
     public void compareObjectTrans (TestClass a) {
-        // ֻҪ��new���ͻ��������ɶ�������·������ã�ԭ���û��ڣ�ָ��ԭ�����������ɵ���������һ����ָ���¶���
-        // Integer��(String���ͺͰ�װ����)��value�ֶ���final�ģ�һ��integer��(String���ͺͰ�װ����)����֮������ֵ�Ͳ��ܱ��޸ģ��� index++ ��ʱ��Integer(String���ͺͰ�װ����)�Ǵ���һ���µ���
-        // �ڷ�����һ������ָ����һ���µĶ����µ�����ָ���µĶ��󣬳��˷�����ԭ�������������ǲ���
+        // 只要有new，就会重新生成对象和重新分配引用，原引用还在，指向原对象，重新生成的引用是另一个，指向新对象
+        // Integer类(String类型和包装类型)的value字段是final的，一旦integer类(String类型和包装类型)创建之后他的值就不能被修改，在 index++ 的时候Integer(String类型和包装类型)是创建一个新的类
+        // 在方法中一个引用指向了一个新的对象，新的引用指向新的对象，出了方法，原来的引用内容是不变
         TestClass b = new TestClass(10);
         a = b;
     }

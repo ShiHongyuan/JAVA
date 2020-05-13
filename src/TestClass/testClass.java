@@ -15,5 +15,9 @@ public class testClass {
         x2.testStatic();
         CreateClass.testStatic();
         int var2 = x2.var;
+        if (true) {
+            int shy = 10;
+        }
+        System.out.println(shy);
     }
 }

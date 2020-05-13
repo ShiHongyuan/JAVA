@@ -1,4 +1,4 @@
-// 引入map
+// 寮曞叆map
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class CharAndStringTransform {
     static void fun() {
-        // MAP的KV类型一定要是Object，不能是int
+        // MAP鐨凨V绫诲瀷涓�瀹氳鏄疧bject锛屼笉鑳芥槸int
         Map<String, Integer> map = new HashMap<String, Integer>();
     }
     static char stringToChar(String s, int n) {

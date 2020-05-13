@@ -4,41 +4,48 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * å¼‚å¸¸åˆ†ä¸ºä¸¤å¤§ç±»ï¼š
+ *      1. java.lang.Exceptionçš„å­ç±»
+ *          é€ æˆçš„å¼‚å¸¸çŠ¶æ€åœ¨è¿è¡Œè¿‡ç¨‹ä¸­å¯ä»¥æ¢å¤ï¼Œè§£å†³å¼‚å¸¸çŠ¶æ€çš„ä»£ç å¸è½½catchè¯­å¥å—é‡Œã€‚
+ *      2. java.lang.RuntimeExceptionçš„å­ç±»
+ *          é€ æˆçš„å¼‚å¸¸çŠ¶æ€åœ¨è¿è¡Œè¿‡ç¨‹ä¸­ä¸èƒ½æ¢å¤ï¼Œè¦ä¹ˆå¿½ç•¥ï¼Œè¦ä¹ˆä¸­æ­¢ç¨‹åºï¼Œé€šå¸¸æ˜¯ç¼–ç¨‹é”™è¯¯ã€‚
+ */
 public class ExceptionClass {
     public static void main(String[] args) {
 
-        /** Ö»ÒªÓĞÒ»¸ö²Ù×÷ÊıÊÇ¸¡µã£¬ËãÊı¾Í»á±ä³É¸¡µãÊı¼ÆËã
-         * ¸¡µã¼ÆËã³ıÊıÊÇ0£¬²»»áÒì³£
-         * ÕûÊı¼ÆËã³ıÊıÊÇ0£¬»á±¨Òì³£ java.lang.ArithmeticException
+        /** åªè¦æœ‰ä¸€ä¸ªæ“ä½œæ•°æ˜¯æµ®ç‚¹ï¼Œç®—æ•°å°±ä¼šå˜æˆæµ®ç‚¹æ•°è®¡ç®—
+         * æµ®ç‚¹è®¡ç®—é™¤æ•°æ˜¯0ï¼Œä¸ä¼šå¼‚å¸¸
+         * æ•´æ•°è®¡ç®—é™¤æ•°æ˜¯0ï¼Œä¼šæŠ¥å¼‚å¸¸ java.lang.ArithmeticException
          * */
         System.out.println(2.0/0.0);    // Infinity
-        System.out.println(2.0/0);      // Infinity ¸¡µã¼ÆËã³ıÊıÊÇ0£¬²»»áÒì³£
-        System.out.println(2/0.0);      // Infinity ¸¡µã¼ÆËã³ıÊıÊÇ0£¬²»»áÒì³£
+        System.out.println(2.0/0);      // Infinity æµ®ç‚¹è®¡ç®—é™¤æ•°æ˜¯0ï¼Œä¸ä¼šå¼‚å¸¸
+        System.out.println(2/0.0);      // Infinity æµ®ç‚¹è®¡ç®—é™¤æ•°æ˜¯0ï¼Œä¸ä¼šå¼‚å¸¸
 
-        System.out.println(0/0.0);      // NaN   ¸¡µã¼ÆËã³ıÊıÊÇ0£¬²»»áÒì³£
-        System.out.println(0.0/0);      // NaN   ¸¡µã¼ÆËã³ıÊıÊÇ0£¬²»»áÒì³£
+        System.out.println(0/0.0);      // NaN   æµ®ç‚¹è®¡ç®—é™¤æ•°æ˜¯0ï¼Œä¸ä¼šå¼‚å¸¸
+        System.out.println(0.0/0);      // NaN   æµ®ç‚¹è®¡ç®—é™¤æ•°æ˜¯0ï¼Œä¸ä¼šå¼‚å¸¸
         System.out.println(0.0/0);      // NaN
 
-//        System.out.println(0/0);        // ÕûÊı¼ÆËã£¬±¨Òì³£java.lang.ArithmeticException: / by zero
-//        System.out.println(2/0);        // ÕûÊı¼ÆËã£¬±¨Òì³£java.lang.ArithmeticException: / by zero
+//        System.out.println(0/0);        // æ•´æ•°è®¡ç®—ï¼ŒæŠ¥å¼‚å¸¸java.lang.ArithmeticException: / by zero
+//        System.out.println(2/0);        // æ•´æ•°è®¡ç®—ï¼ŒæŠ¥å¼‚å¸¸java.lang.ArithmeticException: / by zero
 
         /**
-         * ³¬¹ıintµÄ×î´óÖµ£¬±¾À´Ó¦¸Ã±¨ÉÏÒçÒì³£µÄ£¬µ«ÊÇjvm²»»á±¨´í£¬Ö±½ÓÎª¸ºÊıµÄ×îĞ¡Öµ£¬
+         * è¶…è¿‡intçš„æœ€å¤§å€¼ï¼Œæœ¬æ¥åº”è¯¥æŠ¥ä¸Šæº¢å¼‚å¸¸çš„ï¼Œä½†æ˜¯jvmä¸ä¼šæŠ¥é”™ï¼Œç›´æ¥ä¸ºè´Ÿæ•°çš„æœ€å°å€¼ï¼Œ
          * */
         System.out.println(Integer.MAX_VALUE + 1);   // -2147483648
 
 
         /**
-         * 1¡¢Ãâ¼ìÒì³££º³ÌĞòÉè¼ÆµÄ Âß¼­  ´íÎó£¨class£¬fileÕÒ²»µ½²»½ĞÂß¼­´íÎó£©£¬Ò»¶¨Òª¾ÀÕı³ÌĞò
-         * £¨1£©ÏµÍ³´íÎó£ºError £º LinkageErrorÀàÒÀÀµ£¬Ò»¸öÀàµÄ±àÒëÔì³ÉÁíÒ»¸öÒÀÀµÀà²»¼æÈİ  VirtualMachineErrorĞéÄâ»úÒì³£
-         * £¨2£©ÔËĞĞÊ±Òì³££ºRuntimeException£ºArithmeticException NullPointerException ArrayIndexOutOfBoundsException IllegalArgumentException´«µİ·Ç·¨²ÎÊı
+         * 1ã€å…æ£€å¼‚å¸¸ï¼šç¨‹åºè®¾è®¡çš„ é€»è¾‘  é”™è¯¯ï¼ˆclassï¼Œfileæ‰¾ä¸åˆ°ä¸å«é€»è¾‘é”™è¯¯ï¼‰ï¼Œä¸€å®šè¦çº æ­£ç¨‹åº
+         * ï¼ˆ1ï¼‰ç³»ç»Ÿé”™è¯¯ï¼šError ï¼š LinkageErrorç±»ä¾èµ–ï¼Œä¸€ä¸ªç±»çš„ç¼–è¯‘é€ æˆå¦ä¸€ä¸ªä¾èµ–ç±»ä¸å…¼å®¹  VirtualMachineErrorè™šæ‹Ÿæœºå¼‚å¸¸
+         * ï¼ˆ2ï¼‰è¿è¡Œæ—¶å¼‚å¸¸ï¼šRuntimeExceptionï¼šArithmeticException NullPointerException ArrayIndexOutOfBoundsException IllegalArgumentExceptionä¼ é€’éæ³•å‚æ•°
          *
-         * 2¡¢±Ø¼ìÒì³££ºÅ¼·¢µÄ´íÎó£¬²»Ò»¶¨Òª¾ÀÕıµÄ
-         * ClassNotFoundException IOException (FileNotFoundExceptionÕë¶Ô File¶ÔÏó ²»´æÔÚµÄÇé¿ö extends IOException)
+         * 2ã€å¿…æ£€å¼‚å¸¸ï¼šå¶å‘çš„é”™è¯¯ï¼Œä¸ä¸€å®šè¦çº æ­£çš„
+         * ClassNotFoundException IOException (FileNotFoundExceptioné’ˆå¯¹ Fileå¯¹è±¡ ä¸å­˜åœ¨çš„æƒ…å†µ extends IOException)
          *
-         * extends Throwable£º
-         * 1¡¢´íÎó£ºError extends Throwable
-         * 2¡¢Òì³££ºClassNotFoundException IOException RuntimeException extends Exception (Exception extends Throwable)
+         * extends Throwableï¼š
+         * 1ã€é”™è¯¯ï¼šError extends Throwable
+         * 2ã€å¼‚å¸¸ï¼šClassNotFoundException IOException RuntimeException extends Exception (Exception extends Throwable)
          */
 
         /**
@@ -46,21 +53,21 @@ public class ExceptionClass {
          */
 
         /**
-         * java.lang.Exception¹¹Ôì·½·¨
+         * java.lang.Exceptionæ„é€ æ–¹æ³•
          */
-        // ÎŞ²Î¹¹Ôì
+        // æ— å‚æ„é€ 
         System.out.println( new ArithmeticException().getMessage() );             // null
-        // ÓĞ²Î¹¹Ôì
+        // æœ‰å‚æ„é€ 
         System.out.println( new ArithmeticException("message").getMessage() );    // message
-        // ±Ø¼ìÒì³£¶ÀÓĞµÄÇ¶Ì×¹¹Ôì·½·¨: ¿ÉÒÔ°üº¬ÁíÒ»¸öÒì³££¬ÔÚÒì³£Õ»Àï£¬µ«ÊÇfirstÕ»»¹ÊÇ111
+        // å¿…æ£€å¼‚å¸¸ç‹¬æœ‰çš„åµŒå¥—æ„é€ æ–¹æ³•: å¯ä»¥åŒ…å«å¦ä¸€ä¸ªå¼‚å¸¸ï¼Œåœ¨å¼‚å¸¸æ ˆé‡Œï¼Œä½†æ˜¯firstæ ˆè¿˜æ˜¯111
         new IOException("111", new ArithmeticException("222"));
         new Exception("111", new IOException("222"));
         new IOException("111", new Exception("222"));
 
         /**
-         * Å×³öÒì³££º±Ø¼ìÒì³£ || Ãâ¼ìÒì³£  ±»µ÷ÓÃÕßÅ×³öÒì³£¸øµ÷ÓÃÕß£¬Ö»ÓĞµ÷ÓÃÕß²ÅÖªµÀÊ²Ã´Òì³£Òª×öÊ²Ã´
+         * æŠ›å‡ºå¼‚å¸¸ï¼šå¿…æ£€å¼‚å¸¸ || å…æ£€å¼‚å¸¸  è¢«è°ƒç”¨è€…æŠ›å‡ºå¼‚å¸¸ç»™è°ƒç”¨è€…ï¼Œåªæœ‰è°ƒç”¨è€…æ‰çŸ¥é“ä»€ä¹ˆå¼‚å¸¸è¦åšä»€ä¹ˆ
          */
-        // Í¬Ò»¸ö·½·¨ÀïÅ×³öÒì³£
+        // åŒä¸€ä¸ªæ–¹æ³•é‡ŒæŠ›å‡ºå¼‚å¸¸
         try {
             java.util.Scanner scanner = new Scanner(new File("hhh.txt"));
             System.out.println("file exits");
@@ -81,8 +88,8 @@ public class ExceptionClass {
 
         }
 
-        // ±»µ÷ÓÃµÄ·½·¨Å×³öÒì³££¬µ÷ÓÃ·½×Ô¼º´¦Àí£¬±»µ÷ÓÃµÄ·½·¨Èç¹û²»ÏÔÊ½Å×³ö£¬Ò²»áÖ±½ÓÅ×³ö£¬µ÷ÓÃ·½Òª²¶»ñ£¬·ñÔò¾ÍÔÙÏòÍâÅ×³ö£¬Ö±µ½¶¼Ã»´¦Àí£¬³ÌĞòÖÕÖ¹
-        // ±»µ÷ÓÃµÄ·½·¨ÔÚÄÄÀï·¢ÉúÒì³£¾ÍÔÚÄÄÀïÖÕÖ¹
+        // è¢«è°ƒç”¨çš„æ–¹æ³•æŠ›å‡ºå¼‚å¸¸ï¼Œè°ƒç”¨æ–¹è‡ªå·±å¤„ç†ï¼Œè¢«è°ƒç”¨çš„æ–¹æ³•å¦‚æœä¸æ˜¾å¼æŠ›å‡ºï¼Œä¹Ÿä¼šç›´æ¥æŠ›å‡ºï¼Œè°ƒç”¨æ–¹è¦æ•è·ï¼Œå¦åˆ™å°±å†å‘å¤–æŠ›å‡ºï¼Œç›´åˆ°éƒ½æ²¡å¤„ç†ï¼Œç¨‹åºç»ˆæ­¢
+        // è¢«è°ƒç”¨çš„æ–¹æ³•åœ¨å“ªé‡Œå‘ç”Ÿå¼‚å¸¸å°±åœ¨å“ªé‡Œç»ˆæ­¢
         try {
             quotient(1, 0);
         }
@@ -93,12 +100,12 @@ public class ExceptionClass {
 
 
         /**
-         * ÉùÃ÷Òì³££º Ò»¸ö·½·¨ÒªÅ×³öÒ»¸ö±Ø¼ìÒì³££¬±ØĞëÒªÉùÃ÷Òì³£ throws
+         * å£°æ˜å¼‚å¸¸ï¼š ä¸€ä¸ªæ–¹æ³•è¦æŠ›å‡ºä¸€ä¸ªå¿…æ£€å¼‚å¸¸ï¼Œå¿…é¡»è¦å£°æ˜å¼‚å¸¸ throws
          *
-         * ±Ø¼ìÒì³££º±»µ÷ÓÃÕßÓĞÉùÃ÷µÄÒì³££¬µ÷ÓÃÕß±ØĞë´¦Àí£¬·ñÔò±àÒë±¨´í£¬ÒªÃ´ÔÙÉùÃ÷£¬ÒªÃ´²¶»ñ
-         * Ãâ¼ìÒì³££º±»µ÷ÓÃÕßÓĞÉùÃ÷µÄÒì³££¬µ÷ÓÃÕß²»Ò»¶¨Òª´¦Àí£¬Ò²²»»á±àÒë±¨´í
+         * å¿…æ£€å¼‚å¸¸ï¼šè¢«è°ƒç”¨è€…æœ‰å£°æ˜çš„å¼‚å¸¸ï¼Œè°ƒç”¨è€…å¿…é¡»å¤„ç†ï¼Œå¦åˆ™ç¼–è¯‘æŠ¥é”™ï¼Œè¦ä¹ˆå†å£°æ˜ï¼Œè¦ä¹ˆæ•è·
+         * å…æ£€å¼‚å¸¸ï¼šè¢«è°ƒç”¨è€…æœ‰å£°æ˜çš„å¼‚å¸¸ï¼Œè°ƒç”¨è€…ä¸ä¸€å®šè¦å¤„ç†ï¼Œä¹Ÿä¸ä¼šç¼–è¯‘æŠ¥é”™
          */
-        // Å×³öIOException£ºthrows IOException
+        // æŠ›å‡ºIOExceptionï¼šthrows IOException
         try {
             filenotfound();
         } catch (FileNotFoundException ex) {
@@ -107,47 +114,47 @@ public class ExceptionClass {
         }
 
         /**
-         * ÉùÃ÷Òì³££º¶ººÅ·Ö¸ôÉùÃ÷¶à¸öÒì³££¬±ØĞë²¶»ñ´¦ÀíÃ¿¸ö±Ø¼ìÒì³££¬Ãâ¼ìÒì³£¿ÉÒÔ²»´¦ÀíArrayIndexOutOfBoundsExceptionÃ»´¦Àí
+         * å£°æ˜å¼‚å¸¸ï¼šé€—å·åˆ†éš”å£°æ˜å¤šä¸ªå¼‚å¸¸ï¼Œå¿…é¡»æ•è·å¤„ç†æ¯ä¸ªå¿…æ£€å¼‚å¸¸ï¼Œå…æ£€å¼‚å¸¸å¯ä»¥ä¸å¤„ç†ArrayIndexOutOfBoundsExceptionæ²¡å¤„ç†
          */
         try {
             multiexception();
         }
         catch (FileNotFoundException ex) {
             System.out.println("FileNotFoundException  ");
-            for(StackTraceElement s : ex.getStackTrace()) {  // ·µ»ØÕ»¸ú×ÙĞÅÏ¢µÄÊı×é
-                System.out.println(s.getFileName());         // ÎÄ¼şÃû
-                System.out.println(s.getClassName());        // ÀàÃû
-                System.out.println(s.getMethodName());       // ·½·¨Ãû
-                System.out.println(s.getLineNumber());       // ĞĞºÅ
+            for(StackTraceElement s : ex.getStackTrace()) {  // è¿”å›æ ˆè·Ÿè¸ªä¿¡æ¯çš„æ•°ç»„
+                System.out.println(s.getFileName());         // æ–‡ä»¶å
+                System.out.println(s.getClassName());        // ç±»å
+                System.out.println(s.getMethodName());       // æ–¹æ³•å
+                System.out.println(s.getLineNumber());       // è¡Œå·
             }
         }
         catch (IOException ex) {
-            ex.printStackTrace();                      // ´òÓ¡throwable¶ÔÏó£¬µ÷ÓÃÕ»¸ú×ÙĞÅÏ¢
+            ex.printStackTrace();                      // æ‰“å°throwableå¯¹è±¡ï¼Œè°ƒç”¨æ ˆè·Ÿè¸ªä¿¡æ¯
         }
         catch (ClassNotFoundException ex) {
-            System.out.println(ex.getMessage());       // ·µ»Ø´´½¨Õâ¸ö¶ÔÏó´´½¨Ê±µÄÃèÊöĞÅÏ¢
+            System.out.println(ex.getMessage());       // è¿”å›åˆ›å»ºè¿™ä¸ªå¯¹è±¡åˆ›å»ºæ—¶çš„æè¿°ä¿¡æ¯
         }
-        // ¸¸ÀàµÄExceptionÒ»¶¨ÒªÔÚ×ÓÀàºóÃæ£¬²»È»¸¸Àà¶¼²¶»ñÁË£¬×ÓÀàÔÚºóÃæ²¶»ñ¾ÍÃ»ÓĞÒâÒåÁË£¬»á±àÒë±¨´í
+        // çˆ¶ç±»çš„Exceptionä¸€å®šè¦åœ¨å­ç±»åé¢ï¼Œä¸ç„¶çˆ¶ç±»éƒ½æ•è·äº†ï¼Œå­ç±»åœ¨åé¢æ•è·å°±æ²¡æœ‰æ„ä¹‰äº†ï¼Œä¼šç¼–è¯‘æŠ¥é”™
         catch (Exception ex) {
-            System.out.println(ex.toString());         // ·µ»Ø£ºÒì³£ÀàÃû×Ö£ºgetMessage()
+            System.out.println(ex.toString());         // è¿”å›ï¼šå¼‚å¸¸ç±»åå­—ï¼šgetMessage()
         }
 
         /**
-         * Á´Ê½Òì³££º¶à¸öÇ¶Ì×µ÷ÓÃµÄ·½·¨£¬×Ó·½·¨ÔÚcatchÀïÖØĞÂÅ×³ö×Ó×Ó·½·¨µÄÒì³£¶ÔÏó£¬¸¸·½·¨¿ÉÒÔ²¶»ñ2¸öÒì³£¶ÔÏó
+         * é“¾å¼å¼‚å¸¸ï¼šå¤šä¸ªåµŒå¥—è°ƒç”¨çš„æ–¹æ³•ï¼Œå­æ–¹æ³•åœ¨catché‡Œé‡æ–°æŠ›å‡ºå­å­æ–¹æ³•çš„å¼‚å¸¸å¯¹è±¡ï¼Œçˆ¶æ–¹æ³•å¯ä»¥æ•è·2ä¸ªå¼‚å¸¸å¯¹è±¡
          */
         try {
             linkException();
         }
         catch (Exception ex) {
             System.out.println(ex.getMessage());    // linkException exception
-            ex.printStackTrace();    // ÏÈ´òÓ¡java.lang.ExceptionµÄÒì³£Õ»£¬ÔÙ´òÓ¡java.lang.ArithmeticExceptionµÄÒì³£Õ»
+            ex.printStackTrace();    // å…ˆæ‰“å°java.lang.Exceptionçš„å¼‚å¸¸æ ˆï¼Œå†æ‰“å°java.lang.ArithmeticExceptionçš„å¼‚å¸¸æ ˆ
         }
 
 //        /**
-//         * finally: ºÍtryÊÇÒ»¶Ô£¬²»¹ÜÓĞÃ»ÓĞ²¶»ñÒì³£¶¼»áÖ´ĞĞ
+//         * finally: å’Œtryæ˜¯ä¸€å¯¹ï¼Œä¸ç®¡æœ‰æ²¡æœ‰æ•è·å¼‚å¸¸éƒ½ä¼šæ‰§è¡Œ
 //         */
 //
-//        // Ã»ÓĞÒì³££¬Ë³ĞòÖ´ĞĞ
+//        // æ²¡æœ‰å¼‚å¸¸ï¼Œé¡ºåºæ‰§è¡Œ
 //        try {
 //            quotient(1,1);
 //        }
@@ -155,43 +162,43 @@ public class ExceptionClass {
 //            ex.getMessage();
 //        }
 //        finally {
-//            System.out.println("Ã»ÓĞ·¢ÉúÒì³£Ò²»áÖ´ĞĞ");
+//            System.out.println("æ²¡æœ‰å‘ç”Ÿå¼‚å¸¸ä¹Ÿä¼šæ‰§è¡Œ");
 //        }
 //
 //
-//        // ²¶»ñÒì³££¬Ë³ĞòÖ´ĞĞ
+//        // æ•è·å¼‚å¸¸ï¼Œé¡ºåºæ‰§è¡Œ
 //        try {
 //            quotient(1,0);
 //        }
 //        catch (ArithmeticException ex) {
-//            System.out.println("ÏÈÖ´ĞĞ²¶»ñµÄ£¬ÔÙÖ´ĞĞfinally");
+//            System.out.println("å…ˆæ‰§è¡Œæ•è·çš„ï¼Œå†æ‰§è¡Œfinally");
 //        }
 //        finally {
-//            System.out.println("²¶»ñµ½Òì³£finallyÒ²Òª»áÖ´ĞĞ");
+//            System.out.println("æ•è·åˆ°å¼‚å¸¸finallyä¹Ÿè¦ä¼šæ‰§è¡Œ");
 //        }
 //
 //
-//        // ²¶»ñÅ×³öÒì³££¬ÏÈÖ´ĞĞfinally£¬ÔÙÅ×³öÒì³£¸øµ÷ÓÃÕß
+//        // æ•è·æŠ›å‡ºå¼‚å¸¸ï¼Œå…ˆæ‰§è¡Œfinallyï¼Œå†æŠ›å‡ºå¼‚å¸¸ç»™è°ƒç”¨è€…
 //        try {
 //            quotient(1,0);
 //        }
 //        catch (ArithmeticException ex) {
-//            throw new ArithmeticException("throw again");   // ÔÚcatchÖĞÖØĞÂÅ×³öÒì³£
+//            throw new ArithmeticException("throw again");   // åœ¨catchä¸­é‡æ–°æŠ›å‡ºå¼‚å¸¸
 //
 //        }
 //        finally {
-//            System.out.println("ÔÚÒì³£Å×³öÇ°Ö´ĞĞ");
+//            System.out.println("åœ¨å¼‚å¸¸æŠ›å‡ºå‰æ‰§è¡Œ");
 //        }
 //
-//        // Å×³öÒì³££¬ÏÈÖ´ĞĞfinally£¬ÔÙÅ×³öÒì³£¸øµ÷ÓÃÕß
+//        // æŠ›å‡ºå¼‚å¸¸ï¼Œå…ˆæ‰§è¡Œfinallyï¼Œå†æŠ›å‡ºå¼‚å¸¸ç»™è°ƒç”¨è€…
 //        try {
 //            quotient(1,0);
 //        }
 //        finally {
-//            System.out.println("Ã»ÓĞ²¶»ñÒì³£Ò²»áÖ´ĞĞ");    // ÏÈÖ´ĞĞ£¬ÔÙÅ×³öÒì³£¸øµ÷ÓÃÕß
+//            System.out.println("æ²¡æœ‰æ•è·å¼‚å¸¸ä¹Ÿä¼šæ‰§è¡Œ");    // å…ˆæ‰§è¡Œï¼Œå†æŠ›å‡ºå¼‚å¸¸ç»™è°ƒç”¨è€…
 //        }
 //
-//        // Ç°ÃæÓĞreturn£¬ÏÈÖ´ĞĞfinally£¬ºóreturn
+//        // å‰é¢æœ‰returnï¼Œå…ˆæ‰§è¡Œfinallyï¼Œåreturn
 //        try {
 //            quotient(1,0);
 //        }
@@ -199,27 +206,27 @@ public class ExceptionClass {
 //            return;
 //        }
 //        finally {
-//            System.out.println("returnÒ²ÒªÖ´ĞĞ1");
+//            System.out.println("returnä¹Ÿè¦æ‰§è¡Œ1");
 //        }
 //
 //        try {
 //            return;
 //        }
 //        finally {
-//            System.out.println("returnÒ²ÒªÖ´ĞĞ2");
+//            System.out.println("returnä¹Ÿè¦æ‰§è¡Œ2");
 //        }
 
-//        // Èç¹ûtry£¬finallyÓï¾äÀï¾ùÓĞreturn£¬ºöÂÔtryµÄreturn£¬¶øÊ¹ÓÃfinallyµÄreturn.
+//        // å¦‚æœtryï¼Œfinallyè¯­å¥é‡Œå‡æœ‰returnï¼Œå¿½ç•¥tryçš„returnï¼Œè€Œä½¿ç”¨finallyçš„return.
 
-//        // finally²»»á±»Ö´ĞĞµÄÇé¿ö£º
-//        1¡¢ÔÚfinallyÓï¾ä¿éµÚÒ»ĞĞ·¢ÉúÁËÒì³£¡£ ÒòÎªÔÚÆäËûĞĞ£¬finally¿é»¹ÊÇ»áµÃµ½Ö´ĞĞ
-//        2¡¢ÔÚÇ°ÃæµÄ´úÂëÖĞÓÃÁËSystem.exit(int)ÒÑÍË³ö³ÌĞò¡£ exitÊÇ´ø²Îº¯Êı £»Èô¸ÃÓï¾äÔÚÒì³£Óï¾äÖ®ºó£¬finally»áÖ´ĞĞ
-//        3¡¢³ÌĞòËùÔÚµÄÏß³ÌËÀÍö¡£
-//        4¡¢¹Ø±ÕCPU¡£
+//        // finallyä¸ä¼šè¢«æ‰§è¡Œçš„æƒ…å†µï¼š
+//        1ã€åœ¨finallyè¯­å¥å—ç¬¬ä¸€è¡Œå‘ç”Ÿäº†å¼‚å¸¸ã€‚ å› ä¸ºåœ¨å…¶ä»–è¡Œï¼Œfinallyå—è¿˜æ˜¯ä¼šå¾—åˆ°æ‰§è¡Œ
+//        2ã€åœ¨å‰é¢çš„ä»£ç ä¸­ç”¨äº†System.exit(int)å·²é€€å‡ºç¨‹åºã€‚ exitæ˜¯å¸¦å‚å‡½æ•° ï¼›è‹¥è¯¥è¯­å¥åœ¨å¼‚å¸¸è¯­å¥ä¹‹åï¼Œfinallyä¼šæ‰§è¡Œ
+//        3ã€ç¨‹åºæ‰€åœ¨çš„çº¿ç¨‹æ­»äº¡ã€‚
+//        4ã€å…³é—­CPUã€‚
 
 
         /**
-         * ×Ô¶¨ÖÆÒì³£Àà£¬×îºÃÊÇ¼Ì³Ğ±Ø¼ìÒì³££¬ÕâÑù·ûºÏ×Ô¶¨ÖÆÒì³£ÀàÎªÇ¿ÖÆ´¦ÀíÒì³£¶øÉú
+         * è‡ªå®šåˆ¶å¼‚å¸¸ç±»ï¼Œæœ€å¥½æ˜¯ç»§æ‰¿å¿…æ£€å¼‚å¸¸ï¼Œè¿™æ ·ç¬¦åˆè‡ªå®šåˆ¶å¼‚å¸¸ç±»ä¸ºå¼ºåˆ¶å¤„ç†å¼‚å¸¸è€Œç”Ÿ
          */
         try {
             testMyException();
@@ -234,9 +241,9 @@ public class ExceptionClass {
             super("myException message");
         }
     }
-    public static void testMyException() throws myException{  // myExceptionÊÇ¼Ì³Ğ×Ô±Ø¼ìÒì³££¬ËùÒÔÒ²ÊÇ±Ø¼ìÒì³££¬Ò»¸ö·½·¨ÒªÅ×³öÒ»¸ö±Ø¼ìÒì³££¬±ØĞëÒªÉùÃ÷Òì³£
+    public static void testMyException() throws myException{  // myExceptionæ˜¯ç»§æ‰¿è‡ªå¿…æ£€å¼‚å¸¸ï¼Œæ‰€ä»¥ä¹Ÿæ˜¯å¿…æ£€å¼‚å¸¸ï¼Œä¸€ä¸ªæ–¹æ³•è¦æŠ›å‡ºä¸€ä¸ªå¿…æ£€å¼‚å¸¸ï¼Œå¿…é¡»è¦å£°æ˜å¼‚å¸¸
         if(true) {
-            throw new myException();   // Ò»¸ö·½·¨ÒªÅ×³öÒ»¸ö±Ø¼ìÒì³££¬±ØĞëÒªÉùÃ÷Òì³£
+            throw new myException();   // ä¸€ä¸ªæ–¹æ³•è¦æŠ›å‡ºä¸€ä¸ªå¿…æ£€å¼‚å¸¸ï¼Œå¿…é¡»è¦å£°æ˜å¼‚å¸¸
         }
     }
 
@@ -249,8 +256,8 @@ public class ExceptionClass {
     }
 
     public static void filenotfound() throws FileNotFoundException{
-        java.util.Scanner scanner = new Scanner(new File("hhh.txt"));  // ¸ømainÉùÃ÷ÁËFileNotFoundException
-        System.out.println("throws ÁË£¬»¹»á¼ÌĞøÂğ£¿²»»á£¡");
+        java.util.Scanner scanner = new Scanner(new File("hhh.txt"));  // ç»™mainå£°æ˜äº†FileNotFoundException
+        System.out.println("throws äº†ï¼Œè¿˜ä¼šç»§ç»­å—ï¼Ÿä¸ä¼šï¼");
     }
 
     public static void multiexception() throws FileNotFoundException, ClassNotFoundException, IOException, ArrayIndexOutOfBoundsException {
@@ -258,7 +265,7 @@ public class ExceptionClass {
         scanner.next();
     }
 
-    public static void linkException() throws Exception { // Exception±¾Éí°üº¬±Ø¼ìÒì³££¬ËùÒÔÒ»¸ö·½·¨ÒªÅ×³öÒ»¸ö±Ø¼ìÒì³££¬±ØĞëÒªÉùÃ÷Òì³£
+    public static void linkException() throws Exception { // Exceptionæœ¬èº«åŒ…å«å¿…æ£€å¼‚å¸¸ï¼Œæ‰€ä»¥ä¸€ä¸ªæ–¹æ³•è¦æŠ›å‡ºä¸€ä¸ªå¿…æ£€å¼‚å¸¸ï¼Œå¿…é¡»è¦å£°æ˜å¼‚å¸¸
         try {
             quotient(1,0);
         }

@@ -1,0 +1,5 @@
+#className = reflect.Property$Student
+#methodName = show
+
+className = reflect.Property$Student2
+methodName = show

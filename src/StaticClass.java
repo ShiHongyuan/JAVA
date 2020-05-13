@@ -1,4 +1,3 @@
-import static java.lang.Math.*;
 import static java.lang.Math.max;
 class StaticClass {
     /**
@@ -168,12 +167,16 @@ class StaticClass {
 
     /**
      * static 修饰内部类
-     * 只能修饰内部类，不能修饰外部类
+     * static 只能修饰内部类，不能修饰外部类
      *
+     * 非静态内部类在编译完成之后会隐含地保存着一个引用，该引用是指向创建它的外部类，但是静态内部类却没有。没有这个引用就意味着：
+     * 1、它的创建是不需要依赖外部类的创建。
+     * 2、它不能使用任何外部类的非static成员变量和方法。
      * */
+    // 一个很好的例子，单例模式，就是靠静态内部类实现的，见单例class
 
     /**
-     * static 导包，导入静态资源
+     * staic 导包，导入静态资源
      * 导入某个类中的指定静态资源，不需要使用类名调用类中静态成员，直接使用类中静态成员变量和成员方法
      * 导入Math中的所有静态资源：import static java.lang.Math.*;
      * 只导入某个静态方法：import static java.lang.Math.max;
@@ -187,4 +190,10 @@ class StaticClass {
         }
     }
 
+    // System的静态对象由于是只有在运行时才能打印，所以在方法外定义不会被执行就没有意义，除非在静态块里，在实例创建时会被执行一次
+    static {
+        System.out.println("");
+    }
+
 }
+

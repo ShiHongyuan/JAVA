@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/Algorithms.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ArrayClass.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/CharAndStringTransform.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/CharOperation.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ClassDefined.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ClassLibrary.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/DecimalToBinary.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/DoubleFloatIntLongShortOperation.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EqualsOperation.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExceptionClass.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExtendsClass.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/FileRW.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/FinalClass.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/FunctionDefine.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/GCTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/IOoperation.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/InterfaceDefine.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/JedisJava.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/MainClassTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/MathClass.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/MemStackAndHeap.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/NumberOperation.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ObjectOperation.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ProgramControl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Singleton.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/StaticClass.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/StringOperation.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/TestClass/testClass.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/collectionFramework/CollectionsFactory.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/createClass/CreateClass.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/filteroutputstream.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/newname.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/outputstreamfile.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/randomaccessfile.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/reflect/Constructors.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/reflect/Reflect.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/testfile.txt" charset="UTF-8" />
+  </component>
+</project>

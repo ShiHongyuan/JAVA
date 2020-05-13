@@ -1,51 +1,66 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringOperation {
     public static void main(String[] args) {
         /**
-         * java.lang.StringµÄ´´½¨ºÍ³õÊ¼»¯
-         * StringÓĞ11¸ö¹¹Ôìº¯Êı£¬40¼¸¸ö²Ù×÷·½·¨
-         * ¼ÆËã»úÄÚ²¿£¬stringÊÇÓÉË½ÓĞµÄ×Ö·ûÊı×é±äÁ¿±íÊ¾µÄ
+         * java.lang.Stringçš„åˆ›å»ºå’Œåˆå§‹åŒ–
+         * Stringæœ‰11ä¸ªæ„é€ å‡½æ•°ï¼Œ40å‡ ä¸ªæ“ä½œæ–¹æ³•
+         * è®¡ç®—æœºå†…éƒ¨ï¼Œstringæ˜¯ç”±ç§æœ‰çš„å­—ç¬¦æ•°ç»„å˜é‡è¡¨ç¤ºçš„
          */
-        // Ö±½ÓÁ¿
+        // ç›´æ¥é‡
         String s1 = "123";
         System.out.println(s1);      // 123
 
-        // ×Ö·ûÊı×é ´«Èë¹¹Ôìº¯Êı À´´´½¨³õÊ¼»¯String
+        // å­—ç¬¦æ•°ç»„ ä¼ å…¥æ„é€ å‡½æ•° æ¥åˆ›å»ºåˆå§‹åŒ–String
         String s2 = new String(new char[] {65, 66, 67});
         System.out.println(s2);      // ABC
         String s3 = new String(new char[] {'a', 'b', 'c'});
         System.out.println(s3);      // abc
 
         /**
-         * string±È½Ï
-         * ²»ÄÜÓÃ < >£¬»á±¨´í
+         * Stringåˆ†é…ï¼šç›´æ¥é‡æ˜¯ç›´æ¥å­˜å¸¸é‡æ± çš„åœ°å€ï¼Œä¸ä¼šåœ¨å †ä¸Šåˆ›å»ºæ–°çš„å¯¹è±¡ï¼Œæ‰€ä»¥ä¸¤ä¸ªå†…å®¹ç›¸åŒçš„ç›´æ¥é‡==ç›¸ç­‰ï¼Œ
+         * ä¸¤ä¸ªå†…å®¹ç›¸åŒçš„newå‡ºæ¥çš„Stringä¸èƒ½==
+         */
+
+        String s0 = "hello";
+        String s01 = "hello";
+        String s02 = "he" + "llo";
+
+        System.out.println( s0 == s01 );//true
+        System.out.println( s0 == s02 );//true
+
+        /**
+         * stringæ¯”è¾ƒ
+         * ä¸èƒ½ç”¨ < >ï¼Œä¼šæŠ¥é”™
          */
         String s4 = "abc";
         String s5 = "abe";
-        // == ÒıÓÃÖµÏàµÈ
+        // == å¼•ç”¨å€¼ç›¸ç­‰
         System.out.println(s4 == s5);      // false
 
-        // equals ÄÚÈİÏàµÈ
+        // equals å†…å®¹ç›¸ç­‰
         System.out.println(s4.equals(s5)); // false
 
-        // equalsIgnoreCase Í¬equals + ºöÂÔ´óĞ¡Ğ´
-        System.out.println("aBC".equalsIgnoreCase("ABc")); // true  ÄÚÈİÏàµÈ
+        // equalsIgnoreCase åŒequals + å¿½ç•¥å¤§å°å†™
+        System.out.println("aBC".equalsIgnoreCase("ABc")); // true  å†…å®¹ç›¸ç­‰
 
-        // compareTo  ÄÚÈİÏàµÈ£¬·µ»Ø´Ó×óµ½ÓÒµÚÒ»¸ö²»ÏàÍ¬×Ö·ûµÄ¾àÀë³¤¶È£¬ÏàµÈ¾Í·µ»Ø0
-        System.out.println(s4.compareTo(s5)); // -2  s1µÚÒ»¸ö²»ÏàÍ¬×Ö·û - s2µÚÒ»¸ö²»ÏàÍ¬×Ö·û  c±ÈeĞ¡2¸ö³¤¶È
-        System.out.println(s5.compareTo(s4)); // 2  s1µÚÒ»¸ö²»ÏàÍ¬×Ö·û - s2µÚÒ»¸ö²»ÏàÍ¬×Ö·û   e±Èc´ó2¸ö³¤¶È
-        System.out.println(s4.compareTo("abc")); // 0  ÄÚÈİÏàµÈ
-        System.out.println("abe".compareTo(s5)); // 0  ÄÚÈİÏàµÈ
+        // compareTo  å†…å®¹ç›¸ç­‰ï¼Œè¿”å›ä»å·¦åˆ°å³ç¬¬ä¸€ä¸ªä¸ç›¸åŒå­—ç¬¦çš„è·ç¦»é•¿åº¦ï¼Œç›¸ç­‰å°±è¿”å›0
+        System.out.println(s4.compareTo(s5)); // -2  s1ç¬¬ä¸€ä¸ªä¸ç›¸åŒå­—ç¬¦ - s2ç¬¬ä¸€ä¸ªä¸ç›¸åŒå­—ç¬¦  cæ¯”eå°2ä¸ªé•¿åº¦
+        System.out.println(s5.compareTo(s4)); // 2  s1ç¬¬ä¸€ä¸ªä¸ç›¸åŒå­—ç¬¦ - s2ç¬¬ä¸€ä¸ªä¸ç›¸åŒå­—ç¬¦   eæ¯”cå¤§2ä¸ªé•¿åº¦
+        System.out.println(s4.compareTo("abc")); // 0  å†…å®¹ç›¸ç­‰
+        System.out.println("abe".compareTo(s5)); // 0  å†…å®¹ç›¸ç­‰
 
-//        System.out.println(s4 < s5); // ±àÒë±¨´í
+//        System.out.println(s4 < s5); // ç¼–è¯‘æŠ¥é”™
 
-        // compareToIgnoreCase Í¬compareTo + ºöÂÔ´óĞ¡Ğ´
-        System.out.println("aBC".compareToIgnoreCase("ABc")); // 0  ÄÚÈİÏàµÈ
+        // compareToIgnoreCase åŒcompareTo + å¿½ç•¥å¤§å°å†™
+        System.out.println("aBC".compareToIgnoreCase("ABc")); // 0  å†…å®¹ç›¸ç­‰
 
-        // startsWith(prefix) ÊÇ·ñÒÔprefix×Ö·û´®¿ªÍ·
+        // startsWith(prefix) æ˜¯å¦ä»¥prefixå­—ç¬¦ä¸²å¼€å¤´
         System.out.println("aBC".startsWith("BC")); // false
         System.out.println("aBC".startsWith("aB"));  // true
-        // startsWith ¼ÓÆ«ÒÆÁ¿ ºÍ ²»¼ÓÆ«ÒÆÁ¿
-        System.out.println("aBC".startsWith("BC", 1));   // true k¿ÉÒÔÖ¸¶¨´ÓÄÄÀï¿ªÊ¼Æ¥ÅäÇ°×º
+        // startsWith åŠ åç§»é‡ å’Œ ä¸åŠ åç§»é‡
+        System.out.println("aBC".startsWith("BC", 1));   // true kå¯ä»¥æŒ‡å®šä»å“ªé‡Œå¼€å§‹åŒ¹é…å‰ç¼€
         System.out.println("".startsWith(""));                        // true
         System.out.println("ll".startsWith(""));                      // true
         System.out.println("ll".startsWith("", 0));      // true
@@ -55,11 +70,11 @@ public class StringOperation {
         System.out.println("hello".startsWith("ll", 2)); // true
         System.out.println("hello".startsWith("o", -1)); // false
 
-        // endsWith(suffix) ÊÇ·ñÒÔsuffix×Ö·û´®½áÊø
+        // endsWith(suffix) æ˜¯å¦ä»¥suffixå­—ç¬¦ä¸²ç»“æŸ
         System.out.println("aBC".endsWith("B"));  // false
         System.out.println("aBC".endsWith("BC"));  // true
 
-        // regionMatches([booleanÒª²»ÒªºöÂÔ´óĞ¡Ğ´]£¬s1¿ªÊ¼±È½ÏµÄÎ»ÖÃ£¬s2£¬s2¿ªÊ¼±È½ÏµÄÎ»ÖÃ£¬Òª±È½ÏµÄ³¤¶È) ²¿·Ö×Ö·û´®ÊÇ·ñÏàÍ¬
+        // regionMatches([booleanè¦ä¸è¦å¿½ç•¥å¤§å°å†™]ï¼Œs1å¼€å§‹æ¯”è¾ƒçš„ä½ç½®ï¼Œs2ï¼Œs2å¼€å§‹æ¯”è¾ƒçš„ä½ç½®ï¼Œè¦æ¯”è¾ƒçš„é•¿åº¦) éƒ¨åˆ†å­—ç¬¦ä¸²æ˜¯å¦ç›¸åŒ
         System.out.println("aBCdefg".regionMatches(1,"BCdefg",0,3));  // true
         System.out.println("aBCdefg".regionMatches(1,"BCdefg",0,6));  // true
         System.out.println("aBCdefg".regionMatches(1,"BCdefg",0,20)); // false
@@ -69,13 +84,13 @@ public class StringOperation {
         System.out.println("abc".regionMatches(true,0,"ABC",0,3));  // true
 
         /**
-         * stringµÄÁ¬½Ó·û²Ù×÷
-         * 1¡¢Á¬½Ó·û +
-         * 2¡¢concat
+         * stringçš„è¿æ¥ç¬¦æ“ä½œ
+         * 1ã€è¿æ¥ç¬¦ +
+         * 2ã€concat
          */
-        // ÆäÖĞÖ®Ò»ÊÇ×Ö·û´®£¬¾ÍÊÇÁ¬½Ó·û£¬ÁíÒ»¸öÏÈ×ª»»³É×Ö·û´®ºóÁ¬½Ó£¬Á½¸ö¶¼²»ÊÇ£¬¾ÍÊÇ¼Ó·¨ÔËËã·û
-        System.out.println("string=" + 1 + 2);   //string=12  Ã»ÓĞÀ¨ºÅ£¬´Ó×óµ½ÓÒ¼ÆËã£¬ËùÒÔÊÇÁ¬½Ó·û
-        System.out.println("string=" + (1 + 2)); //string=3   ÓĞÀ¨ºÅ£¬ÏÈËãÀ¨ºÅÀïµÄ£¬¶¼ÊÇÕûÊı£¬Ïà¼Ó£¬ÔÙºÍ×ó±ßÁ¬½Ó
+        // å…¶ä¸­ä¹‹ä¸€æ˜¯å­—ç¬¦ä¸²ï¼Œå°±æ˜¯è¿æ¥ç¬¦ï¼Œå¦ä¸€ä¸ªå…ˆè½¬æ¢æˆå­—ç¬¦ä¸²åè¿æ¥ï¼Œä¸¤ä¸ªéƒ½ä¸æ˜¯ï¼Œå°±æ˜¯åŠ æ³•è¿ç®—ç¬¦
+        System.out.println("string=" + 1 + 2);   //string=12  æ²¡æœ‰æ‹¬å·ï¼Œä»å·¦åˆ°å³è®¡ç®—ï¼Œæ‰€ä»¥æ˜¯è¿æ¥ç¬¦
+        System.out.println("string=" + (1 + 2)); //string=3   æœ‰æ‹¬å·ï¼Œå…ˆç®—æ‹¬å·é‡Œçš„ï¼Œéƒ½æ˜¯æ•´æ•°ï¼Œç›¸åŠ ï¼Œå†å’Œå·¦è¾¹è¿æ¥
 
         String s6 = "123";
         String s7 = "abc";
@@ -84,43 +99,43 @@ public class StringOperation {
 
 
         /**
-         * string½ØÈ¡×Ö·û´®
+         * stringæˆªå–å­—ç¬¦ä¸²
          */
-        // ½ØÈ¡×Ö·û´®substring(¿ªÊ¼Î»ÖÃ£¬½áÊøÎ»ÖÃ)
-        System.out.println("123".substring(0,0)); // ·µ»Ø"", ÔËĞĞÒ²²»»á±¨´í
-//        System.out.println("123".substring(2,1)); // ÔËĞĞ±¨´í
+        // æˆªå–å­—ç¬¦ä¸²substring(å¼€å§‹ä½ç½®ï¼Œç»“æŸä½ç½®)
+        System.out.println("123".substring(0,0)); // è¿”å›"", è¿è¡Œä¹Ÿä¸ä¼šæŠ¥é”™
+//        System.out.println("123".substring(2,1)); // è¿è¡ŒæŠ¥é”™
         System.out.println("123".substring(1,2)); // 2
         System.out.println("123".substring(1,3)); // 23
 
-        // substring(¿ªÊ¼Î»ÖÃ)
+        // substring(å¼€å§‹ä½ç½®)
         System.out.println("123".substring(1)); // 23
         System.out.println("123".substring(0)); // 123
 
         /**
-         * string»ñÈ¡Ö¸¶¨Î»ÖÃ×Ö·û
+         * stringè·å–æŒ‡å®šä½ç½®å­—ç¬¦
          */
         // charAt(int)
         char c = "abc".charAt(1);
         System.out.println(c); // b
-        System.out.println("1 ".charAt(1));   //' ' ¿Õ°××Ö·û
+        System.out.println("1 ".charAt(1));   //' ' ç©ºç™½å­—ç¬¦
 
         /**
-         * ×Ö·û´®´óĞ¡Ğ´×ª»» ²»¸Ä±äÔ­À´µÄÖµ£¬Éú³ÉÒ»¸öĞÂµÄ×Ö·û´®
+         * å­—ç¬¦ä¸²å¤§å°å†™è½¬æ¢ ä¸æ”¹å˜åŸæ¥çš„å€¼ï¼Œç”Ÿæˆä¸€ä¸ªæ–°çš„å­—ç¬¦ä¸²
          */
-        // ×ªĞ¡Ğ´
+        // è½¬å°å†™
         System.out.println("Hello".toLowerCase());   // hello
 
-        // ×ª´óĞ´
+        // è½¬å¤§å†™
         System.out.println("Hello".toUpperCase());   // HELLO
 
         /**
-         * È¥Í·Î²¿Õ¸ñ
+         * å»å¤´å°¾ç©ºæ ¼
          */
-        // ×ªÍ·Î²¿Õ¸ñ
+        // è½¬å¤´å°¾ç©ºæ ¼
         System.out.println("  Hel lo  ".trim());     // Hel lo
 
         /**
-         * ·Ö¸îstring
+         * åˆ†å‰²string
          */
         String[] strings = "a#b#c#d#e#f".split("#");
         for (String s: strings) {
@@ -128,32 +143,52 @@ public class StringOperation {
         }
         System.out.print("\n");
 
-        // limit ×î¶àÖ»ÄÜ±»·Ö¸î³ÉµÄÊı×é¸öÊı£¬²»¹»µÄºóÃæ¾Í²»·Ö¸îÁË
+        // limit æœ€å¤šåªèƒ½è¢«åˆ†å‰²æˆçš„æ•°ç»„ä¸ªæ•°ï¼Œä¸å¤Ÿçš„åé¢å°±ä¸åˆ†å‰²äº†
         String[] strings1 = "a#b#c#d#e#f".split("#", 3);
         for (String s: strings1) {
-            System.out.print(s + " ");   // limit=3£ºa b c#d#e#f   limit=4£ºa b c d#e#f
+            System.out.print(s + " ");   // limit=3ï¼ša b c#d#e#f   limit=4ï¼ša b c d#e#f
         }
         System.out.print("\n");
 
-        // ½áºÏÕıÔò±í´ïÊ½ ×îºóÒ»¸ö·Ö¸ô·ûºóÃæÃ»ÓĞµÄ»°£¬¾Í²»»áÓĞ""ÔªËØ
+        // ç»“åˆæ­£åˆ™è¡¨è¾¾å¼ æœ€åä¸€ä¸ªåˆ†éš”ç¬¦åé¢æ²¡æœ‰çš„è¯ï¼Œå°±ä¸ä¼šæœ‰""å…ƒç´ 
         String[] strings2 = ";java,c?;:c++#".split("[,:;?#]");
         for (String s: strings2) {
             System.out.println(s);   // "" java c "" "" c++
         }
 
         /**
-         * stringÌæ»»
-         * 1¡¢replace        È«²¿Ìæ»»£¬²»Ö§³ÖÕıÔò±í´ïÊ½
-         * 2¡¢replaceAll     È«²¿Ìæ»»£¬¿ÉÕıÔò¿É²»ÕıÔò
-         * 3¡¢replaceFirst   Ìæ»»µÚÒ»¸öÆ¥Åä¶ÔÏó£¬¿ÉÕıÔò¿É²»ÕıÔò
+         * åˆå¹¶é›†åˆæˆ–è€…æ•°ç»„æˆä¸€ä¸ªæ–°çš„å­—ç¬¦ä¸²
+         */
+        List<String> list = new ArrayList<>();
+        list.add("shi");
+        list.add("hong");
+        list.add("yuan");
+
+        String newString1 = String.join("-", list);
+
+
+        String[] arrays = {"shi", "hong", "yuan"};
+        String newString2 = String.join("#", arrays);
+
+
+        System.out.println(newString1);//shi-hong-yuan
+        System.out.println(newString2);//shi#hong#yuan
+
+
+
+        /**
+         * stringæ›¿æ¢
+         * 1ã€replace        å…¨éƒ¨æ›¿æ¢ï¼Œä¸æ”¯æŒæ­£åˆ™è¡¨è¾¾å¼
+         * 2ã€replaceAll     å…¨éƒ¨æ›¿æ¢ï¼Œå¯æ­£åˆ™å¯ä¸æ­£åˆ™
+         * 3ã€replaceFirst   æ›¿æ¢ç¬¬ä¸€ä¸ªåŒ¹é…å¯¹è±¡ï¼Œå¯æ­£åˆ™å¯ä¸æ­£åˆ™
          */
         // replace
-        // ²ÎÊıÊÇchar
+        // å‚æ•°æ˜¯char
         System.out.println("abc".replace('a','b'));     // bbc
-        // ²ÎÊıÊÇstring
+        // å‚æ•°æ˜¯string
         System.out.println("abc".replace("a","b"));    // bbc
         System.out.println("abc".replace("ab","ba"));  // bac
-        System.out.println("abc".replace("aa","ba"));  // abc   Ã»ÓĞÌæ»»³É¹¦
+        System.out.println("abc".replace("aa","ba"));  // abc   æ²¡æœ‰æ›¿æ¢æˆåŠŸ
 
         // replaceAll
         System.out.println("abc".replaceAll("a", "c"));       // cbc
@@ -164,14 +199,14 @@ public class StringOperation {
         System.out.println("abcabc".replaceFirst("(abc)", "a"));     // aabc
 
         /**
-         * string»ñÈ¡Ö¸¶¨×Ö·ûµÄÎ»ÖÃ indexOf Ö¸¶¨µÄÆğÊ¼Î»ÖÃ³¬¹ıstring³¤¶ÈÁË£¬Ò²²»»á±¨´í£¬×î¶àÕÒ²»µ½
+         * stringè·å–æŒ‡å®šå­—ç¬¦çš„ä½ç½® indexOf æŒ‡å®šçš„èµ·å§‹ä½ç½®è¶…è¿‡stringé•¿åº¦äº†ï¼Œä¹Ÿä¸ä¼šæŠ¥é”™ï¼Œæœ€å¤šæ‰¾ä¸åˆ°
          */
-        // indexOf(char)          Õû¸östringÓëcharµÚÒ»´ÎÆ¥ÅäµÄÎ»ÖÃ
-//        System.out.println("".indexOf(''));           // ±àÒë±¨´í£¬char²»ÄÜÊÇ¿Õ
+        // indexOf(char)          æ•´ä¸ªstringä¸charç¬¬ä¸€æ¬¡åŒ¹é…çš„ä½ç½®
+//        System.out.println("".indexOf(''));           // ç¼–è¯‘æŠ¥é”™ï¼Œcharä¸èƒ½æ˜¯ç©º
         System.out.println("".indexOf('a'));            // -1
         System.out.println("abc abc abc".indexOf('a')); // 0
 
-        // indexOf(char, int)     intºó£¨°üÀ¨int£©ÓëcharµÚÒ»´ÎÆ¥ÅäµÄÎ»ÖÃ
+        // indexOf(char, int)     intåï¼ˆåŒ…æ‹¬intï¼‰ä¸charç¬¬ä¸€æ¬¡åŒ¹é…çš„ä½ç½®
         System.out.println("".indexOf('a', 2));            // -1
         System.out.println("abc abc abc".indexOf('a', 0)); // 0
         System.out.println("abc abc abc".indexOf('a', 2)); // 4
@@ -191,11 +226,11 @@ public class StringOperation {
         System.out.println("abc abc abc".indexOf("a", 1));   // 4
         System.out.println("abc abc abc".indexOf("a", 20));  // -1
 
-        // lastIndexOf(char)      Õû¸östringÓëchar×îºóÒ»´ÎÆ¥ÅäµÄÎ»ÖÃ
+        // lastIndexOf(char)      æ•´ä¸ªstringä¸charæœ€åä¸€æ¬¡åŒ¹é…çš„ä½ç½®
         System.out.println("".lastIndexOf('a'));            // -1
         System.out.println("abc abc abc".lastIndexOf('a')); // 8
 
-        // lastIndexOf(char, int) intÇ°£¨°üÀ¨int£©ÓëÓëchar×îºóÒ»´ÎÆ¥ÅäµÄÎ»ÖÃ
+        // lastIndexOf(char, int) intå‰ï¼ˆåŒ…æ‹¬intï¼‰ä¸ä¸charæœ€åä¸€æ¬¡åŒ¹é…çš„ä½ç½®
         System.out.println("".lastIndexOf('a', 2));            // -1
         System.out.println("abc abc abc".lastIndexOf('a', 8)); // 8
         System.out.println("abc abc abc".lastIndexOf('a', 0)); // 0
@@ -203,7 +238,7 @@ public class StringOperation {
 
         // lastIndexOf(string)
         System.out.println("".lastIndexOf(""));               // 0
-        System.out.println("abc abc abc".lastIndexOf(""));    // 11  ×îºóÒ»Î»µÄÏÂÒ»Î»
+        System.out.println("abc abc abc".lastIndexOf(""));    // 11  æœ€åä¸€ä½çš„ä¸‹ä¸€ä½
         System.out.println("".lastIndexOf("a"));              // -1
         System.out.println("abc abc abc".lastIndexOf("a"));   // 8
 
@@ -218,18 +253,18 @@ public class StringOperation {
         System.out.println("abc abc abc".lastIndexOf("a", -1));  // -1
 
         /**
-         * string ×Ö·ûÊı×é »¥×ª
+         * string å­—ç¬¦æ•°ç»„ äº’è½¬
          */
-        // string ×ª char[]
+        // string è½¬ char[]
         char[] chars1 = "abc".toCharArray();
         System.out.println(chars1);  // abc
 
         char[] chars2 = {'a', 'b', 'c', 'd', 'e', 'f'};
-        // getChars Ö»ÄÜÌæ»»Ô­char[]µÄÒ»²¿·Ö×Ö·û£¬Èç¹ûÌæ»»µÄÎ»ÖÃ³¬¹ıÁËÔ­char[]µÄ³¤¶È£¬ÔËĞĞ»á±¨´í
+        // getChars åªèƒ½æ›¿æ¢åŸchar[]çš„ä¸€éƒ¨åˆ†å­—ç¬¦ï¼Œå¦‚æœæ›¿æ¢çš„ä½ç½®è¶…è¿‡äº†åŸchar[]çš„é•¿åº¦ï¼Œè¿è¡Œä¼šæŠ¥é”™
         "123".getChars(0, 3, chars2, 1);
         System.out.println(chars2);  // a123ef
 
-        // char[] ×ª string
+        // char[] è½¬ string
         String str1 = new String(chars2);
         System.out.println(str1);       // a123ef
 
@@ -238,7 +273,7 @@ public class StringOperation {
 
 
         /**
-         * »ù±¾Êı¾İÀàĞÍ ×ª string
+         * åŸºæœ¬æ•°æ®ç±»å‹ è½¬ string
          */
         System.out.println(String.valueOf('a'));      // a char -> string
         System.out.println(String.valueOf(1));        // 1 int -> string
@@ -250,28 +285,36 @@ public class StringOperation {
         System.out.println(String.valueOf(true));     // true boolean -> string
 
         /**
-         * ¶ÔÏó ×ª string  String.valueOf() == toString()
+         * å¯¹è±¡ è½¬ string  String.valueOf() == toString()
          */
         StringOperation x = new StringOperation();
         System.out.println(String.valueOf(x));     // StringOperation@60e53b93
         System.out.println(x.toString());          // StringOperation@60e53b93
 
         /**
-         * string ×ª Êı×ÖÀàĞÍ
+         * string è½¬ æ•°å­—ç±»å‹
+         * TypeåŒ…è£…ç±»å‹.parseInt("")è¿”å›å€¼æ˜¯typeçš„åŸºæœ¬æ•°æ®ç±»å‹
+         * TypeåŒ…è£…ç±»å‹.valueOf("")è¿”å›å€¼æ˜¯typeçš„åŒ…è£…ç±»å‹
          */
         int n1 = Integer.parseInt("123");
-        double n2 = Double.parseDouble("123");
+        int n2 = Integer.valueOf("123");
         double n3 = Integer.valueOf("123");
-        double n4 = Double.valueOf("123");
+        double n4 = Double.parseDouble("123.5");
+        double n5 = Double.valueOf("123.5");
+//        long l1 = Long.parseLong("123.5");
+//        long l2 = Long.valueOf("123.5");
 
         System.out.println(n1); // 123
-        System.out.println(n2); // 123.0
+        System.out.println(n2); // 123
         System.out.println(n3); // 123.0
-        System.out.println(n4); // 123.0
+        System.out.println(n4); // 123.5
+        System.out.println(n5); // 123.5
+//        System.out.println(l1); // 123.5 æµ®ç‚¹å­—ç¬¦ä¸²ä¸èƒ½è½¬æ¢æˆæ•°å­—å‹ï¼Œä¼šæŠ¥é”™
+//        System.out.println(l2); // ä¼šæŠ¥é”™
 
         /**
-         * »ù±¾Êı¾İÀàĞÍ ×ªÎª ¸ñÊ½»¯µÄstring
-         * ¸ñÊ½»¯²¿·Ö Í¬printf£¬Ö»ÊÇ¸ñÊ½»¯ºó»á×Ô¶¯×ª»»ÎªÒ»¸östring·µ»Ø
+         * åŸºæœ¬æ•°æ®ç±»å‹ è½¬ä¸º æ ¼å¼åŒ–çš„string
+         * æ ¼å¼åŒ–éƒ¨åˆ† åŒprintfï¼Œåªæ˜¯æ ¼å¼åŒ–åä¼šè‡ªåŠ¨è½¬æ¢ä¸ºä¸€ä¸ªstringè¿”å›
          */
         String str3 = String.format("%5.2f", 266.256);
         System.out.println(str3);   // 266.26
@@ -294,9 +337,9 @@ public class StringOperation {
 
         /**
          * toString()
-         * toString·½·¨ÊÇÏµÍ³½«»áÊä³ö¸Ã¶ÔÏóµÄ¡°×ÔÎÒÃèÊö¡±ĞÅÏ¢£¬ÓÃÒÔ¸æËßÍâ½ç¶ÔÏó¾ßÓĞµÄ×´Ì¬ĞÅÏ¢
-         * Object ÀàÌá¹©µÄtoString·½·¨×ÜÊÇ·µ»Ø¸Ã¶ÔÏóÊµÏÖÀàµÄÀàÃû + @ +hashCodeÖµ
-         * ¿ÉÒÔÍ¨¹ıÖØĞ´¶ÔÏóµÄtoString()·½·¨£¬¸Ä±ä¶ÔÏóÊä³öµÄ×ÔÎÒÃèÊö
+         * toStringæ–¹æ³•æ˜¯ç³»ç»Ÿå°†ä¼šè¾“å‡ºè¯¥å¯¹è±¡çš„â€œè‡ªæˆ‘æè¿°â€ä¿¡æ¯ï¼Œç”¨ä»¥å‘Šè¯‰å¤–ç•Œå¯¹è±¡å…·æœ‰çš„çŠ¶æ€ä¿¡æ¯
+         * Object ç±»æä¾›çš„toStringæ–¹æ³•æ€»æ˜¯è¿”å›è¯¥å¯¹è±¡å®ç°ç±»çš„ç±»å + @ +hashCodeå€¼
+         * å¯ä»¥é€šè¿‡é‡å†™å¯¹è±¡çš„toString()æ–¹æ³•ï¼Œæ”¹å˜å¯¹è±¡è¾“å‡ºçš„è‡ªæˆ‘æè¿°
          */
 
         System.out.println(chars1.toString());           // [C@60e53b93
@@ -304,37 +347,37 @@ public class StringOperation {
 
 
         /**
-         * ×Ö·û´®Éú³ÉÆ÷£ºjava.lang.StringBuilder¡¢ java.lang.StringBuffer
-         * StringBuilderĞŞ¸Ä»º³åÇøµÄ·½·¨ÊÇÍ¬²½µÄ£¬ËùÒÔÊÇÏß³Ì°²È«µÄ£¨Í¬²½·½·¨£¬Òì²½·½·¨£¬¼ÓËø£¿£©
-         * StringBuilderºÍStringBufferµÄ¹¹Ôì·½·¨ÏàÍ¬£¬ÆäËû·½·¨StringBuffer°üº¬ÁËStringBuilderËùÓĞµÄ£¬ÉõÖÁ¸ü¶à
-         * ËùÓĞ·½·¨£º1¡¢¸Ä±äÔ­Éú³ÉÆ÷µÄÄÚÈİ 2¡¢·µ»ØĞÂÉú³ÉÆ÷µÄÒıÓÃ£¨ºÜÉÙÓÃµ½£©
+         * å­—ç¬¦ä¸²ç”Ÿæˆå™¨ï¼šjava.lang.StringBuilderã€ java.lang.StringBuffer
+         * StringBuilderä¿®æ”¹ç¼“å†²åŒºçš„æ–¹æ³•æ˜¯åŒæ­¥çš„ï¼Œæ‰€ä»¥æ˜¯çº¿ç¨‹å®‰å…¨çš„
+         * StringBuilderå’ŒStringBufferçš„æ„é€ æ–¹æ³•ç›¸åŒï¼Œå…¶ä»–æ–¹æ³•StringBufferåŒ…å«äº†StringBuilderæ‰€æœ‰çš„ï¼Œç”šè‡³æ›´å¤š
+         * æ‰€æœ‰æ–¹æ³•ï¼š1ã€æ”¹å˜åŸç”Ÿæˆå™¨çš„å†…å®¹ 2ã€è¿”å›æ–°ç”Ÿæˆå™¨çš„å¼•ç”¨ï¼ˆå¾ˆå°‘ç”¨åˆ°ï¼‰
          */
-        /** StringBuilder---¹¹Ôì·½·¨ **/
-        // ´´½¨Ò»¸öÄ¬ÈÏÈİÁ¿£¨16£©£¬Êµ¼Ê³¤¶ÈÎª0µÄ¿Õ×Ö·ûÊı×éµÄ×Ö·û´®Éú³ÉÆ÷
+        /** StringBuilder---æ„é€ æ–¹æ³• **/
+        // åˆ›å»ºä¸€ä¸ªé»˜è®¤å®¹é‡ï¼ˆ16ï¼‰ï¼Œå®é™…é•¿åº¦ä¸º0çš„ç©ºå­—ç¬¦æ•°ç»„çš„å­—ç¬¦ä¸²ç”Ÿæˆå™¨
         StringBuilder builder1 = new StringBuilder();
         System.out.println(builder1.toString());                // ""
-        // ´´½¨Ò»¸öÖ¸¶¨ÈİÁ¿£¨10£©£¬Êµ¼Ê³¤¶ÈÎª0µÄ¿Õ×Ö·ûÊı×éµÄ×Ö·û´®Éú³ÉÆ÷
+        // åˆ›å»ºä¸€ä¸ªæŒ‡å®šå®¹é‡ï¼ˆ10ï¼‰ï¼Œå®é™…é•¿åº¦ä¸º0çš„ç©ºå­—ç¬¦æ•°ç»„çš„å­—ç¬¦ä¸²ç”Ÿæˆå™¨
         StringBuilder builder2 = new StringBuilder(10);
         System.out.println(builder2.toString());                // ""
-        // ´´½¨Ò»¸öÄ¬ÈÏÈİÁ¿£¨16£©£¬Êµ¼Ê³¤¶ÈÎª"abc"£¨3£©µÄ×Ö·ûÊı×éµÄ×Ö·û´®Éú³ÉÆ÷
+        // åˆ›å»ºä¸€ä¸ªé»˜è®¤å®¹é‡ï¼ˆ16ï¼‰ï¼Œå®é™…é•¿åº¦ä¸º"abc"ï¼ˆ3ï¼‰çš„å­—ç¬¦æ•°ç»„çš„å­—ç¬¦ä¸²ç”Ÿæˆå™¨
         StringBuilder builder3 = new StringBuilder("abc");
         System.out.println(builder3.toString());                // abc
 
-        /** StringBuilder---×·¼ÓÔªËØ **/
-        // ×·¼ÓÒ»¸östring
+        /** StringBuilder---è¿½åŠ å…ƒç´  **/
+        // è¿½åŠ ä¸€ä¸ªstring
         builder3.append("def");
         System.out.println(builder3.toString());                // abcdef
-        // ×·¼ÓÒ»¸öchar[]Êı×é
+        // è¿½åŠ ä¸€ä¸ªchar[]æ•°ç»„
         builder3.append(new char[] {'s','h','y'});
         System.out.println(builder3.toString());                // abcdefshy
-        // Ö¸¶¨char[]Êı×éµÄ²¿·ÖÔªËØ×·¼Ó£¬´Óchar[]Êı×éµÄÄÄÀï¿ªÊ¼£¬¶àÉÙ¸öÔªËØÈ¥×·¼Ó
+        // æŒ‡å®šchar[]æ•°ç»„çš„éƒ¨åˆ†å…ƒç´ è¿½åŠ ï¼Œä»char[]æ•°ç»„çš„å“ªé‡Œå¼€å§‹ï¼Œå¤šå°‘ä¸ªå…ƒç´ å»è¿½åŠ 
         builder3.append(new char[] {'s','h','y'}, 1, 2);
         System.out.println(builder3.toString());                // abcdefshyhy
 
-        // ÔËĞĞ±¨´í£¬ArrayIndexOutOfBoundsException£¬Ö¸¶¨µÄ³¤¶È³¬¹ıÁËÖ¸¶¨ÆğÊ¼Î»ÖÃºóµÄÔªËØ¸öÊı
+        // è¿è¡ŒæŠ¥é”™ï¼ŒArrayIndexOutOfBoundsExceptionï¼ŒæŒ‡å®šçš„é•¿åº¦è¶…è¿‡äº†æŒ‡å®šèµ·å§‹ä½ç½®åçš„å…ƒç´ ä¸ªæ•°
 //        builder3.append(new char[] {'s','h','y'}, 1, 3);
 
-        // »ù±¾Êı¾İÀàĞÍ×ª»»³Éstring£¬È¥×·¼Ó
+        // åŸºæœ¬æ•°æ®ç±»å‹è½¬æ¢æˆstringï¼Œå»è¿½åŠ 
         builder3.append(1);
         System.out.println(builder3.toString());                // abcdefshyhy1
         builder3.append(2L);
@@ -348,22 +391,22 @@ public class StringOperation {
         builder3.append(false);
         System.out.println(builder3.toString());                // abcdefshyhy126.06.6cfalse
 
-        /** StringBuilder---²åÈëÔªËØ   ¾Í±Èappend¶àÒ»¸öÏë²åÈëµÄÎ»ÖÃ£¬ÔÚÖ¸¶¨Î»ÖÃÇ°²åÈë **/
+        /** StringBuilder---æ’å…¥å…ƒç´    å°±æ¯”appendå¤šä¸€ä¸ªæƒ³æ’å…¥çš„ä½ç½®ï¼Œåœ¨æŒ‡å®šä½ç½®å‰æ’å…¥ **/
         builder3 = new StringBuilder("abc");
-        // ²åÈëÒ»¸östring  ×îÇ°Ãæ²åÈë
+        // æ’å…¥ä¸€ä¸ªstring  æœ€å‰é¢æ’å…¥
         builder3.insert(0, "def");
         System.out.println(builder3.toString());                // defabc
-        // ²åÈëÒ»¸öchar[]Êı×é  ×îºóÃæ²åÈë
+        // æ’å…¥ä¸€ä¸ªchar[]æ•°ç»„  æœ€åé¢æ’å…¥
         builder3.insert(6, new char[] {'s','h','y'});
         System.out.println(builder3.toString());                // defabcshy
-        // Ö¸¶¨char[]Êı×éµÄ²¿·ÖÔªËØ£¬´Óchar[]Êı×éµÄÄÄÀï¿ªÊ¼£¬¶àÉÙ¸öÔªËØÈ¥²åÈë
+        // æŒ‡å®šchar[]æ•°ç»„çš„éƒ¨åˆ†å…ƒç´ ï¼Œä»char[]æ•°ç»„çš„å“ªé‡Œå¼€å§‹ï¼Œå¤šå°‘ä¸ªå…ƒç´ å»æ’å…¥
         builder3.insert(8, new char[] {'s','h','y'}, 1, 2);
         System.out.println(builder3.toString());                // defabcshhyy
 
-        // ÔËĞĞ±¨´í£¬ArrayIndexOutOfBoundsException£¬Ö¸¶¨µÄ³¤¶È³¬¹ıÁËÖ¸¶¨ÆğÊ¼Î»ÖÃºóµÄÔªËØ¸öÊı
+        // è¿è¡ŒæŠ¥é”™ï¼ŒArrayIndexOutOfBoundsExceptionï¼ŒæŒ‡å®šçš„é•¿åº¦è¶…è¿‡äº†æŒ‡å®šèµ·å§‹ä½ç½®åçš„å…ƒç´ ä¸ªæ•°
 //        builder3.insert(1, new char[] {'s','h','y'}, 1, 3);
 
-        // »ù±¾Êı¾İÀàĞÍ×ª»»³Éstring£¬È¥²åÈë
+        // åŸºæœ¬æ•°æ®ç±»å‹è½¬æ¢æˆstringï¼Œå»æ’å…¥
         builder3.insert(1, 1);
         System.out.println(builder3.toString());                // d1efabcshhyy
         builder3.insert(1, 2L);
@@ -377,38 +420,38 @@ public class StringOperation {
         builder3.insert(1, true);
         System.out.println(builder3.toString());                // dtruec6.66.021efabcshhyy
 
-        /** StringBuilder--- É¾³ıÔªËØ **/
+        /** StringBuilder--- åˆ é™¤å…ƒç´  **/
         builder3 = new StringBuilder("abcdef");
-        // É¾³ıÖ¸¶¨ÏÂ±êÎ»ÖÃµÄ×Ö·û
+        // åˆ é™¤æŒ‡å®šä¸‹æ ‡ä½ç½®çš„å­—ç¬¦
         builder3.deleteCharAt(1);
         System.out.println(builder3.toString());                // acdef
-        // É¾³ıÖ¸¶¨ÏÂ±êÇøÓòµÄ×Ö·û startindex ~ endindex-1
+        // åˆ é™¤æŒ‡å®šä¸‹æ ‡åŒºåŸŸçš„å­—ç¬¦ startindex ~ endindex-1
         builder3.delete(1, 2);
         System.out.println(builder3.toString());                // adef
 
-        /** StringBuilder--- ĞŞ¸ÄÔªËØ **/
+        /** StringBuilder--- ä¿®æ”¹å…ƒç´  **/
         builder3 = new StringBuilder("abc");
-        // ĞŞ¸ÄÖ¸¶¨Î»ÖÃµÄ×Ö·û
+        // ä¿®æ”¹æŒ‡å®šä½ç½®çš„å­—ç¬¦
         builder3.setCharAt(1, 'c');
         System.out.println(builder3.toString());                // acc
 
-        /** StringBuilder--- Ìæ»»ÔªËØ **/
+        /** StringBuilder--- æ›¿æ¢å…ƒç´  **/
         builder3 = new StringBuilder("abc");
-        // ĞŞ¸ÄÖ¸¶¨Î»ÖÃÇøÓòµÄ×Ö·û  startindex ~ endindex-1
+        // ä¿®æ”¹æŒ‡å®šä½ç½®åŒºåŸŸçš„å­—ç¬¦  startindex ~ endindex-1
         builder3.replace(1, 3, "sh");
         System.out.println(builder3.toString());                // ash
 
-        /** StringBuilder--- ·­×ªÉú³ÉÆ÷µÄ×Ö·û **/
+        /** StringBuilder--- ç¿»è½¬ç”Ÿæˆå™¨çš„å­—ç¬¦ **/
         builder3 = new StringBuilder("abc");
         builder3.reverse();
         System.out.println(builder3.toString());                // cba
 
-        /** StringBuilder--- ÒÔÉÏËùÓĞ·½·¨¶¼¿ÉÒÔ·µ»ØĞÂÉú³ÉÆ÷µÄÒıÓÃ **/
+        /** StringBuilder--- ä»¥ä¸Šæ‰€æœ‰æ–¹æ³•éƒ½å¯ä»¥è¿”å›æ–°ç”Ÿæˆå™¨çš„å¼•ç”¨ **/
         builder3 = new StringBuilder("abc");
         StringBuilder builder = builder3.reverse();
         System.out.println(builder.toString());                 // cba
 
-        /** StringBuilder---»ñÈ¡Éú³ÉÆ÷µ±Ç°¿ÉÓÃµÄÈİÁ¿´óĞ¡ **/
+        /** StringBuilder---è·å–ç”Ÿæˆå™¨å½“å‰å¯ç”¨çš„å®¹é‡å¤§å° **/
         builder1 = new StringBuilder();
         builder2 = new StringBuilder(10);
         builder3 = new StringBuilder("abc");
@@ -416,33 +459,33 @@ public class StringOperation {
         System.out.println(builder2.capacity());                 // 10
         System.out.println(builder3.capacity());                 // 19
 
-        /** StringBuilder---»ñÈ¡Éú³ÉÆ÷µÄÊµ¼Ê´óĞ¡ **/
+        /** StringBuilder---è·å–ç”Ÿæˆå™¨çš„å®é™…å¤§å° **/
         builder1 = new StringBuilder();
         builder2 = new StringBuilder(10);
         builder3 = new StringBuilder("abc");
-        System.out.println(builder1.length());                 // 0 µ±lengthÊÇ0Ê±£¬Ã»ÓĞÉú³ÉÊı×é£¬Ö»ÊÇ·ÖÅäÁËÕâÃ´¶àµÄ¿Õ¼ä
+        System.out.println(builder1.length());                 // 0 å½“lengthæ˜¯0æ—¶ï¼Œæ²¡æœ‰ç”Ÿæˆæ•°ç»„ï¼Œåªæ˜¯åˆ†é…äº†è¿™ä¹ˆå¤šçš„ç©ºé—´
         System.out.println(builder2.length());                 // 0
         System.out.println(builder3.length());                 // 3
 
-        /** StringBuilder---ÉèÖÃÉú³ÉÆ÷µÄÊµ¼Ê´óĞ¡ **/
+        /** StringBuilder---è®¾ç½®ç”Ÿæˆå™¨çš„å®é™…å¤§å° **/
         builder3 = new StringBuilder("abc");
         builder3.setLength(2);
         System.out.println(builder3.length());                 // 2
         System.out.println(builder3.toString());               // ab
-        System.out.println(builder3.capacity());               // 19  ¸Ä±äÊµ¼Ê´óĞ¡£¬Ô­À´µÄÈİÁ¿´óĞ¡²»±ä
+        System.out.println(builder3.capacity());               // 19  æ”¹å˜å®é™…å¤§å°ï¼ŒåŸæ¥çš„å®¹é‡å¤§å°ä¸å˜
 
         builder3 = new StringBuilder("abc");
         builder3.setLength(6);
         System.out.println(builder3.length());                 // 6
-        System.out.println(builder3.toString());               // abc     lengthÖ»·´Ó³Êµ¼Ê´óĞ¡£¬µ±lengthÉèÖÃ´óÊ±£¬Ê£ÓàÊı×éµÄ×Ö·ûÌî³änull×Ö·û£¬'\u0000'
-        System.out.println(builder3.capacity());               // 19  ¸Ä±äÊµ¼Ê´óĞ¡£¬Ô­À´µÄÈİÁ¿´óĞ¡²»±ä
+        System.out.println(builder3.toString());               // abc     lengthåªåæ˜ å®é™…å¤§å°ï¼Œå½“lengthè®¾ç½®å¤§æ—¶ï¼Œå‰©ä½™æ•°ç»„çš„å­—ç¬¦å¡«å……nullå­—ç¬¦ï¼Œ'\u0000'
+        System.out.println(builder3.capacity());               // 19  æ”¹å˜å®é™…å¤§å°ï¼ŒåŸæ¥çš„å®¹é‡å¤§å°ä¸å˜
 
-        /** StringBuilder---ÉèÖÃµÄÈİÁ¿ÎªÊµ¼Ê´óĞ¡ **/
+        /** StringBuilder---è®¾ç½®çš„å®¹é‡ä¸ºå®é™…å¤§å° **/
         System.out.println(builder3.capacity());               // 19
         builder3.trimToSize();
         System.out.println(builder3.length());                 // 6
         System.out.println(builder3.toString());               // abc   
-        System.out.println(builder3.capacity());               // 6  ÈİÁ¿´óĞ¡±ä³ÉÊµ¼Ê´óĞ¡£¬null×Ö·ûÒ²Ëã×Ö·û£¬Ò²ÔÚÊµ¼Ê´óĞ¡Àï
+        System.out.println(builder3.capacity());               // 6  å®¹é‡å¤§å°å˜æˆå®é™…å¤§å°ï¼Œnullå­—ç¬¦ä¹Ÿç®—å­—ç¬¦ï¼Œä¹Ÿåœ¨å®é™…å¤§å°é‡Œ
 
         builder3 = new StringBuilder("abc");
         System.out.println(builder3.length());                 // 3
@@ -450,29 +493,41 @@ public class StringOperation {
         builder3.trimToSize();
         System.out.println(builder3.capacity());               // 3
 
-        /** StringBuilder---»ñÈ¡Ö¸¶¨Î»ÖÃµÄ×Ö·û **/
+        /** StringBuilder---è·å–æŒ‡å®šä½ç½®çš„å­—ç¬¦ **/
         char builder_char = builder3.charAt(1);
         System.out.println(builder_char);                      // b
 
-        /** StringBuilder---½ØÈ¡×Ó´® **/
+        /** StringBuilder---æˆªå–å­ä¸² **/
         builder3 = new StringBuilder("abc");
-        // ½ØÈ¡´ÓÖ¸¶¨¶¨Î»ÖÃ¿ªÊ¼µ½½áÎ²
+        // æˆªå–ä»æŒ‡å®šå®šä½ç½®å¼€å§‹åˆ°ç»“å°¾
         System.out.println(builder3.substring(1));        // bc
-        // ½ØÈ¡´ÓÖ¸¶¨ÇøÓò£¬startindex ~ endindex-1
+        // æˆªå–ä»æŒ‡å®šåŒºåŸŸï¼Œstartindex ~ endindex-1
         System.out.println(builder3.substring(1,2));           // b
 
 
-        /** Ò»¸ö×Ö·û´®ºÍÒ»¸ö¶ÔÏóÓÃ+ºÅÁ¬½Ó£¬µ÷ÓÃ¶ÔÏóµÄtoString()·½·¨
-         *  Ò»¸ö×Ö·û´®ºÍÒ»¸ö»ù±¾Êı¾İÀàĞÍÓÃ+ºÅÁ¬½Ó£¬Ö±½ÓÏÔÊ¾»ù±¾Êı¾İÀàĞÍÖµµÄ×Ö·û´®±íÊ¾  **/
+        /** ä¸€ä¸ªå­—ç¬¦ä¸²å’Œä¸€ä¸ªå¯¹è±¡ç”¨+å·è¿æ¥ï¼Œè°ƒç”¨å¯¹è±¡çš„toString()æ–¹æ³•
+         *  ä¸€ä¸ªå­—ç¬¦ä¸²å’Œä¸€ä¸ªåŸºæœ¬æ•°æ®ç±»å‹ç”¨+å·è¿æ¥ï¼Œç›´æ¥æ˜¾ç¤ºåŸºæœ¬æ•°æ®ç±»å‹å€¼çš„å­—ç¬¦ä¸²è¡¨ç¤º  **/
         Integer a = 1;
         Integer b = 1;
         Character c1 = 'a';
         char c2 = 'a';
 
         System.out.println(a + " + " + b + "=" + (a+b));                          // 1 + 1=2
-        System.out.println(a.toString() + " + " + b.toString() + "=" + (a+b));    // 1 + 1=2  (a+b)µÄ½á¹ûÊÇint
+        System.out.println(a.toString() + " + " + b.toString() + "=" + (a+b));    // 1 + 1=2  (a+b)çš„ç»“æœæ˜¯int
         System.out.println(c1 +"+"+c2);              // a+a
         System.out.println(c1.toString()+"+"+c2);    // a+a
-        System.out.println((c1+c2));                   // 194 'a'×ª»»³ÉintÏà¼Ó 97+97=194
+        System.out.println((c1+c2));                   // 194 'a'è½¬æ¢æˆintç›¸åŠ  97+97=194
+
+        // å­—ç¬¦ä¸²å³ç§»stepä½
+        String str = "12345678";
+        StringBuilder stringBuilder = new StringBuilder();
+        int step = 3;
+        int origin = str.length() - step;
+        stringBuilder.append(str.substring(origin));
+        stringBuilder.append(str.substring(0, origin));
+        str = stringBuilder.toString();
     }
+
+
+
 }

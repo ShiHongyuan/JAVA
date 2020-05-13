@@ -3,11 +3,11 @@ import java.util.List;
 public class ObjectOperation {
     public static void main(String[] args) {
         String[] strs = null;
-        // int a = strs.length;  // ±¨´ínull
+        // int a = strs.length;  // æŠ¥é”™null
         // strs[0] = "123";
 
         List<String> lists = null;
-        // lists.size();      // ±¨´ínull
-        // lists.add("123");  // ±¨´ínull
+        // lists.size();      // æŠ¥é”™null
+        // lists.add("123");  // æŠ¥é”™null
     }
 }

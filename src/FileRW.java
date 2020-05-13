@@ -1,7 +1,11 @@
 import java.io.*;
 import java.util.Scanner;
 
-
+/**
+ * 阻塞同步IO（BIO）：一个线程在进行磁盘读写时，是会阻塞等待的，但是CPU是处于空闲状态，可以调度其他线程运行。
+ * 非阻塞同步IO（NIO）：一个线程在进行磁盘读写时，不会阻塞等待，会立即返回，这个线程还是可以继续占有CPU，执行其他代码，
+ *                  等到磁盘准备好时，通知发起磁盘请求的这个线程，利用CPU进行磁盘和内存之间的读写。
+ */
 public class FileRW {
     public static void main(String[] args) throws IOException, ClassNotFoundException{
 
@@ -336,7 +340,7 @@ public class FileRW {
 
 
         /***********
-         * 二进制io: 写入读出的都是字节，比文本io效率高，.dat文件
+         * 二进制io: 写入读出的都是字节，比文本（字符）io效率高，.dat文件
          * 二进制io的所有方法都要声明必检异常:IOException (其子类FileNotFoundException也被包括了)
          */
 
@@ -446,7 +450,7 @@ public class FileRW {
         printWriterStream1.close();
         printWriterStream2.close();
 
-        /** 继承根类---标记性实现类---读写二进制文件的方式是基本数据类型和字符串 java.io.FilterInputStream  java.io.FilterOutputStream **/
+        /** 继承根类---标记性实现类（实现了InputStream和OutputStream抽象类的方法，但是增加了额外的一些流的功能，让继承它的不同子类分别去实现）---读写二进制文件的方式是基本数据类型和字符串 java.io.FilterInputStream  java.io.FilterOutputStream **/
 
         /** 标记性接口---读写二进制文件的方式是基本数据类型和字符串 java.io.DataInput java.io.DataOutput **/
          /* java.io.DataInput */

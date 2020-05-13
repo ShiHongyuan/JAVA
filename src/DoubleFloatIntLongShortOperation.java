@@ -4,82 +4,82 @@ import java.math.RoundingMode;
 public class DoubleFloatIntLongShortOperation {
     public static void main(String[] args) {
 
-        float f = (float)1.3; // ´óµÄ²»ÄÜÒşÊ½×ª»»³ÉĞ¡µÄ£¬1.3Ä¬ÈÏÊÇdouble£¬²»ÄÜÒşÊ½×ª»»³Éfloat
-        float f1 = 1.3f;      // 1.3fÄ¬ÈÏÊÇfloat,²»ÓÃ×ª»»
+        float f = (float)1.3; // å¤§çš„ä¸èƒ½éšå¼è½¬æ¢æˆå°çš„ï¼Œ1.3é»˜è®¤æ˜¯doubleï¼Œä¸èƒ½éšå¼è½¬æ¢æˆfloat
+        float f1 = 1.3f;      // 1.3fé»˜è®¤æ˜¯float,ä¸ç”¨è½¬æ¢
 
-        // ÕûĞÍ¾ÍÃ»ÓĞÄ¬ÈÏµÄÀàĞÍ£¬Ö»ÓĞ¸¡µãÊıÄ¬ÈÏÊÇdouble
+        // æ•´å‹å°±æ²¡æœ‰é»˜è®¤çš„ç±»å‹ï¼Œåªæœ‰æµ®ç‚¹æ•°é»˜è®¤æ˜¯double
         long l = 1;
         short s = 2;
         byte b = 3;
 
         int i = 0;
-        double d = i; // ÒşÊ½×ª»»
-        System.out.println(d == i);  // true  iÒşÊ½×ª»»³Édouble
-        System.out.println(d == 0);  // true  0ÒşÊ½×ª»»³Édouble
+        double d = i; // éšå¼è½¬æ¢
+        System.out.println(d == i);  // true  iéšå¼è½¬æ¢æˆdouble
+        System.out.println(d == 0);  // true  0éšå¼è½¬æ¢æˆdouble
 
         int i1 =1;
-        double d1 = i1; // ÒşÊ½×ª»»
-        System.out.println(d1 == i1);  // true  i1ÒşÊ½×ª»»³Édouble
-        System.out.println(d1 == 1);  // true   1ÒşÊ½×ª»»³Édouble
+        double d1 = i1; // éšå¼è½¬æ¢
+        System.out.println(d1 == i1);  // true  i1éšå¼è½¬æ¢æˆdouble
+        System.out.println(d1 == 1);  // true   1éšå¼è½¬æ¢æˆdouble
 
         double dd = 1.9;
         float ff = 1.9f;
-        System.out.println((int)dd); // 1  ¸¡µã×ªint£¬Ö±½ÓÈ¥µôĞ¡Êı²¿·Ö
-        System.out.println((int)ff); // 1  ¸¡µã×ªint£¬Ö±½ÓÈ¥µôĞ¡Êı²¿·Ö
+        System.out.println((int)dd); // 1  æµ®ç‚¹è½¬intï¼Œç›´æ¥å»æ‰å°æ•°éƒ¨åˆ†
+        System.out.println((int)ff); // 1  æµ®ç‚¹è½¬intï¼Œç›´æ¥å»æ‰å°æ•°éƒ¨åˆ†
 
 
-        System.out.println(2.00-1.10); // 0.8999999999999999   double - double£¬ÓÉÓÚ0.1´æ´¢²»¾«È·£¬ËùÒÔ½á¹û²»¾«È·£¬Ñ­»·ºóÃæµÄÖ±½ÓÉáÆúµôÁË
-        System.out.println(1 - 0.9);   // 0.09999999999999998  double - double£¬ÓÉÓÚ0.9´æ´¢²»¾«È·£¬ËùÒÔ½á¹û²»¾«È·
-        System.out.println(1.00 - 0.00); // 1.0  double - double£¬µ«ÊÇÕûÊı²¿·Ö´æ´¢ÊÇ¾«È·µÄ£¬0.0ÎŞÏŞ½Ó½üÓÚ0£¬ËùÒÔ½á¹û¿´ÆğÀ´±È½Ï¾«È·£¬µ«ÊÇÊµ¼ÊÉÏ´æ´¢µÄÒ²²»ÊÇ¾«È·µÄ£¬ÒòÎª0²»¾«È·
+        System.out.println(2.00-1.10); // 0.8999999999999999   double - doubleï¼Œç”±äº0.1å­˜å‚¨ä¸ç²¾ç¡®ï¼Œæ‰€ä»¥ç»“æœä¸ç²¾ç¡®ï¼Œå¾ªç¯åé¢çš„ç›´æ¥èˆå¼ƒæ‰äº†
+        System.out.println(1 - 0.9);   // 0.09999999999999998  double - doubleï¼Œç”±äº0.9å­˜å‚¨ä¸ç²¾ç¡®ï¼Œæ‰€ä»¥ç»“æœä¸ç²¾ç¡®
+        System.out.println(1.00 - 0.00); // 1.0  double - doubleï¼Œä½†æ˜¯æ•´æ•°éƒ¨åˆ†å­˜å‚¨æ˜¯ç²¾ç¡®çš„ï¼Œ0.0æ— é™æ¥è¿‘äº0ï¼Œæ‰€ä»¥ç»“æœçœ‹èµ·æ¥æ¯”è¾ƒç²¾ç¡®ï¼Œä½†æ˜¯å®é™…ä¸Šå­˜å‚¨çš„ä¹Ÿä¸æ˜¯ç²¾ç¡®çš„ï¼Œå› ä¸º0ä¸ç²¾ç¡®
 
-        System.out.println(1f - 0.9f);     // 0.100000024  float-float£¬µÃµ½µÄÒ²ÊÇfloat£¬´æ´¢0.9Ò²²»¾«È·£¬ÉáÆúµÃ¸ü¶à
-        System.out.println(2.00f - 1.10f); // 0.9          float-float£¬µÃµ½µÄÒ²ÊÇfloat£¬´æ´¢0.1Ò²²»¾«È·
+        System.out.println(1f - 0.9f);     // 0.100000024  float-floatï¼Œå¾—åˆ°çš„ä¹Ÿæ˜¯floatï¼Œå­˜å‚¨0.9ä¹Ÿä¸ç²¾ç¡®ï¼Œèˆå¼ƒå¾—æ›´å¤š
+        System.out.println(2.00f - 1.10f); // 0.9          float-floatï¼Œå¾—åˆ°çš„ä¹Ÿæ˜¯floatï¼Œå­˜å‚¨0.1ä¹Ÿä¸ç²¾ç¡®
 
 
         System.out.println(2.00-1.10);   // 0.8999999999999999
-        System.out.println(2.0 - 1.10f); // 0.8999999761581421  double-double£¬1.10fÒşÊ½×ª»»³Édouble£¬ÓÉÓÚ1.10f±¾Éí¾ÍÊÇ²»¾«È·µÄ´æ´¢£¬
-                                         // ×ª»»³ÉdoubleÊ±£¬Óë1.10±¾ÉídoubleµÄ´æ´¢ÓÖ²»Ò»ÑùÁË£¬ËùÒÔ½á¹ûÒ²²»Ò»ÑùÁË
+        System.out.println(2.0 - 1.10f); // 0.8999999761581421  double-doubleï¼Œ1.10féšå¼è½¬æ¢æˆdoubleï¼Œç”±äº1.10fæœ¬èº«å°±æ˜¯ä¸ç²¾ç¡®çš„å­˜å‚¨ï¼Œ
+                                         // è½¬æ¢æˆdoubleæ—¶ï¼Œä¸1.10æœ¬èº«doubleçš„å­˜å‚¨åˆä¸ä¸€æ ·äº†ï¼Œæ‰€ä»¥ç»“æœä¹Ÿä¸ä¸€æ ·äº†
 
         double d2 = 0.9;
         float f2 = 0.9f;
-        System.out.println(d2 == f2);  // false float»áÒşÊ½×ª»»³Édoubleºó±È½Ï£¬µ«ÊÇÓÉÓÚfloat´æ´¢µÄ0.9²»¾«È·£¬×ª»»³ÉdoubleÊ±£¬
-                                       // Óë0.9±¾ÉídoubleµÄ´æ´¢Ò²²»Ò»Ñù£¬±È½ÏÊÇ¶ş½øÖÆµÄ±È½Ï£¬ËùÒÔ²»µÈ
-        System.out.println(d2 < f2);   // false  ÒòÎªf2ÒşÊ½×ª»»³Édoubleºó¶ş½øÖÆÖµÊÇ0.8999999761581421£¬double±¾Éí0.9µÄ¶ş½øÖÆÖµÊÇ0.8999999999999999
-        System.out.println(d2 > f2);   // true   Í¬Àí£¬ËùÒÔf2=0.8999999761581421£¬d2=0.8999999999999999 f2 < d2
+        System.out.println(d2 == f2);  // false floatä¼šéšå¼è½¬æ¢æˆdoubleåæ¯”è¾ƒï¼Œä½†æ˜¯ç”±äºfloatå­˜å‚¨çš„0.9ä¸ç²¾ç¡®ï¼Œè½¬æ¢æˆdoubleæ—¶ï¼Œ
+                                       // ä¸0.9æœ¬èº«doubleçš„å­˜å‚¨ä¹Ÿä¸ä¸€æ ·ï¼Œæ¯”è¾ƒæ˜¯äºŒè¿›åˆ¶çš„æ¯”è¾ƒï¼Œæ‰€ä»¥ä¸ç­‰
+        System.out.println(d2 < f2);   // false  å› ä¸ºf2éšå¼è½¬æ¢æˆdoubleåäºŒè¿›åˆ¶å€¼æ˜¯0.8999999761581421ï¼Œdoubleæœ¬èº«0.9çš„äºŒè¿›åˆ¶å€¼æ˜¯0.8999999999999999
+        System.out.println(d2 > f2);   // true   åŒç†ï¼Œæ‰€ä»¥f2=0.8999999761581421ï¼Œd2=0.8999999999999999 f2 < d2
 
         double d3 = 1;
         float f3 = 1f;
-        System.out.println(d3 == f3);  // true  float»áÒşÊ½×ª»»³Édoubleºó±È½Ï£¬µ«ÊÇfloatºÍdouble¶ÔÕûÊıµÄ´æ´¢¶¼ÊÇÒ»ÑùµÄ£¬¾«È·µÄ£¬ËùÒÔÏàµÈ
+        System.out.println(d3 == f3);  // true  floatä¼šéšå¼è½¬æ¢æˆdoubleåæ¯”è¾ƒï¼Œä½†æ˜¯floatå’Œdoubleå¯¹æ•´æ•°çš„å­˜å‚¨éƒ½æ˜¯ä¸€æ ·çš„ï¼Œç²¾ç¡®çš„ï¼Œæ‰€ä»¥ç›¸ç­‰
 
         System.out.println(0.9f);         // 0.9
         System.out.println(0.9d);         // 0.9
-        System.out.println((double)0.9f); // 0.8999999761581421  Í¬ÑùµÄfloat×ª»»³ÉdoubleºóÖµ¾Í²»Ò»ÑùÁË
+        System.out.println((double)0.9f); // 0.8999999761581421  åŒæ ·çš„floatè½¬æ¢æˆdoubleåå€¼å°±ä¸ä¸€æ ·äº†
 
 
-        // ¸¡µãÊı²»ÄÜÓĞÓàÊıÔËËã
+        // æµ®ç‚¹æ•°ä¸èƒ½æœ‰ä½™æ•°è¿ç®—
         System.out.println(5.5%10); // 5.5
 
 
-        /** ÓÉÉÏ¿ÉÖª£¬floatºÍdouble²»ÊÊºÏÓÃÓÚ¸¡µãÊıµÄ¼ÆËãºÍ±È½Ï£¬Ò»°ãÓÃBigDecimal
-         * floatºÍdoubleÀàĞÍÊÇÎªÁËÔÚ¹ãÓòÊıÖµ·¶Î§ÉÏÌá¹©½ÏÎª¾«È·µÄ¿ìËÙ½üËÆ¼ÆËã¶ø¾«ĞÄÉè¼ÆµÄ¡£È»¶ø£¬ËüÃÇÃ»ÓĞÌá¹©ÍêÈ«¾«È·µÄ½á¹û£¬ËùÒÔ²»Ó¦¸Ã±»ÓÃÓÚÒªÇó¾«È·½á¹ûµÄ³¡ºÏ
-         * ÔÚ´ó¶àÊıµÄÉÌÒµ¼ÆËãÖĞ£¬floatºÍdouble²»ÊÊºÏÓÃÓÚ¼ÆËãºÍ±È½Ï£¬Ò»°ãÓÃBigDecimalÀ´½øĞĞ¾«È·¼ÆËã
+        /** ç”±ä¸Šå¯çŸ¥ï¼Œfloatå’Œdoubleä¸é€‚åˆç”¨äºæµ®ç‚¹æ•°çš„è®¡ç®—å’Œæ¯”è¾ƒï¼Œä¸€èˆ¬ç”¨BigDecimal
+         * floatå’Œdoubleç±»å‹æ˜¯ä¸ºäº†åœ¨å¹¿åŸŸæ•°å€¼èŒƒå›´ä¸Šæä¾›è¾ƒä¸ºç²¾ç¡®çš„å¿«é€Ÿè¿‘ä¼¼è®¡ç®—è€Œç²¾å¿ƒè®¾è®¡çš„ã€‚ç„¶è€Œï¼Œå®ƒä»¬æ²¡æœ‰æä¾›å®Œå…¨ç²¾ç¡®çš„ç»“æœï¼Œæ‰€ä»¥ä¸åº”è¯¥è¢«ç”¨äºè¦æ±‚ç²¾ç¡®ç»“æœçš„åœºåˆ
+         * åœ¨å¤§å¤šæ•°çš„å•†ä¸šè®¡ç®—ä¸­ï¼Œfloatå’Œdoubleä¸é€‚åˆç”¨äºè®¡ç®—å’Œæ¯”è¾ƒï¼Œä¸€èˆ¬ç”¨BigDecimalæ¥è¿›è¡Œç²¾ç¡®è®¡ç®—
          *
          * java.math.BigDecima
          */
 
         /**
-         * BigDecimal¹¹Ôì·½·¨
+         * BigDecimalæ„é€ æ–¹æ³•
          */
         BigDecimal bigDecimal = new BigDecimal(2);
         BigDecimal bString = new BigDecimal("2.3");
         BigDecimal bDouble = new BigDecimal(2.3);
 
-        System.out.println("bigDecimal=" + bigDecimal); // 2 ½«int±íÊ¾ĞÎÊ½×ª»»³ÉBigDecimal
-        System.out.println("bDouble=" + bDouble);       // 2.3 ½«String±íÊ¾ĞÎÊ½×ª»»³ÉBigDecimal Ç¿ÁÒ½¨ÒéÊ¹ÓÃ
-        System.out.println("bString=" + bString);       // 2.2999999999 ½«double±íÊ¾ĞÎÊ½×ª»»ÎªBigDecimal *²»½¨ÒéÊ¹ÓÃ
-                                                        // ÒòÎªdouble²»¾«È·£¬´«½øÈ¥µÄ²»Ò»ÑùÊÇ2.3£¬bDouble¾Í²»Ò»¶¨ÊÇ2.3
+        System.out.println("bigDecimal=" + bigDecimal); // 2 å°†intè¡¨ç¤ºå½¢å¼è½¬æ¢æˆBigDecimal
+        System.out.println("bDouble=" + bDouble);       // 2.3 å°†Stringè¡¨ç¤ºå½¢å¼è½¬æ¢æˆBigDecimal å¼ºçƒˆå»ºè®®ä½¿ç”¨
+        System.out.println("bString=" + bString);       // 2.2999999999 å°†doubleè¡¨ç¤ºå½¢å¼è½¬æ¢ä¸ºBigDecimal *ä¸å»ºè®®ä½¿ç”¨
+                                                        // å› ä¸ºdoubleä¸ç²¾ç¡®ï¼Œä¼ è¿›å»çš„ä¸ä¸€æ ·æ˜¯2.3ï¼ŒbDoubleå°±ä¸ä¸€å®šæ˜¯2.3
 
-        // ±ØĞëÓÃdouble×÷Îª¹¹ÔìÔ´Ê±µÄ°ì·¨
+        // å¿…é¡»ç”¨doubleä½œä¸ºæ„é€ æºæ—¶çš„åŠæ³•
         BigDecimal bDouble1 = BigDecimal.valueOf(2.3);
         BigDecimal bDouble2 = new BigDecimal(Double.toString(2.3));
 
@@ -95,7 +95,7 @@ public class DoubleFloatIntLongShortOperation {
         System.out.println("bDouble4=" + bDouble4);     // 2.3
 
         /**
-         * BigDecimal¼Ó¼õ³Ë³ıÔËËã
+         * BigDecimalåŠ å‡ä¹˜é™¤è¿ç®—
          */
         BigDecimal bigDecimal1 = new BigDecimal("4.5");
         BigDecimal bigDecimal2 = new BigDecimal("1.5");
@@ -104,49 +104,49 @@ public class DoubleFloatIntLongShortOperation {
         System.out.println("a * b =" + bigDecimal1.multiply(bigDecimal2)); // 6.75
         System.out.println("a / b =" + bigDecimal1.divide(bigDecimal2));   // 3
 
-        // ¼õ³Ë³ıÆäÊµ×îÖÕ¶¼·µ»ØµÄÊÇÒ»¸öĞÂµÄBigDecimal¶ÔÏó£¬ÒòÎªBigIntegerÓëBigDecimal¶¼ÊÇ²»¿É±äµÄ£¨immutable£©µÄ£¬ÔÚ½øĞĞÃ¿Ò»²½ÔËËãÊ±£¬¶¼»á²úÉúÒ»¸öĞÂµÄ¶ÔÏó
+        // å‡ä¹˜é™¤å…¶å®æœ€ç»ˆéƒ½è¿”å›çš„æ˜¯ä¸€ä¸ªæ–°çš„BigDecimalå¯¹è±¡ï¼Œå› ä¸ºBigIntegerä¸BigDecimaléƒ½æ˜¯ä¸å¯å˜çš„ï¼ˆimmutableï¼‰çš„ï¼Œåœ¨è¿›è¡Œæ¯ä¸€æ­¥è¿ç®—æ—¶ï¼Œéƒ½ä¼šäº§ç”Ÿä¸€ä¸ªæ–°çš„å¯¹è±¡
         System.out.println(bigDecimal1.add(bigDecimal2)); // 6.0
-        System.out.println(bigDecimal1); // 4.5 bigDecimal1¡¢bigDecimal2¶¼ÊÇÃ»ÓĞ±äµÄ
-        System.out.println(bigDecimal2); // 1.5 bigDecimal1¡¢bigDecimal2¶¼ÊÇÃ»ÓĞ±äµÄ
+        System.out.println(bigDecimal1); // 4.5 bigDecimal1ã€bigDecimal2éƒ½æ˜¯æ²¡æœ‰å˜çš„
+        System.out.println(bigDecimal2); // 1.5 bigDecimal1ã€bigDecimal2éƒ½æ˜¯æ²¡æœ‰å˜çš„
 
-        /** ×¢Òâ ³ı·¨ÔËËãdivide£¬ÊÇÈı¸ö²ÎÊıpublic BigDecimal divide(BigDecimal divisor, int scale, int roundingMode)
-         *  µÚ¶ş¸ö²ÎÊı±íÊ¾Ğ¡Êıµãºó±£ÁôÎ»Êı£¬µÚÈı¸ö²ÎÊı±íÊ¾ÉáÈëÄ£Ê½£º
+        /** æ³¨æ„ é™¤æ³•è¿ç®—divideï¼Œæ˜¯ä¸‰ä¸ªå‚æ•°public BigDecimal divide(BigDecimal divisor, int scale, int roundingMode)
+         *  ç¬¬äºŒä¸ªå‚æ•°è¡¨ç¤ºå°æ•°ç‚¹åä¿ç•™ä½æ•°ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è¡¨ç¤ºèˆå…¥æ¨¡å¼ï¼š
          *
          *  java.math.RoundingMode
          *
-         *  RoundingMode.CEILING  //ÏòÕıÎŞÇî·½ÏòÉáÈë
-         *  RoundingMode.FLOOR    //Ïò¸ºÎŞÇî·½ÏòÉáÈë
+         *  RoundingMode.CEILING  //å‘æ­£æ— ç©·æ–¹å‘èˆå…¥
+         *  RoundingMode.FLOOR    //å‘è´Ÿæ— ç©·æ–¹å‘èˆå…¥
          *
-         *  RoundingMode.DOWN     //Ïò0·½ÏòÉáÈë
-         *  RoundingMode.UP       //ÏòÔ¶Àë0µÄ·½ÏòÉáÈë
+         *  RoundingMode.DOWN     //å‘0æ–¹å‘èˆå…¥
+         *  RoundingMode.UP       //å‘è¿œç¦»0çš„æ–¹å‘èˆå…¥
          *
-         *  RoundingMode.HALF_DOWN    //Ïò£¨¾àÀë£©×î½üµÄÒ»±ßÉáÈë£¬³ı·ÇÁ½±ß£¨µÄ¾àÀë£©ÊÇÏàµÈ,Èç¹ûÊÇÕâÑù£¬ÏòÏÂÉáÈë, ÀıÈç1.55 ±£ÁôÒ»Î»Ğ¡Êı½á¹ûÎª1.5
+         *  RoundingMode.HALF_DOWN    //å‘ï¼ˆè·ç¦»ï¼‰æœ€è¿‘çš„ä¸€è¾¹èˆå…¥ï¼Œé™¤éä¸¤è¾¹ï¼ˆçš„è·ç¦»ï¼‰æ˜¯ç›¸ç­‰,å¦‚æœæ˜¯è¿™æ ·ï¼Œå‘ä¸‹èˆå…¥, ä¾‹å¦‚1.55 ä¿ç•™ä¸€ä½å°æ•°ç»“æœä¸º1.5
          *
-         *  RoundingMode.HALF_EVEN    //Ïò£¨¾àÀë£©×î½üµÄÒ»±ßÉáÈë£¬³ı·ÇÁ½±ß£¨µÄ¾àÀë£©ÊÇÏàµÈ,Èç¹ûÊÇÕâÑù£¬Èç¹û±£ÁôÎ»ÊıÊÇÆæÊı£¬Ê¹ÓÃROUND_HALF_UP£¬Èç¹ûÊÇÅ¼Êı£¬Ê¹ÓÃROUND_HALF_DOWN
+         *  RoundingMode.HALF_EVEN    //å‘ï¼ˆè·ç¦»ï¼‰æœ€è¿‘çš„ä¸€è¾¹èˆå…¥ï¼Œé™¤éä¸¤è¾¹ï¼ˆçš„è·ç¦»ï¼‰æ˜¯ç›¸ç­‰,å¦‚æœæ˜¯è¿™æ ·ï¼Œå¦‚æœä¿ç•™ä½æ•°æ˜¯å¥‡æ•°ï¼Œä½¿ç”¨ROUND_HALF_UPï¼Œå¦‚æœæ˜¯å¶æ•°ï¼Œä½¿ç”¨ROUND_HALF_DOWN
          *
-         *  RoundingMode.HALF_UP      //Ïò£¨¾àÀë£©×î½üµÄÒ»±ßÉáÈë£¬³ı·ÇÁ½±ß£¨µÄ¾àÀë£©ÊÇÏàµÈ,Èç¹ûÊÇÕâÑù£¬ÏòÉÏÉáÈë, 1.55±£ÁôÒ»Î»Ğ¡Êı½á¹ûÎª1.6£¬ÕæÕıµÄËÄÉáÎåÈë
+         *  RoundingMode.HALF_UP      //å‘ï¼ˆè·ç¦»ï¼‰æœ€è¿‘çš„ä¸€è¾¹èˆå…¥ï¼Œé™¤éä¸¤è¾¹ï¼ˆçš„è·ç¦»ï¼‰æ˜¯ç›¸ç­‰,å¦‚æœæ˜¯è¿™æ ·ï¼Œå‘ä¸Šèˆå…¥, 1.55ä¿ç•™ä¸€ä½å°æ•°ç»“æœä¸º1.6ï¼ŒçœŸæ­£çš„å››èˆäº”å…¥
          *
-         *  RoundingMode.UNNECESSARY    //¼ÆËã½á¹ûÊÇ¾«È·µÄ£¬²»ĞèÒªÉáÈëÄ£Ê½£¬Ä¬ÈÏÄ£Ê½
+         *  RoundingMode.UNNECESSARY    //è®¡ç®—ç»“æœæ˜¯ç²¾ç¡®çš„ï¼Œä¸éœ€è¦èˆå…¥æ¨¡å¼ï¼Œé»˜è®¤æ¨¡å¼
          */
 
-        // divideµÄRoundingModeÄ¬ÈÏÊÇROUND_UNNECESSARY£¬scaleÄ¬ÈÏÊÇ1Î»Ğ¡Êı£¬ËùÒÔÄÜ³ı¾¡£¬¾Í³ı¾¡£¬³ı¾¡³ÉÕûÊı¡¢Ğ¡Êı¶¼¿ÉÒÔ£¬µ«Ò²ÊÇÒ»¸öBigDecimal
+        // divideçš„RoundingModeé»˜è®¤æ˜¯ROUND_UNNECESSARYï¼Œscaleé»˜è®¤æ˜¯1ä½å°æ•°ï¼Œæ‰€ä»¥èƒ½é™¤å°½ï¼Œå°±é™¤å°½ï¼Œé™¤å°½æˆæ•´æ•°ã€å°æ•°éƒ½å¯ä»¥ï¼Œä½†ä¹Ÿæ˜¯ä¸€ä¸ªBigDecimal
         System.out.println(new BigDecimal("4.5").divide(new BigDecimal("1.5")));   // 3
         System.out.println(new BigDecimal("4.5").divide(new BigDecimal("3")));     // 1.5
-        // System.out.println(new BigDecimal("4.5").divide(new BigDecimal("1.3")));   // ³ı²»¾¡£¬ÓÖÃ»Ö¸¶¨RoundingMode£¬¾Í»á±¨´í
-        System.out.println(new BigDecimal("4.5").divide(new BigDecimal("1.3"), RoundingMode.HALF_UP)); // 3.5 ³ı²»¾¡£¬Ö¸¶¨ÁËRoundingMode£¬ËÄÉáÎåÈë£¬scaleÄ¬ÈÏ±£ÁôÒ»Î»Ğ¡Êı
-        System.out.println(new BigDecimal("4.5").divide(new BigDecimal("1.3"), 2, RoundingMode.HALF_UP)); // 3.46£¬Ö¸¶¨scale±£Áô2Î»Ğ¡Êı
+        // System.out.println(new BigDecimal("4.5").divide(new BigDecimal("1.3")));   // é™¤ä¸å°½ï¼Œåˆæ²¡æŒ‡å®šRoundingModeï¼Œå°±ä¼šæŠ¥é”™
+        System.out.println(new BigDecimal("4.5").divide(new BigDecimal("1.3"), RoundingMode.HALF_UP)); // 3.5 é™¤ä¸å°½ï¼ŒæŒ‡å®šäº†RoundingModeï¼Œå››èˆäº”å…¥ï¼Œscaleé»˜è®¤ä¿ç•™ä¸€ä½å°æ•°
+        System.out.println(new BigDecimal("4.5").divide(new BigDecimal("1.3"), 2, RoundingMode.HALF_UP)); // 3.46ï¼ŒæŒ‡å®šscaleä¿ç•™2ä½å°æ•°
 
 
         /**
-         * BigDecimal½Ø¶Ï¡¢ËÄÉáÎåÈë£¬setScale£¬±£ÁôĞ¡ÊıÎ»ÊÇ²»ÄÜÈ±Ê¡µÄ£¬RoundingModeÈ±Ê¡ÊÇUNNECESSARY
+         * BigDecimalæˆªæ–­ã€å››èˆäº”å…¥ï¼ŒsetScaleï¼Œä¿ç•™å°æ•°ä½æ˜¯ä¸èƒ½ç¼ºçœçš„ï¼ŒRoundingModeç¼ºçœæ˜¯UNNECESSARY
          */
         BigDecimal bigDecimal3 = new BigDecimal("3.265");
-        // ½Ø¶Ï³É4Î»Ğ¡Êı
-        System.out.println(bigDecimal3.setScale(4)); // 3.2650  RoundingModeÈ±Ê¡Ä¬ÈÏÊÇUNNECESSARY
-        // ½Ø¶Ï³É2Î»Ğ¡Êı£¬RoundingModeÈ±Ê¡UNNECESSARY£¬»á±¨´í
-        // System.out.println(bigDecimal3.setScale(2)); // ±¨´í£¬±£Áô2Î»²»ÄÜÉáÈë£¬»á±¨´í
-        // ½Ø¶Ï³É2Î»Ğ¡Êı£¬²¢ÇÒËÄÉáÎåÈë
-        System.out.println(bigDecimal3.setScale(2, RoundingMode.HALF_UP)); // 3.27 Ö¸¶¨ÁËRoundingMode£¬±£Áô2Î»ËÄÉáÎåÈë
+        // æˆªæ–­æˆ4ä½å°æ•°
+        System.out.println(bigDecimal3.setScale(4)); // 3.2650  RoundingModeç¼ºçœé»˜è®¤æ˜¯UNNECESSARY
+        // æˆªæ–­æˆ2ä½å°æ•°ï¼ŒRoundingModeç¼ºçœUNNECESSARYï¼Œä¼šæŠ¥é”™
+        // System.out.println(bigDecimal3.setScale(2)); // æŠ¥é”™ï¼Œä¿ç•™2ä½ä¸èƒ½èˆå…¥ï¼Œä¼šæŠ¥é”™
+        // æˆªæ–­æˆ2ä½å°æ•°ï¼Œå¹¶ä¸”å››èˆäº”å…¥
+        System.out.println(bigDecimal3.setScale(2, RoundingMode.HALF_UP)); // 3.27 æŒ‡å®šäº†RoundingModeï¼Œä¿ç•™2ä½å››èˆäº”å…¥
 
     }
 }

@@ -1,25 +1,26 @@
 public class FunctionDefine {
     public static void main(String[] args) {
         /**
-         * if ÓĞesle£¬¾Í²»Ò»¶¨ĞèÒª×îºóµÄreturn£¬Ã»ÓĞelse£¬¾ÍÒ»¶¨ĞèÒª×îºóµÄreturn£¬²»È»±àÒë±¨´í
+         * if æœ‰esleï¼Œå°±ä¸ä¸€å®šéœ€è¦æœ€åçš„returnï¼Œæ²¡æœ‰elseï¼Œå°±ä¸€å®šéœ€è¦æœ€åçš„returnï¼Œä¸ç„¶ç¼–è¯‘æŠ¥é”™
          * */
         testIF(2);
 
         /**
-         * Êµ²Î´«ĞÎ²Î£¬Ö»ÒªÒşÊ½×ª»»ÄÜµÃµ½£¬¾ÍÀàĞÍ¼æÈİ£¬¾Í¿ÉÒÔ´«µİ
+         * å®å‚ä¼ å½¢å‚ï¼Œåªè¦éšå¼è½¬æ¢èƒ½å¾—åˆ°ï¼Œå°±ç±»å‹å…¼å®¹ï¼Œå°±å¯ä»¥ä¼ é€’
          * */
-//        testParameter(1.0, 2, '\u0001');      // 1.0 doubleÒşÊ½×ª»»int ±¨´í
-//        testParameter(1, 2, 65);              // 65 intÒşÊ½×ª»»char ±¨´í
-        testParameter(1, 2, '\u0001');  // 2  intÒşÊ½×ª»»double ³É¹¦µ÷ÓÃ
+//        testParameter(1.0, 2, '\u0001');      // 1.0 doubleéšå¼è½¬æ¢int æŠ¥é”™
+//        testParameter(1, 2, 65);              // 65 intéšå¼è½¬æ¢char æŠ¥é”™
+        testParameter(1, 2, '\u0001');  // 2  intéšå¼è½¬æ¢double æˆåŠŸè°ƒç”¨
 
         /**
-         * ·½·¨ÖØÔØ£¬ĞÎ²ÎË³Ğò²»Ò»Ñù£¬ÊÇ¶ÔµÄ£¬µ«ÊÇµ÷ÓÃÊ±¶¼¿ÉÒÔÒşÊ½×ª»»£¬¾Í»á±¨´í
+         * æ–¹æ³•é‡è½½ï¼Œå½¢å‚é¡ºåºä¸ä¸€æ ·ï¼Œæ˜¯å¯¹çš„ï¼Œä½†æ˜¯è°ƒç”¨æ—¶éƒ½å¯ä»¥éšå¼è½¬æ¢ï¼Œå°±ä¼šæŠ¥é”™
          * */
-//        testOverload(1, 2); // ±¨´í£¬²»ÖªµÀÒªµ÷ÓÃµÄÊÇÄÄÒ»¸ö
+//        testOverload(1, 2); // æŠ¥é”™ï¼Œä¸çŸ¥é“è¦è°ƒç”¨çš„æ˜¯å“ªä¸€ä¸ª
+
 
     }
 
-    // Ã»ÓĞelse£¬Ã»ÓĞ×îºóµÄreturn£¬±¨´í
+    // æ²¡æœ‰elseï¼Œæ²¡æœ‰æœ€åçš„returnï¼ŒæŠ¥é”™
 //    private int testIF(int n) {
 //        if (n == 1) {
 //            return 1;
@@ -29,7 +30,7 @@ public class FunctionDefine {
 //        }
 //    }
 
-    // ÓĞelse£¬Ã»ÓĞ×îºóµÄreturn£¬³É¹¦
+    // æœ‰elseï¼Œæ²¡æœ‰æœ€åçš„returnï¼ŒæˆåŠŸ
     private static int testIF(int n) {
         if (n == 1) {
             return 1;
@@ -47,7 +48,7 @@ public class FunctionDefine {
         return;
     }
 
-    private static void testOverload(double d, int n) {
-        return;
-    }
+    private static void testOverload(double d, int n) { return; }
+
+
 }
